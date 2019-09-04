@@ -373,12 +373,12 @@ ul.toc li {
 <link href="#rfc.authors" rel="Chapter">
 
 
-  <meta name="generator" content="xml2rfc version 2.25.0 - https://tools.ietf.org/tools/xml2rfc" />
+  <meta name="generator" content="xml2rfc version 2.26.0 - https://tools.ietf.org/tools/xml2rfc" />
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
   <meta name="dct.creator" content="Yasskin, J." />
   <meta name="dct.identifier" content="urn:ietf:id:draft-yasskin-http-origin-signed-responses-latest" />
-  <meta name="dct.issued" scheme="ISO8601" content="2019-09-03" />
+  <meta name="dct.issued" scheme="ISO8601" content="2019-09-04" />
   <meta name="dct.abstract" content="This document specifies how a server can send an HTTP exchange&#8212;a request URL, content negotiation information, and a response&#8212;with signatures that vouch for that exchange&#8217;s authenticity. These signatures can be verified against an origin&#8217;s certificate to establish that the exchange is authoritative for an origin even if it was transferred over a connection that isn&#8217;t. The signatures can also be used in other ways described in the appendices.These signatures contain countermeasures against downgrade and protocol-confusion attacks." />
   <meta name="description" content="This document specifies how a server can send an HTTP exchange&#8212;a request URL, content negotiation information, and a response&#8212;with signatures that vouch for that exchange&#8217;s authenticity. These signatures can be verified against an origin&#8217;s certificate to establish that the exchange is authoritative for an origin even if it was transferred over a connection that isn&#8217;t. The signatures can also be used in other ways described in the appendices.These signatures contain countermeasures against downgrade and protocol-confusion attacks." />
 
@@ -399,10 +399,10 @@ ul.toc li {
 </tr>
 <tr>
 <td class="left">Intended status: Standards Track</td>
-<td class="right">September 03, 2019</td>
+<td class="right">September 04, 2019</td>
 </tr>
 <tr>
-<td class="left">Expires: March 6, 2020</td>
+<td class="left">Expires: March 7, 2020</td>
 <td class="right"></td>
 </tr>
 
@@ -423,7 +423,7 @@ ul.toc li {
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on March 6, 2020.</p>
+<p>This Internet-Draft will expire on March 7, 2020.</p>
 <h1 id="rfc.copyrightnotice"><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
 <p>Copyright (c) 2019 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
@@ -1464,52 +1464,56 @@ following map&gt;sig1; sig=*...; integrity="digest/mi-sha256"; ...{
 <h1 id="rfc.section.8.6">
 <a href="#rfc.section.8.6">8.6.</a> <a href="#internet-media-type-applicationsigned-exchange" id="internet-media-type-applicationsigned-exchange">Internet Media Type application/signed-exchange</a>
 </h1>
-<p id="rfc.section.8.6.p.1">Type name:  application</p>
-<p id="rfc.section.8.6.p.2">Subtype name:  signed-exchange</p>
-<p id="rfc.section.8.6.p.3">Required parameters:</p>
+<p id="rfc.section.8.6.p.1">IANA is requested to register the MIME media type (<a href="#IANA.media-types" class="xref">[IANA.media-types]</a>) for signed exchanges, application/signed-exchange, as follows:</p>
+<p id="rfc.section.8.6.p.2">Type name:  application</p>
+<p id="rfc.section.8.6.p.3">Subtype name:  signed-exchange</p>
+<p id="rfc.section.8.6.p.4">Required parameters:</p>
 <p></p>
 
 <ul><li>v: A string denoting the version of the file format. (<a href="#RFC5234" class="xref">[RFC5234]</a> ABNF: <samp>version = DIGIT/%x61-7A</samp>) The version defined in this specification is <samp>1</samp>.  When used with the <samp>Accept</samp> header field (Section 5.3.1 of <a href="#RFC7231" class="xref">[RFC7231]</a>), this parameter can be a comma (,)-separated list of version strings. (<a href="#RFC5234" class="xref">[RFC5234]</a> ABNF: <samp>version-list = version *( "," version )</samp>) The server is then expected to reply with a resource using a particular version from that list.  <br><br> Note: RFC EDITOR PLEASE DELETE THIS NOTE; Implementations of drafts of this specification MUST NOT use simple integers to describe their versions, and MUST instead define implementation-specific strings to identify which draft is implemented. The newest version of <a href="#I-D.yasskin-httpbis-origin-signed-exchanges-impl" class="xref">[I-D.yasskin-httpbis-origin-signed-exchanges-impl]</a> describes the meaning of one such string.</li></ul>
-<p id="rfc.section.8.6.p.5">Optional parameters:  N/A</p>
-<p id="rfc.section.8.6.p.6">Encoding considerations:  binary</p>
-<p id="rfc.section.8.6.p.7">Security considerations:  see <a href="#security-application-signed-exchange" class="xref">Section 6.6</a></p>
-<p id="rfc.section.8.6.p.8">Interoperability considerations:  N/A</p>
-<p id="rfc.section.8.6.p.9">Published specification:  This specification (see <a href="#application-signed-exchange" class="xref">Section 5.3</a>).</p>
-<p id="rfc.section.8.6.p.10">Applications that use this media type:  N/A</p>
-<p id="rfc.section.8.6.p.11">Fragment identifier considerations:  N/A</p>
-<p id="rfc.section.8.6.p.12">Additional information:</p>
-<p id="rfc.section.8.6.p.13">Deprecated alias names for this type:  N/A</p>
-<p id="rfc.section.8.6.p.14">Magic number(s):  73 78 67 31 00</p>
-<p id="rfc.section.8.6.p.15">File extension(s): .sxg</p>
-<p id="rfc.section.8.6.p.16">Macintosh file type code(s):  N/A</p>
-<p id="rfc.section.8.6.p.17">Person and email address to contact for further information: See Authors&#8217; Addresses section.</p>
-<p id="rfc.section.8.6.p.18">Intended usage:  COMMON</p>
-<p id="rfc.section.8.6.p.19">Restrictions on usage:  N/A</p>
-<p id="rfc.section.8.6.p.20">Author:  See Authors&#8217; Addresses section.</p>
-<p id="rfc.section.8.6.p.21">Change controller:  IESG</p>
+<p id="rfc.section.8.6.p.6">Optional parameters:  N/A</p>
+<p id="rfc.section.8.6.p.7">Encoding considerations:  binary</p>
+<p id="rfc.section.8.6.p.8">Security considerations:  see <a href="#security-application-signed-exchange" class="xref">Section 6.6</a></p>
+<p id="rfc.section.8.6.p.9">Interoperability considerations:  N/A</p>
+<p id="rfc.section.8.6.p.10">Published specification:  This specification (see <a href="#application-signed-exchange" class="xref">Section 5.3</a>).</p>
+<p id="rfc.section.8.6.p.11">Applications that use this media type:  N/A</p>
+<p id="rfc.section.8.6.p.12">Fragment identifier considerations:  N/A</p>
+<p id="rfc.section.8.6.p.13">Additional information:</p>
+<p id="rfc.section.8.6.p.14">Deprecated alias names for this type:  N/A</p>
+<p id="rfc.section.8.6.p.15">Magic number(s):  73 78 67 31 00</p>
+<p id="rfc.section.8.6.p.16">File extension(s): .sxg</p>
+<p id="rfc.section.8.6.p.17">Macintosh file type code(s):  N/A</p>
+<p id="rfc.section.8.6.p.18">Person and email address to contact for further information: See Authors&#8217; Addresses section.</p>
+<p id="rfc.section.8.6.p.19">Intended usage:  COMMON</p>
+<p id="rfc.section.8.6.p.20">Restrictions on usage:  N/A</p>
+<p id="rfc.section.8.6.p.21">Author:  See Authors&#8217; Addresses section.</p>
+<p id="rfc.section.8.6.p.22">Change controller:  IESG</p>
+<p id="rfc.section.8.6.p.23">Provisional registration? Yes</p>
 <h1 id="rfc.section.8.7">
 <a href="#rfc.section.8.7">8.7.</a> <a href="#internet-media-type-applicationcert-chaincbor" id="internet-media-type-applicationcert-chaincbor">Internet Media Type application/cert-chain+cbor</a>
 </h1>
-<p id="rfc.section.8.7.p.1">Type name:  application</p>
-<p id="rfc.section.8.7.p.2">Subtype name:  cert-chain+cbor</p>
-<p id="rfc.section.8.7.p.3">Required parameters:  N/A</p>
-<p id="rfc.section.8.7.p.4">Optional parameters:  N/A</p>
-<p id="rfc.section.8.7.p.5">Encoding considerations:  binary</p>
-<p id="rfc.section.8.7.p.6">Security considerations:  N/A</p>
-<p id="rfc.section.8.7.p.7">Interoperability considerations:  N/A</p>
-<p id="rfc.section.8.7.p.8">Published specification:  This specification (see <a href="#cert-chain-format" class="xref">Section 3.3</a>).</p>
-<p id="rfc.section.8.7.p.9">Applications that use this media type:  N/A</p>
-<p id="rfc.section.8.7.p.10">Fragment identifier considerations:  N/A</p>
-<p id="rfc.section.8.7.p.11">Additional information:</p>
-<p id="rfc.section.8.7.p.12">Deprecated alias names for this type:  N/A</p>
-<p id="rfc.section.8.7.p.13">Magic number(s): 1*9(??) 67 F0 9F 93 9C E2 9B 93</p>
-<p id="rfc.section.8.7.p.14">File extension(s): N/A</p>
-<p id="rfc.section.8.7.p.15">Macintosh file type code(s):  N/A</p>
-<p id="rfc.section.8.7.p.16">Person and email address to contact for further information: See Authors&#8217; Addresses section.</p>
-<p id="rfc.section.8.7.p.17">Intended usage:  COMMON</p>
-<p id="rfc.section.8.7.p.18">Restrictions on usage:  N/A</p>
-<p id="rfc.section.8.7.p.19">Author:  See Authors&#8217; Addresses section.</p>
-<p id="rfc.section.8.7.p.20">Change controller:  IESG</p>
+<p id="rfc.section.8.7.p.1">IANA is requested to register the MIME media type (<a href="#IANA.media-types" class="xref">[IANA.media-types]</a>) for CBOR-format certificate chains, application/cert-chain+cbor, as follows:</p>
+<p id="rfc.section.8.7.p.2">Type name:  application</p>
+<p id="rfc.section.8.7.p.3">Subtype name:  cert-chain+cbor</p>
+<p id="rfc.section.8.7.p.4">Required parameters:  N/A</p>
+<p id="rfc.section.8.7.p.5">Optional parameters:  N/A</p>
+<p id="rfc.section.8.7.p.6">Encoding considerations:  binary</p>
+<p id="rfc.section.8.7.p.7">Security considerations:  N/A</p>
+<p id="rfc.section.8.7.p.8">Interoperability considerations:  N/A</p>
+<p id="rfc.section.8.7.p.9">Published specification:  This specification (see <a href="#cert-chain-format" class="xref">Section 3.3</a>).</p>
+<p id="rfc.section.8.7.p.10">Applications that use this media type:  N/A</p>
+<p id="rfc.section.8.7.p.11">Fragment identifier considerations:  N/A</p>
+<p id="rfc.section.8.7.p.12">Additional information:</p>
+<p id="rfc.section.8.7.p.13">Deprecated alias names for this type:  N/A</p>
+<p id="rfc.section.8.7.p.14">Magic number(s): 1*9(??) 67 F0 9F 93 9C E2 9B 93</p>
+<p id="rfc.section.8.7.p.15">File extension(s): N/A</p>
+<p id="rfc.section.8.7.p.16">Macintosh file type code(s):  N/A</p>
+<p id="rfc.section.8.7.p.17">Person and email address to contact for further information: See Authors&#8217; Addresses section.</p>
+<p id="rfc.section.8.7.p.18">Intended usage:  COMMON</p>
+<p id="rfc.section.8.7.p.19">Restrictions on usage:  N/A</p>
+<p id="rfc.section.8.7.p.20">Author:  See Authors&#8217; Addresses section.</p>
+<p id="rfc.section.8.7.p.21">Change controller:  IESG</p>
+<p id="rfc.section.8.7.p.22">Provisional registration? Yes</p>
 <h1 id="rfc.section.8.8">
 <a href="#rfc.section.8.8">8.8.</a> <a href="#iana-caa-cansignhttpexchanges" id="iana-caa-cansignhttpexchanges">The cansignhttpexchanges CAA Parameter</a>
 </h1>
@@ -1543,6 +1547,11 @@ following map&gt;sig1; sig=*...; integrity="digest/mi-sha256"; ...{
 <td class="reference"><b id="I-D.thomson-http-mice">[I-D.thomson-http-mice]</b></td>
 <td class="top">
 <a>Thomson, M.</a> and <a>J. Yasskin</a>, "<a href="https://tools.ietf.org/html/draft-thomson-http-mice-03">Merkle Integrity Content Encoding</a>", Internet-Draft draft-thomson-http-mice-03, August 2018.</td>
+</tr>
+<tr>
+<td class="reference"><b id="IANA.media-types">[IANA.media-types]</b></td>
+<td class="top">
+<a>IANA</a>, "<a href="http://www.iana.org/assignments/media-types">Media Types</a>"</td>
 </tr>
 <tr>
 <td class="reference"><b id="POSIX">[POSIX]</b></td>

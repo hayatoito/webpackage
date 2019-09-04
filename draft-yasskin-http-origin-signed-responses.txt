@@ -4,8 +4,8 @@
 
 Network Working Group                                         J. Yasskin
 Internet-Draft                                                    Google
-Intended status: Standards Track                      September 03, 2019
-Expires: March 6, 2020
+Intended status: Standards Track                      September 04, 2019
+Expires: March 7, 2020
 
 
                          Signed HTTP Exchanges
@@ -48,12 +48,12 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on March 6, 2020.
+   This Internet-Draft will expire on March 7, 2020.
 
 
 
 
-Yasskin                   Expires March 6, 2020                 [Page 1]
+Yasskin                   Expires March 7, 2020                 [Page 1]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Yasskin                   Expires March 6, 2020                 [Page 2]
+Yasskin                   Expires March 7, 2020                 [Page 2]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -152,12 +152,12 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
      A.1.  PUSHed subresources . . . . . . . . . . . . . . . . . . .  48
      A.2.  Explicit use of a content distributor for subresources  .  48
      A.3.  Subresource Integrity . . . . . . . . . . . . . . . . . .  49
-     A.4.  Binary Transparency . . . . . . . . . . . . . . . . . . .  49
+     A.4.  Binary Transparency . . . . . . . . . . . . . . . . . . .  50
      A.5.  Static Analysis . . . . . . . . . . . . . . . . . . . . .  50
      A.6.  Offline websites  . . . . . . . . . . . . . . . . . . . .  50
    Appendix B.  Requirements . . . . . . . . . . . . . . . . . . . .  50
      B.1.  Proof of origin . . . . . . . . . . . . . . . . . . . . .  50
-       B.1.1.  Certificate constraints . . . . . . . . . . . . . . .  50
+       B.1.1.  Certificate constraints . . . . . . . . . . . . . . .  51
        B.1.2.  Signature constraints . . . . . . . . . . . . . . . .  51
        B.1.3.  Retrieving the certificate  . . . . . . . . . . . . .  51
      B.2.  How much to sign  . . . . . . . . . . . . . . . . . . . .  52
@@ -165,7 +165,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                 [Page 3]
+Yasskin                   Expires March 7, 2020                 [Page 3]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -176,10 +176,10 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
      B.4.  Low implementation complexity . . . . . . . . . . . . . .  54
        B.4.1.  Limited choices . . . . . . . . . . . . . . . . . . .  54
        B.4.2.  Bounded-buffering integrity checking  . . . . . . . .  54
-   Appendix C.  Determining validity using cache control . . . . . .  54
+   Appendix C.  Determining validity using cache control . . . . . .  55
      C.1.  Example of updating cache control . . . . . . . . . . . .  55
      C.2.  Downsides of updating cache control . . . . . . . . . . .  56
-   Appendix D.  Change Log . . . . . . . . . . . . . . . . . . . . .  56
+   Appendix D.  Change Log . . . . . . . . . . . . . . . . . . . . .  57
    Appendix E.  Acknowledgements . . . . . . . . . . . . . . . . . .  59
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  59
 
@@ -221,7 +221,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                 [Page 4]
+Yasskin                   Expires March 7, 2020                 [Page 4]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -277,7 +277,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                 [Page 5]
+Yasskin                   Expires March 7, 2020                 [Page 5]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -333,7 +333,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                 [Page 6]
+Yasskin                   Expires March 7, 2020                 [Page 6]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -389,7 +389,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                 [Page 7]
+Yasskin                   Expires March 7, 2020                 [Page 7]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -445,7 +445,7 @@ Signature:
 
 
 
-Yasskin                   Expires March 6, 2020                 [Page 8]
+Yasskin                   Expires March 7, 2020                 [Page 8]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -501,7 +501,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                 [Page 9]
+Yasskin                   Expires March 7, 2020                 [Page 9]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -557,7 +557,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 10]
+Yasskin                   Expires March 7, 2020                [Page 10]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -613,7 +613,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 11]
+Yasskin                   Expires March 7, 2020                [Page 11]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -669,7 +669,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 12]
+Yasskin                   Expires March 7, 2020                [Page 12]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -725,7 +725,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 13]
+Yasskin                   Expires March 7, 2020                [Page 13]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -781,7 +781,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 14]
+Yasskin                   Expires March 7, 2020                [Page 14]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -837,7 +837,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 15]
+Yasskin                   Expires March 7, 2020                [Page 15]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -893,7 +893,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 16]
+Yasskin                   Expires March 7, 2020                [Page 16]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -949,7 +949,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 17]
+Yasskin                   Expires March 7, 2020                [Page 17]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -1005,7 +1005,7 @@ Signature:
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 18]
+Yasskin                   Expires March 7, 2020                [Page 18]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -1061,7 +1061,7 @@ Signature:
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 19]
+Yasskin                   Expires March 7, 2020                [Page 19]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -1117,7 +1117,7 @@ Accept-Signature: ..., ed25519key; **
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 20]
+Yasskin                   Expires March 7, 2020                [Page 20]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -1173,7 +1173,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 21]
+Yasskin                   Expires March 7, 2020                [Page 21]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -1229,7 +1229,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 22]
+Yasskin                   Expires March 7, 2020                [Page 22]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -1285,7 +1285,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 23]
+Yasskin                   Expires March 7, 2020                [Page 23]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -1341,7 +1341,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 24]
+Yasskin                   Expires March 7, 2020                [Page 24]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -1397,7 +1397,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 25]
+Yasskin                   Expires March 7, 2020                [Page 25]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -1453,7 +1453,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 26]
+Yasskin                   Expires March 7, 2020                [Page 26]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -1509,7 +1509,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 27]
+Yasskin                   Expires March 7, 2020                [Page 27]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -1565,7 +1565,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 28]
+Yasskin                   Expires March 7, 2020                [Page 28]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -1621,7 +1621,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 29]
+Yasskin                   Expires March 7, 2020                [Page 29]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -1677,7 +1677,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 30]
+Yasskin                   Expires March 7, 2020                [Page 30]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -1733,7 +1733,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 31]
+Yasskin                   Expires March 7, 2020                [Page 31]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -1789,7 +1789,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 32]
+Yasskin                   Expires March 7, 2020                [Page 32]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -1845,7 +1845,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 33]
+Yasskin                   Expires March 7, 2020                [Page 33]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -1901,7 +1901,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 34]
+Yasskin                   Expires March 7, 2020                [Page 34]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -1957,7 +1957,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 35]
+Yasskin                   Expires March 7, 2020                [Page 35]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -2013,7 +2013,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 36]
+Yasskin                   Expires March 7, 2020                [Page 36]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -2069,7 +2069,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 37]
+Yasskin                   Expires March 7, 2020                [Page 37]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -2125,7 +2125,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 6, 2020                [Page 38]
+Yasskin                   Expires March 7, 2020                [Page 38]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
@@ -2174,17 +2174,21 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
 8.6.  Internet Media Type application/signed-exchange
 
-   Type name: application
-
-   Subtype name: signed-exchange
-
-
+   IANA is requested to register the MIME media type
+   ([IANA.media-types]) for signed exchanges, application/signed-
+   exchange, as follows:
 
 
-Yasskin                   Expires March 6, 2020                [Page 39]
+
+
+Yasskin                   Expires March 7, 2020                [Page 39]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
+
+   Type name: application
+
+   Subtype name: signed-exchange
 
    Required parameters:
 
@@ -2231,22 +2235,28 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
    Person and email address to contact for further information: See
    Authors' Addresses section.
 
-   Intended usage: COMMON
-
-   Restrictions on usage: N/A
 
 
-
-Yasskin                   Expires March 6, 2020                [Page 40]
+Yasskin                   Expires March 7, 2020                [Page 40]
 
 Internet-Draft            Signed HTTP Exchanges           September 2019
 
+
+   Intended usage: COMMON
+
+   Restrictions on usage: N/A
 
    Author: See Authors' Addresses section.
 
    Change controller: IESG
 
+   Provisional registration?  Yes
+
 8.7.  Internet Media Type application/cert-chain+cbor
+
+   IANA is requested to register the MIME media type
+   ([IANA.media-types]) for CBOR-format certificate chains, application/
+   cert-chain+cbor, as follows:
 
    Type name: application
 
@@ -2281,6 +2291,13 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
    Person and email address to contact for further information: See
    Authors' Addresses section.
 
+
+
+Yasskin                   Expires March 7, 2020                [Page 41]
+
+Internet-Draft            Signed HTTP Exchanges           September 2019
+
+
    Intended usage: COMMON
 
    Restrictions on usage: N/A
@@ -2289,14 +2306,7 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
    Change controller: IESG
 
-
-
-
-
-Yasskin                   Expires March 6, 2020                [Page 41]
-
-Internet-Draft            Signed HTTP Exchanges           September 2019
-
+   Provisional registration?  Yes
 
 8.8.  The cansignhttpexchanges CAA Parameter
 
@@ -2329,6 +2339,21 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
               Encoding", draft-thomson-http-mice-03 (work in progress),
               August 2018.
 
+   [IANA.media-types]
+              IANA, "Media Types",
+              <http://www.iana.org/assignments/media-types>.
+
+
+
+
+
+
+
+Yasskin                   Expires March 7, 2020                [Page 42]
+
+Internet-Draft            Signed HTTP Exchanges           September 2019
+
+
    [POSIX]    IEEE and The Open Group, "The Open Group Base
               Specifications Issue 7", name IEEE, value 1003.1-2008,
               2016 Edition, 2016,
@@ -2343,16 +2368,6 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
    [RFC3230]  Mogul, J. and A. Van Hoff, "Instance Digests in HTTP",
               RFC 3230, DOI 10.17487/RFC3230, January 2002,
               <https://www.rfc-editor.org/info/rfc3230>.
-
-
-
-
-
-
-Yasskin                   Expires March 6, 2020                [Page 42]
-
-Internet-Draft            Signed HTTP Exchanges           September 2019
-
 
    [RFC3864]  Klyne, G., Nottingham, M., and J. Mogul, "Registration
               Procedures for Message Header Fields", BCP 90, RFC 3864,
@@ -2385,6 +2400,16 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
               Transparency", RFC 6962, DOI 10.17487/RFC6962, June 2013,
               <https://www.rfc-editor.org/info/rfc6962>.
 
+
+
+
+
+
+Yasskin                   Expires March 7, 2020                [Page 43]
+
+Internet-Draft            Signed HTTP Exchanges           September 2019
+
+
    [RFC7049]  Bormann, C. and P. Hoffman, "Concise Binary Object
               Representation (CBOR)", RFC 7049, DOI 10.17487/RFC7049,
               October 2013, <https://www.rfc-editor.org/info/rfc7049>.
@@ -2398,17 +2423,6 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
               Protocol (HTTP/1.1): Semantics and Content", RFC 7231,
               DOI 10.17487/RFC7231, June 2014,
               <https://www.rfc-editor.org/info/rfc7231>.
-
-
-
-
-
-
-
-Yasskin                   Expires March 6, 2020                [Page 43]
-
-Internet-Draft            Signed HTTP Exchanges           September 2019
-
 
    [RFC7234]  Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
               Ed., "Hypertext Transfer Protocol (HTTP/1.1): Caching",
@@ -2443,6 +2457,15 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
               2018,
               <https://cabforum.org/baseline-requirements-documents/>.
 
+
+
+
+
+Yasskin                   Expires March 7, 2020                [Page 44]
+
+Internet-Draft            Signed HTTP Exchanges           September 2019
+
+
    [CRLSets]  Langley, A., "Revocation checking and Chrome's CRL",
               February 2012,
               <https://www.imperialviolet.org/2012/02/05/crlsets.html>.
@@ -2455,16 +2478,6 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
    [I-D.burke-content-signature]
               Burke, B., "HTTP Header for digital signatures", draft-
               burke-content-signature-00 (work in progress), March 2011.
-
-
-
-
-
-
-Yasskin                   Expires March 6, 2020                [Page 44]
-
-Internet-Draft            Signed HTTP Exchanges           September 2019
-
 
    [I-D.cavage-http-signatures]
               Cavage, M. and M. Sporny, "Signing HTTP Messages", draft-
@@ -2500,6 +2513,15 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
               <https://blog.mozilla.org/security/2015/03/03/
               revoking-intermediate-certificates-introducing-onecrl/>.
 
+
+
+
+
+Yasskin                   Expires March 7, 2020                [Page 45]
+
+Internet-Draft            Signed HTTP Exchanges           September 2019
+
+
    [RFC2965]  Kristol, D. and L. Montulli, "HTTP State Management
               Mechanism", RFC 2965, DOI 10.17487/RFC2965, October 2000,
               <https://www.rfc-editor.org/info/rfc2965>.
@@ -2513,14 +2535,6 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
               Extensions: Extension Definitions", RFC 6066,
               DOI 10.17487/RFC6066, January 2011,
               <https://www.rfc-editor.org/info/rfc6066>.
-
-
-
-
-Yasskin                   Expires March 6, 2020                [Page 45]
-
-Internet-Draft            Signed HTTP Exchanges           September 2019
-
 
    [RFC6265]  Barth, A., "HTTP State Management Mechanism", RFC 6265,
               DOI 10.17487/RFC6265, April 2011,
@@ -2553,6 +2567,17 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
               DOI 10.17487/RFC7615, September 2015,
               <https://www.rfc-editor.org/info/rfc7615>.
 
+
+
+
+
+
+
+Yasskin                   Expires March 7, 2020                [Page 46]
+
+Internet-Draft            Signed HTTP Exchanges           September 2019
+
+
    [RFC8017]  Moriarty, K., Ed., Kaliski, B., Jonsson, J., and A. Rusch,
               "PKCS #1: RSA Cryptography Specifications Version 2.2",
               RFC 8017, DOI 10.17487/RFC8017, November 2016,
@@ -2566,17 +2591,6 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
    [RFC8336]  Nottingham, M. and E. Nygren, "The ORIGIN HTTP/2 Frame",
               RFC 8336, DOI 10.17487/RFC8336, March 2018,
               <https://www.rfc-editor.org/info/rfc8336>.
-
-
-
-
-
-
-
-Yasskin                   Expires March 6, 2020                [Page 46]
-
-Internet-Draft            Signed HTTP Exchanges           September 2019
-
 
    [SRI]      Akhawe, D., Braun, F., Marier, F., and J. Weinberger,
               "Subresource Integrity", World Wide Web Consortium
@@ -2612,6 +2626,14 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
    [8] https://example.com/
 
+
+
+
+Yasskin                   Expires March 7, 2020                [Page 47]
+
+Internet-Draft            Signed HTTP Exchanges           September 2019
+
+
    [9] https://url.spec.whatwg.org/#percent-encode
 
    [10] https://url.spec.whatwg.org/#url-code-points
@@ -2625,14 +2647,6 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
    [14] https://www.apple.com/ios/app-store/
 
    [15] https://play.google.com/store
-
-
-
-
-Yasskin                   Expires March 6, 2020                [Page 47]
-
-Internet-Draft            Signed HTTP Exchanges           September 2019
-
 
    [16] https://github.com/WICG/webpackage
 
@@ -2667,6 +2681,15 @@ A.2.  Explicit use of a content distributor for subresources
    distributor that's not authoritative, but require that those
    resources be signed by "O.com" so that the distributor couldn't
    modify the resources.  This is more constrained than the common CDN
+
+
+
+
+Yasskin                   Expires March 7, 2020                [Page 48]
+
+Internet-Draft            Signed HTTP Exchanges           September 2019
+
+
    case where "O.com" has a CNAME granting the CDN the right to serve
    arbitrary content as "O.com".
 
@@ -2682,14 +2705,6 @@ A.2.  Explicit use of a content distributor for subresources
    where the "<dist-img>" implementation generates an appropriate
    "<img>" based on, for example, a "<meta name="dist-base">" tag
    elsewhere in the page.  However, this has the downside that the
-
-
-
-Yasskin                   Expires March 6, 2020                [Page 48]
-
-Internet-Draft            Signed HTTP Exchanges           September 2019
-
-
    preloader [11] can no longer see the physical source to download it.
    The resulting delay might cancel out the benefit of using a
    distributor.
@@ -2723,6 +2738,14 @@ A.3.  Subresource Integrity
    details of what they need to sign will affect whether and how they
    can use this proposal.
 
+
+
+
+Yasskin                   Expires March 7, 2020                [Page 49]
+
+Internet-Draft            Signed HTTP Exchanges           September 2019
+
+
 A.4.  Binary Transparency
 
    So-called "Binary Transparency" may eventually allow users to verify
@@ -2738,13 +2761,6 @@ A.4.  Binary Transparency
    containing HTTP resources or full websites, we'll need a way to
    provide signatures of those resources, which signed exchanges
    provides.
-
-
-
-Yasskin                   Expires March 6, 2020                [Page 49]
-
-Internet-Draft            Signed HTTP Exchanges           September 2019
-
 
 A.5.  Static Analysis
 
@@ -2777,6 +2793,15 @@ B.1.  Proof of origin
    TLS.  The obvious way to do this is to re-use the web PKI and CA
    ecosystem.
 
+
+
+
+
+Yasskin                   Expires March 7, 2020                [Page 50]
+
+Internet-Draft            Signed HTTP Exchanges           September 2019
+
+
 B.1.1.  Certificate constraints
 
    If we re-use existing TLS server certificates, we incur the risks
@@ -2793,15 +2818,6 @@ B.1.1.  Certificate constraints
 
    These risks are considered too high, so we define a new X.509
    certificate extension in Section 4.2 that requires CAs to issue new
-
-
-
-
-Yasskin                   Expires March 6, 2020                [Page 50]
-
-Internet-Draft            Signed HTTP Exchanges           September 2019
-
-
    certificates for this purpose.  We expect at least one low-cost CA to
    be willing to sign certificates with this extension.
 
@@ -2833,6 +2849,15 @@ B.1.3.  Retrieving the certificate
    would be to include the certificate and its chain in the signature
    metadata itself, but this wastes bytes when the same certificate is
    used for multiple HTTP responses.  If we decide to put the signature
+
+
+
+
+Yasskin                   Expires March 7, 2020                [Page 51]
+
+Internet-Draft            Signed HTTP Exchanges           September 2019
+
+
    in an HTTP header, certificates are also unusually large for that
    context.
 
@@ -2849,14 +2874,6 @@ B.1.3.  Retrieving the certificate
    the intended one, the content of the leaf certificate or the chain
    should be included in the signed data, like TLS does (Section 4.4.3
    of [RFC8446]).
-
-
-
-
-Yasskin                   Expires March 6, 2020                [Page 51]
-
-Internet-Draft            Signed HTTP Exchanges           September 2019
-
 
 B.2.  How much to sign
 
@@ -2888,6 +2905,15 @@ B.2.1.  Conveying the signed headers
    enough TLS-terminating proxies that the publisher's signatures would
    tend to break before getting to the client.
 
+
+
+
+
+Yasskin                   Expires March 7, 2020                [Page 52]
+
+Internet-Draft            Signed HTTP Exchanges           September 2019
+
+
    There's no way in current HTTP for the response to a client-initiated
    request (Section 8.1 of [RFC7540]) to convey the request headers it
    expected to respond to, but we sidestep that by conveying content
@@ -2905,15 +2931,6 @@ B.2.1.  Conveying the signed headers
 
    To help the PUSHed subresources use case (Appendix A.1), we might
    also want to extend the "PUSH_PROMISE" frame type to include a
-
-
-
-
-Yasskin                   Expires March 6, 2020                [Page 52]
-
-Internet-Draft            Signed HTTP Exchanges           September 2019
-
-
    signature, and that could tell intermediates not to change the
    ensuing headers.
 
@@ -2945,6 +2962,14 @@ B.3.2.  Response downgrade attacks
    The signed content in a response might be vulnerable to attacks, such
    as XSS, or might simply be discovered to be incorrect after
    publication.  Once the author fixes those vulnerabilities or
+
+
+
+Yasskin                   Expires March 7, 2020                [Page 53]
+
+Internet-Draft            Signed HTTP Exchanges           September 2019
+
+
    mistakes, clients should stop trusting the old signed content in a
    reasonable amount of time.  Similar to certificate revocation, I
    expect the best option to be stapled "this version is still valid"
@@ -2962,13 +2987,6 @@ B.3.2.  Response downgrade attacks
        requires each version to include a different update URL, but
        allows intermediates to serve less data.  This is the approach
        taken in Section 3.
-
-
-
-Yasskin                   Expires March 6, 2020                [Page 53]
-
-Internet-Draft            Signed HTTP Exchanges           September 2019
-
 
    3.  A replacement for the exchange's signature and an update for the
        embedded "expires" and related cache-control HTTP headers
@@ -3001,6 +3019,13 @@ B.4.2.  Bounded-buffering integrity checking
    can enforce that it only operates on chunks of data up to a certain
    size, it can avoid the complexity of spooling large files to disk.
 
+
+
+Yasskin                   Expires March 7, 2020                [Page 54]
+
+Internet-Draft            Signed HTTP Exchanges           September 2019
+
+
    To allow the network layer to verify signed exchanges using a bounded
    amount of memory, Section 5.3 requires the signature to be less than
    16kB and the headers to be less than 512kB, and Section 3.5 requires
@@ -3018,13 +3043,6 @@ Appendix C.  Determining validity using cache control
    cache control headers ([RFC7234]) instead of embedding an expiration
    date in the signature itself.  This section specifies how that would
    work, and describes why I haven't chosen that option.
-
-
-
-Yasskin                   Expires March 6, 2020                [Page 54]
-
-Internet-Draft            Signed HTTP Exchanges           September 2019
-
 
    The signatures in the "Signature" header field (Section 3.1) would no
    longer contain "date" or "expires" fields.
@@ -3047,6 +3065,23 @@ C.1.  Example of updating cache control
 
    For example, given a stored exchange of:
 
+
+
+
+
+
+
+
+
+
+
+
+
+Yasskin                   Expires March 7, 2020                [Page 55]
+
+Internet-Draft            Signed HTTP Exchanges           September 2019
+
+
    GET  / HTTP/1.1
    Host: example.com
    Accept: */*
@@ -3067,20 +3102,6 @@ C.1.  Example of updating cache control
    Date: Sat, 25 Nov 2017 10:00:00 UTC
 
    The resulting stored exchange would be:
-
-
-
-
-
-
-
-
-
-
-Yasskin                   Expires March 6, 2020                [Page 55]
-
-Internet-Draft            Signed HTTP Exchanges           September 2019
-
 
    GET / HTTP/1.1
    Host: example.com
@@ -3108,6 +3129,15 @@ C.2.  Downsides of updating cache control
    single signed exchange argues for embedding a signature's lifetime
    into the signature.
 
+
+
+
+
+Yasskin                   Expires March 7, 2020                [Page 56]
+
+Internet-Draft            Signed HTTP Exchanges           September 2019
+
+
 Appendix D.  Change Log
 
    RFC EDITOR PLEASE DELETE THIS SECTION.
@@ -3130,13 +3160,6 @@ Appendix D.  Change Log
    o  Fill in TBD size limits.
 
    o  Update to mice-03 including the Digest header.
-
-
-
-Yasskin                   Expires March 6, 2020                [Page 56]
-
-Internet-Draft            Signed HTTP Exchanges           September 2019
-
 
    o  Refer to draft-yasskin-httpbis-origin-signed-exchanges-impl for
       draft version numbers.
@@ -3163,6 +3186,14 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
    o  Explicitly check the response payload's integrity instead of
       assuming the client did it elsewhere in processing the response.
 
+
+
+
+Yasskin                   Expires March 7, 2020                [Page 57]
+
+Internet-Draft            Signed HTTP Exchanges           September 2019
+
+
    o  Reject uncached header fields.
 
    o  Update to draft-ietf-httpbis-header-structure-09.
@@ -3186,13 +3217,6 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
          headers.
 
    o  Require absolute URLs.
-
-
-
-Yasskin                   Expires March 6, 2020                [Page 57]
-
-Internet-Draft            Signed HTTP Exchanges           September 2019
-
 
    o  Make all identifiers in headers lower-case, as required by
       Structured Headers.
@@ -3218,6 +3242,14 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
       headers are signed, have the cross-origin methods use all headers,
       and remove the "allResponseHeaders" flag.
 
+
+
+
+Yasskin                   Expires March 7, 2020                [Page 58]
+
+Internet-Draft            Signed HTTP Exchanges           September 2019
+
+
    o  Describe footguns around signing private content, and block
       certain headers to make it less likely.
 
@@ -3241,14 +3273,6 @@ Internet-Draft            Signed HTTP Exchanges           September 2019
 
    o  Remove the update.url field from signature validity updates, in
       favor of just re-fetching the original request URL.
-
-
-
-
-Yasskin                   Expires March 6, 2020                [Page 58]
-
-Internet-Draft            Signed HTTP Exchanges           September 2019
-
 
    o  Define an HTTP/2 extension to use a setting to enable cross-origin
       Server Push.
@@ -3277,28 +3301,4 @@ Author's Address
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Yasskin                   Expires March 6, 2020                [Page 59]
+Yasskin                   Expires March 7, 2020                [Page 59]
