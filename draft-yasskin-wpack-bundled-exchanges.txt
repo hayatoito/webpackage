@@ -4,8 +4,8 @@
 
 Network Working Group                                         J. Yasskin
 Internet-Draft                                                    Google
-Intended status: Standards Track                      September 04, 2019
-Expires: March 7, 2020
+Intended status: Standards Track                      September 26, 2019
+Expires: March 29, 2020
 
 
                          Bundled HTTP Exchanges
@@ -43,7 +43,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on March 7, 2020.
+   This Internet-Draft will expire on March 29, 2020.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Yasskin                   Expires March 7, 2020                 [Page 1]
+Yasskin                  Expires March 29, 2020                 [Page 1]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Yasskin                   Expires March 7, 2020                 [Page 2]
+Yasskin                  Expires March 29, 2020                 [Page 2]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -165,7 +165,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                 [Page 3]
+Yasskin                  Expires March 29, 2020                 [Page 3]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -221,7 +221,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                 [Page 4]
+Yasskin                  Expires March 29, 2020                 [Page 4]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -277,7 +277,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                 [Page 5]
+Yasskin                  Expires March 29, 2020                 [Page 5]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -333,7 +333,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                 [Page 6]
+Yasskin                  Expires March 29, 2020                 [Page 6]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -389,7 +389,7 @@ whatwg-url = tstr
 
 
 
-Yasskin                   Expires March 7, 2020                 [Page 7]
+Yasskin                  Expires March 29, 2020                 [Page 7]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -445,7 +445,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                 [Page 8]
+Yasskin                  Expires March 29, 2020                 [Page 8]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -501,7 +501,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                 [Page 9]
+Yasskin                  Expires March 29, 2020                 [Page 9]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -557,7 +557,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                [Page 10]
+Yasskin                  Expires March 29, 2020                [Page 10]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -613,7 +613,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                [Page 11]
+Yasskin                  Expires March 29, 2020                [Page 11]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -669,7 +669,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                [Page 12]
+Yasskin                  Expires March 29, 2020                [Page 12]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -725,7 +725,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                [Page 13]
+Yasskin                  Expires March 29, 2020                [Page 13]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -781,7 +781,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                [Page 14]
+Yasskin                  Expires March 29, 2020                [Page 14]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -837,7 +837,7 @@ resource-integrity = (header-sha256: bstr, payload-integrity-header: tstr)
 
 
 
-Yasskin                   Expires March 7, 2020                [Page 15]
+Yasskin                  Expires March 29, 2020                [Page 15]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -893,7 +893,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                [Page 16]
+Yasskin                  Expires March 29, 2020                [Page 16]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -949,7 +949,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                [Page 17]
+Yasskin                  Expires March 29, 2020                [Page 17]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -1005,7 +1005,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                [Page 18]
+Yasskin                  Expires March 29, 2020                [Page 18]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -1061,7 +1061,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                [Page 19]
+Yasskin                  Expires March 29, 2020                [Page 19]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -1117,7 +1117,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                [Page 20]
+Yasskin                  Expires March 29, 2020                [Page 20]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -1173,7 +1173,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                [Page 21]
+Yasskin                  Expires March 29, 2020                [Page 21]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -1229,7 +1229,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                [Page 22]
+Yasskin                  Expires March 29, 2020                [Page 22]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -1285,7 +1285,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                [Page 23]
+Yasskin                  Expires March 29, 2020                [Page 23]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -1341,7 +1341,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                [Page 24]
+Yasskin                  Expires March 29, 2020                [Page 24]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -1397,7 +1397,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                [Page 25]
+Yasskin                  Expires March 29, 2020                [Page 25]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -1453,7 +1453,7 @@ Internet-Draft           Bundled HTTP Exchanges           September 2019
 
 
 
-Yasskin                   Expires March 7, 2020                [Page 26]
+Yasskin                  Expires March 29, 2020                [Page 26]
 
 Internet-Draft           Bundled HTTP Exchanges           September 2019
 
@@ -1489,6 +1489,14 @@ Appendix A.  Change Log
 
    RFC EDITOR PLEASE DELETE THIS SECTION.
 
+   draft-02
+
+   o  Fix the initial bytes of the format.
+
+   o  Allow empty responses to omit their content type.
+
+   o  Provisionally register application/webbundle.
+
    draft-01
 
    o  Include only section lengths in the section index, requiring
@@ -1499,20 +1507,19 @@ Appendix A.  Change Log
 
    o  Require the "manifest" to be embedded into the bundle.
 
+
+
+Yasskin                  Expires March 29, 2020                [Page 27]
+
+Internet-Draft           Bundled HTTP Exchanges           September 2019
+
+
    o  Add a content sniffing security consideration.
 
    o  Add a version string to the format and its mime type.
 
    o  Add a fallback URL in a fixed location in the format, and use that
       fallback URL as the primary URL of the bundle.
-
-
-
-
-Yasskin                   Expires March 7, 2020                [Page 27]
-
-Internet-Draft           Bundled HTTP Exchanges           September 2019
-
 
    o  Add a "signatures" section to let authorities (like domain-trusted
       X.509 certificates) vouch for subsets of a bundle.
@@ -1558,11 +1565,4 @@ Author's Address
 
 
 
-
-
-
-
-
-
-
-Yasskin                   Expires March 7, 2020                [Page 28]
+Yasskin                  Expires March 29, 2020                [Page 28]
