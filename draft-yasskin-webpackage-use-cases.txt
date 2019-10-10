@@ -4,8 +4,8 @@
 
 Network Working Group                                         J. Yasskin
 Internet-Draft                                                    Google
-Intended status: Informational                        September 30, 2019
-Expires: April 2, 2020
+Intended status: Informational                          October 10, 2019
+Expires: April 12, 2020
 
 
               Use Cases and Requirements for Web Packages
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on April 2, 2020.
+   This Internet-Draft will expire on April 12, 2020.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Yasskin                   Expires April 2, 2020                 [Page 1]
+Yasskin                  Expires April 12, 2020                 [Page 1]
 
-Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
+Internet-Draft Use Cases and Requirements for Web Packages  October 2019
 
 
    publication of this document.  Please review these documents
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Yasskin                   Expires April 2, 2020                 [Page 2]
+Yasskin                  Expires April 12, 2020                 [Page 2]
 
-Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
+Internet-Draft Use Cases and Requirements for Web Packages  October 2019
 
 
        3.2.8.  Subsetting and reordering . . . . . . . . . . . . . .  16
@@ -165,9 +165,9 @@ Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
 
 
 
-Yasskin                   Expires April 2, 2020                 [Page 3]
+Yasskin                  Expires April 12, 2020                 [Page 3]
 
-Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
+Internet-Draft Use Cases and Requirements for Web Packages  October 2019
 
 
 2.1.  Essential
@@ -221,9 +221,9 @@ Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
 
 
 
-Yasskin                   Expires April 2, 2020                 [Page 4]
+Yasskin                  Expires April 12, 2020                 [Page 4]
 
-Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
+Internet-Draft Use Cases and Requirements for Web Packages  October 2019
 
 
    o  Indexed by URL: Resources on the web are addressed by URL.
@@ -277,9 +277,9 @@ Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
 
 
 
-Yasskin                   Expires April 2, 2020                 [Page 5]
+Yasskin                  Expires April 12, 2020                 [Page 5]
 
-Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
+Internet-Draft Use Cases and Requirements for Web Packages  October 2019
 
 
    o  Random access: To avoid needing a long linear scan before using
@@ -333,9 +333,9 @@ Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
 
 
 
-Yasskin                   Expires April 2, 2020                 [Page 6]
+Yasskin                  Expires April 12, 2020                 [Page 6]
 
-Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
+Internet-Draft Use Cases and Requirements for Web Packages  October 2019
 
 
    Two search engines have built systems to do this with today's
@@ -389,9 +389,9 @@ Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
 
 
 
-Yasskin                   Expires April 2, 2020                 [Page 7]
+Yasskin                  Expires April 12, 2020                 [Page 7]
 
-Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
+Internet-Draft Use Cases and Requirements for Web Packages  October 2019
 
 
    o  Metadata: A publication can have copyright and licensing concerns;
@@ -445,9 +445,9 @@ Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
 
 
 
-Yasskin                   Expires April 2, 2020                 [Page 8]
+Yasskin                  Expires April 12, 2020                 [Page 8]
 
-Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
+Internet-Draft Use Cases and Requirements for Web Packages  October 2019
 
 
    a web package always knows the true URL, this forces content
@@ -501,9 +501,9 @@ Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
 
 
 
-Yasskin                   Expires April 2, 2020                 [Page 9]
+Yasskin                  Expires April 12, 2020                 [Page 9]
 
-Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
+Internet-Draft Use Cases and Requirements for Web Packages  October 2019
 
 
       resource resolves to a single resource that both B and C can
@@ -557,9 +557,9 @@ Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
 
 
 
-Yasskin                   Expires April 2, 2020                [Page 10]
+Yasskin                  Expires April 12, 2020                [Page 10]
 
-Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
+Internet-Draft Use Cases and Requirements for Web Packages  October 2019
 
 
 2.2.6.  Installation from a self-extracting executable
@@ -613,9 +613,9 @@ Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
 
 
 
-Yasskin                   Expires April 2, 2020                [Page 11]
+Yasskin                  Expires April 12, 2020                [Page 11]
 
-Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
+Internet-Draft Use Cases and Requirements for Web Packages  October 2019
 
 
    other resources, can resolve the above downsides while keeping the
@@ -669,9 +669,9 @@ Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
 
 
 
-Yasskin                   Expires April 2, 2020                [Page 12]
+Yasskin                  Expires April 12, 2020                [Page 12]
 
-Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
+Internet-Draft Use Cases and Requirements for Web Packages  October 2019
 
 
 3.  Requirements
@@ -725,9 +725,9 @@ Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
 
 
 
-Yasskin                   Expires April 2, 2020                [Page 13]
+Yasskin                  Expires April 12, 2020                [Page 13]
 
-Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
+Internet-Draft Use Cases and Requirements for Web Packages  October 2019
 
 
    This would require an extension to the [ZIP] format, similar to
@@ -781,9 +781,9 @@ Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
 
 
 
-Yasskin                   Expires April 2, 2020                [Page 14]
+Yasskin                  Expires April 12, 2020                [Page 14]
 
-Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
+Internet-Draft Use Cases and Requirements for Web Packages  October 2019
 
 
 3.1.12.  Implementations are hard to get wrong
@@ -837,9 +837,9 @@ Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
 
 
 
-Yasskin                   Expires April 2, 2020                [Page 15]
+Yasskin                  Expires April 12, 2020                [Page 15]
 
-Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
+Internet-Draft Use Cases and Requirements for Web Packages  October 2019
 
 
 3.2.6.  Compress transfers
@@ -893,9 +893,9 @@ Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
 
 
 
-Yasskin                   Expires April 2, 2020                [Page 16]
+Yasskin                  Expires April 12, 2020                [Page 16]
 
-Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
+Internet-Draft Use Cases and Requirements for Web Packages  October 2019
 
 
 4.  Non-goals
@@ -949,9 +949,9 @@ Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
 
 
 
-Yasskin                   Expires April 2, 2020                [Page 17]
+Yasskin                  Expires April 12, 2020                [Page 17]
 
-Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
+Internet-Draft Use Cases and Requirements for Web Packages  October 2019
 
 
    However, the HTTPWG is doing a lot of work to let servers optimize
@@ -1005,9 +1005,9 @@ Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
 
 
 
-Yasskin                   Expires April 2, 2020                [Page 18]
+Yasskin                  Expires April 12, 2020                [Page 18]
 
-Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
+Internet-Draft Use Cases and Requirements for Web Packages  October 2019
 
 
    [I-D.cavage-http-signatures]
@@ -1061,9 +1061,9 @@ Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
 
 
 
-Yasskin                   Expires April 2, 2020                [Page 19]
+Yasskin                  Expires April 12, 2020                [Page 19]
 
-Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
+Internet-Draft Use Cases and Requirements for Web Packages  October 2019
 
 
    [RFC7515]  Jones, M., Bradley, J., and N. Sakimura, "JSON Web
@@ -1117,9 +1117,9 @@ Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
 
 
 
-Yasskin                   Expires April 2, 2020                [Page 20]
+Yasskin                  Expires April 12, 2020                [Page 20]
 
-Internet-Draft Use Cases and Requirements for Web PackagesSeptember 2019
+Internet-Draft Use Cases and Requirements for Web Packages  October 2019
 
 
    [10] https://www.mipengine.org/
@@ -1173,4 +1173,4 @@ Author's Address
 
 
 
-Yasskin                   Expires April 2, 2020                [Page 21]
+Yasskin                  Expires April 12, 2020                [Page 21]
