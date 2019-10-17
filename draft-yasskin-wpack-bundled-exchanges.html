@@ -321,14 +321,14 @@ ul.toc li {
 <link href="#rfc.authors" rel="Chapter">
 
 
-  <meta name="generator" content="xml2rfc version 2.32.0 - https://tools.ietf.org/tools/xml2rfc" />
+  <meta name="generator" content="xml2rfc version 2.33.0 - https://tools.ietf.org/tools/xml2rfc" />
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
   <meta name="dct.creator" content="Yasskin, J." />
   <meta name="dct.identifier" content="urn:ietf:id:draft-yasskin-wpack-bundled-exchanges-latest" />
-  <meta name="dct.issued" scheme="ISO8601" content="2019-10-14" />
-  <meta name="dct.abstract" content="Bundled exchanges provide a way to bundle up groups of HTTP request+response pairs to transmit or store them together. They can include multiple top-level resources with one identified as the default by a manifest, provide random access to their component exchanges, and efficiently store 8-bit resources." />
-  <meta name="description" content="Bundled exchanges provide a way to bundle up groups of HTTP request+response pairs to transmit or store them together. They can include multiple top-level resources with one identified as the default by a manifest, provide random access to their component exchanges, and efficiently store 8-bit resources." />
+  <meta name="dct.issued" scheme="ISO8601" content="2019-10-17" />
+  <meta name="dct.abstract" content="Bundled exchanges provide a way to bundle up groups of HTTP request+response pairs to transmit or store them together. They can include multiple top-level resources with one identified as the default by a primaryUrl metadata, provide random access to their component exchanges, and efficiently store 8-bit resources." />
+  <meta name="description" content="Bundled exchanges provide a way to bundle up groups of HTTP request+response pairs to transmit or store them together. They can include multiple top-level resources with one identified as the default by a primaryUrl metadata, provide random access to their component exchanges, and efficiently store 8-bit resources." />
 
 </head>
 
@@ -347,10 +347,10 @@ ul.toc li {
 </tr>
 <tr>
 <td class="left">Intended status: Standards Track</td>
-<td class="right">October 14, 2019</td>
+<td class="right">October 17, 2019</td>
 </tr>
 <tr>
-<td class="left">Expires: April 16, 2020</td>
+<td class="left">Expires: April 19, 2020</td>
 <td class="right"></td>
 </tr>
 
@@ -362,7 +362,7 @@ ul.toc li {
   <span class="filename">draft-yasskin-wpack-bundled-exchanges-latest</span></p>
   
   <h1 id="rfc.abstract"><a href="#rfc.abstract">Abstract</a></h1>
-<p>Bundled exchanges provide a way to bundle up groups of HTTP request+response pairs to transmit or store them together. They can include multiple top-level resources with one identified as the default by a manifest, provide random access to their component exchanges, and efficiently store 8-bit resources.</p>
+<p>Bundled exchanges provide a way to bundle up groups of HTTP request+response pairs to transmit or store them together. They can include multiple top-level resources with one identified as the default by a primaryUrl metadata, provide random access to their component exchanges, and efficiently store 8-bit resources.</p>
 <h1><a>Note to Readers</a></h1>
 <p>Discussion of this draft takes place on the wpack mailing list (wpack@ietf.org), which is archived at <a href="https://www.ietf.org/mailman/listinfo/wpack">https://www.ietf.org/mailman/listinfo/wpack</a>.</p>
 <p>The source code and issues list for this draft can be found in <a href="https://github.com/WICG/webpackage">https://github.com/WICG/webpackage</a>.</p>
@@ -370,7 +370,7 @@ ul.toc li {
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on April 16, 2020.</p>
+<p>This Internet-Draft will expire on April 19, 2020.</p>
 <h1 id="rfc.copyrightnotice"><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
 <p>Copyright (c) 2019 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
@@ -480,7 +480,7 @@ ul.toc li {
 <h1 id="rfc.section.2">
 <a href="#rfc.section.2">2.</a> <a href="#semantics" id="semantics">Semantics</a>
 </h1>
-<p id="rfc.section.2.p.1">A bundle is logically a set of HTTP exchanges, with a URL identifying the manifest(s) of the bundle itself.</p>
+<p id="rfc.section.2.p.1">A bundle is logically a set of HTTP exchanges, with a URL identifying the primary resource of the bundle.</p>
 <p id="rfc.section.2.p.2">While the order of the exchanges is not semantically meaningful, it can significantly affect performance when the bundle is loaded from a network stream.</p>
 <p id="rfc.section.2.p.3">A bundle is parsed from a stream of bytes, which is assumed to have the attributes and operations described in <a href="#stream-operations" class="xref">Section 2.1</a>.</p>
 <p id="rfc.section.2.p.4">Bundle parsers support two operations, <a href="#semantics-load-metadata" class="xref">Load a bundle&#8217;s metadata</a> (<a href="#semantics-load-metadata" class="xref">Section 2.2</a>) and <a href="#semantics-load-response" class="xref">Load a response from a bundle</a> (<a href="#semantics-load-response" class="xref">Section 2.3</a>) each of which can return an error instead of their normal result.</p>
@@ -518,8 +518,6 @@ ul.toc li {
 </ul>
 <p> </p>
 </dd>
-<dt>manifest</dt>
-<dd style="margin-left: 8">The URL of the bundle&#8217;s manifest(s). This is a URL to support bundles with multiple different manifests, where the client uses content negotiation to select the most appropriate one.</dd>
 </dl>
 <p id="rfc.section.2.2.p.3">The map may include other items added by sections defined in the <a href="#section-name-registry" class="xref">Web Bundle Section Name Registry</a>.</p>
 <p id="rfc.section.2.2.p.4">This operation only waits for a prefix of the stream that, if the bundle is encoded with the &#8220;responses&#8221; section last, ends before the first response.</p>
@@ -624,7 +622,7 @@ section-lengths = [* (section-name: tstr, length: uint) ],
 </ol>
 </li>
 <li>Assert: <samp>metadata</samp> has an entry with the key &#8220;primaryUrl&#8221;.</li>
-<li>If <samp>metadata</samp> doesn&#8217;t have entries with keys &#8220;requests&#8221; and &#8220;manifest&#8221;, return a &#8220;format error&#8221; with <samp>fallbackUrl</samp>.</li>
+<li>If <samp>metadata</samp> doesn&#8217;t have an entry with key &#8220;requests&#8221;, return a &#8220;format error&#8221; with <samp>fallbackUrl</samp>.</li>
 <li>Return <samp>metadata</samp>.</li>
 </ol>
 <h1 id="rfc.section.3.3.1">
