@@ -43,7 +43,7 @@
     "milestone": null,
     "comments": 4,
     "created_at": "2019-10-15T06:31:50Z",
-    "updated_at": "2019-10-16T01:37:16Z",
+    "updated_at": "2019-10-16T23:52:01Z",
     "closed_at": "2019-10-16T01:37:16Z",
     "author_association": "COLLABORATOR",
     "pull_request": {
@@ -97,7 +97,7 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2019-10-14T20:35:54Z",
-    "updated_at": "2019-10-14T21:16:58Z",
+    "updated_at": "2019-10-17T18:17:14Z",
     "closed_at": null,
     "author_association": "MEMBER",
     "pull_request": {
@@ -368,17 +368,17 @@
         "default": false
       }
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
 
     ],
     "milestone": null,
-    "comments": 1,
+    "comments": 2,
     "created_at": "2019-10-01T08:59:48Z",
-    "updated_at": "2019-10-04T18:45:51Z",
-    "closed_at": null,
+    "updated_at": "2019-10-16T23:52:27Z",
+    "closed_at": "2019-10-16T23:52:27Z",
     "author_association": "COLLABORATOR",
     "body": "Currently Bundled Exchanges [must have a `manifest` section](https://wicg.github.io/webpackage/draft-yasskin-wpack-bundled-exchanges.html#load-metadata). It was reasonable in the past because its `start_url` could be used to indicate the default resource in the bundle, but we now have the [primary URL](https://wicg.github.io/webpackage/draft-yasskin-wpack-bundled-exchanges.html#semantics-load-metadata) which is meant to be the bundle's main resource URL.\r\n\r\nAlso, in some use cases (for example [Save and share a web page](https://wicg.github.io/webpackage/draft-yasskin-webpackage-use-cases.html#snapshot)) manifest may not be available.\r\n"
   },
