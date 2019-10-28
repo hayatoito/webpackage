@@ -4,8 +4,8 @@
 
 Network Working Group                                         J. Yasskin
 Internet-Draft                                                    Google
-Intended status: Standards Track                        October 25, 2019
-Expires: April 27, 2020
+Intended status: Standards Track                        October 28, 2019
+Expires: April 30, 2020
 
 
                          Bundled HTTP Exchanges
@@ -43,7 +43,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on April 27, 2020.
+   This Internet-Draft will expire on April 30, 2020.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Yasskin                  Expires April 27, 2020                 [Page 1]
+Yasskin                  Expires April 30, 2020                 [Page 1]
 
 Internet-Draft           Bundled HTTP Exchanges             October 2019
 
@@ -81,41 +81,41 @@ Table of Contents
    3.  Format  . . . . . . . . . . . . . . . . . . . . . . . . . . .   6
      3.1.  Top-level structure . . . . . . . . . . . . . . . . . . .   6
      3.2.  Serving constraints . . . . . . . . . . . . . . . . . . .   7
-     3.3.  Load a bundle's metadata  . . . . . . . . . . . . . . . .   7
-       3.3.1.  Parsing the index section . . . . . . . . . . . . . .  10
-       3.3.2.  Parsing the manifest section  . . . . . . . . . . . .  13
-       3.3.3.  Parsing the signatures section  . . . . . . . . . . .  13
-       3.3.4.  Parsing the critical section  . . . . . . . . . . . .  15
-       3.3.5.  The responses section . . . . . . . . . . . . . . . .  15
-       3.3.6.  Starting from the end . . . . . . . . . . . . . . . .  15
-     3.4.  Load a response from a bundle . . . . . . . . . . . . . .  16
-     3.5.  Parsing CBOR items  . . . . . . . . . . . . . . . . . . .  18
-       3.5.1.  Parse a known-length item . . . . . . . . . . . . . .  18
-       3.5.2.  Parsing variable-length data from a bytestring  . . .  18
-       3.5.3.  Parsing the type and argument of a CBOR item  . . . .  19
-     3.6.  Interpreting CBOR HTTP headers  . . . . . . . . . . . . .  20
-   4.  Guidelines for bundle authors . . . . . . . . . . . . . . . .  21
-   5.  Security Considerations . . . . . . . . . . . . . . . . . . .  21
-     5.1.  Version skew  . . . . . . . . . . . . . . . . . . . . . .  21
-     5.2.  Content sniffing  . . . . . . . . . . . . . . . . . . . .  21
-   6.  IANA considerations . . . . . . . . . . . . . . . . . . . . .  22
-     6.1.  Internet Media Type Registration  . . . . . . . . . . . .  22
-     6.2.  Web Bundle Section Name Registry  . . . . . . . . . . . .  24
-   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  24
-     7.1.  Normative References  . . . . . . . . . . . . . . . . . .  25
-     7.2.  Informative References  . . . . . . . . . . . . . . . . .  26
-     7.3.  URIs  . . . . . . . . . . . . . . . . . . . . . . . . . .  26
-   Appendix A.  Change Log . . . . . . . . . . . . . . . . . . . . .  26
+     3.3.  Load a bundle's metadata  . . . . . . . . . . . . . . . .   8
+       3.3.1.  Parsing the index section . . . . . . . . . . . . . .  11
+       3.3.2.  Parsing the manifest section  . . . . . . . . . . . .  14
+       3.3.3.  Parsing the signatures section  . . . . . . . . . . .  14
+       3.3.4.  Parsing the critical section  . . . . . . . . . . . .  17
+       3.3.5.  The responses section . . . . . . . . . . . . . . . .  17
+       3.3.6.  Starting from the end . . . . . . . . . . . . . . . .  17
+     3.4.  Load a response from a bundle . . . . . . . . . . . . . .  19
+     3.5.  Parsing CBOR items  . . . . . . . . . . . . . . . . . . .  20
+       3.5.1.  Parse a known-length item . . . . . . . . . . . . . .  20
+       3.5.2.  Parsing variable-length data from a bytestring  . . .  21
+       3.5.3.  Parsing the type and argument of a CBOR item  . . . .  21
+     3.6.  Interpreting CBOR HTTP headers  . . . . . . . . . . . . .  22
+   4.  Guidelines for bundle authors . . . . . . . . . . . . . . . .  23
+   5.  Security Considerations . . . . . . . . . . . . . . . . . . .  23
+     5.1.  Version skew  . . . . . . . . . . . . . . . . . . . . . .  23
+     5.2.  Content sniffing  . . . . . . . . . . . . . . . . . . . .  24
+   6.  IANA considerations . . . . . . . . . . . . . . . . . . . . .  25
+     6.1.  Internet Media Type Registration  . . . . . . . . . . . .  25
+     6.2.  Web Bundle Section Name Registry  . . . . . . . . . . . .  26
+   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  27
+     7.1.  Normative References  . . . . . . . . . . . . . . . . . .  27
+     7.2.  Informative References  . . . . . . . . . . . . . . . . .  28
+     7.3.  URIs  . . . . . . . . . . . . . . . . . . . . . . . . . .  29
+   Appendix A.  Change Log . . . . . . . . . . . . . . . . . . . . .  29
 
 
 
-Yasskin                  Expires April 27, 2020                 [Page 2]
+Yasskin                  Expires April 30, 2020                 [Page 2]
 
 Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
-   Appendix B.  Acknowledgements . . . . . . . . . . . . . . . . . .  27
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  27
+   Appendix B.  Acknowledgements . . . . . . . . . . . . . . . . . .  30
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  30
 
 1.  Introduction
 
@@ -165,7 +165,7 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                  Expires April 27, 2020                 [Page 3]
+Yasskin                  Expires April 30, 2020                 [Page 3]
 
 Internet-Draft           Bundled HTTP Exchanges             October 2019
 
@@ -221,7 +221,7 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                  Expires April 27, 2020                 [Page 4]
+Yasskin                  Expires April 30, 2020                 [Page 4]
 
 Internet-Draft           Bundled HTTP Exchanges             October 2019
 
@@ -277,7 +277,7 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                  Expires April 27, 2020                 [Page 5]
+Yasskin                  Expires April 30, 2020                 [Page 5]
 
 Internet-Draft           Bundled HTTP Exchanges             October 2019
 
@@ -309,33 +309,70 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
    The bundle is a CBOR item ([CBORbis]) with the following CDDL
    ([CDDL]) schema:
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Yasskin                  Expires April 30, 2020                 [Page 6]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
+
 webbundle = [
+
   ; &#127760;&#128230; in UTF-8.
+
   magic: h'F0 9F 8C 90 F0 9F 93 A6',
+
   version: bytes .size 4,
+
   primary-url: whatwg-url,
+
   section-lengths: bytes .cbor [* (section-name: tstr, length: uint) ],
+
   sections: [* any ],
+
   length: bytes .size 8,  ; Big-endian number of bytes in the bundle.
+
 ]
+
+
 
 $section-name /= "index" / "manifest" / "signatures" / "critical" / "responses"
 
+
+
 $section /= index / manifest / signatures / critical / responses
 
+
+
 responses = [*response]
+
+
 
 whatwg-url = tstr
 
 
-
-
-
-
-
-Yasskin                  Expires April 27, 2020                 [Page 6]
-
-Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 3.2.  Serving constraints
@@ -349,13 +386,23 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
    o  X-Content-Type-Options: nosniff
 
+
+
+
+Yasskin                  Expires April 30, 2020                 [Page 7]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
+
 3.3.  Load a bundle's metadata
 
    A bundle holds a series of sections, which can be accessed randomly
    using the information in the "section-lengths" CBOR item, which holds
    a list of alternating section names and section lengths:
 
+
    section-lengths = [* (section-name: tstr, length: uint) ],
+
 
    To implement Section 2.2, the parser MUST run the following steps,
    taking the "stream" as input.
@@ -385,15 +432,6 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
         decoding of "fallbackUrlBytes" with no base URL.  If either the
         UTF-8 decoding or parsing fails, return a "format error".
 
-
-
-
-
-Yasskin                  Expires April 27, 2020                 [Page 7]
-
-Internet-Draft           Bundled HTTP Exchanges             October 2019
-
-
         Note: From this point forward, errors also include the fallback
         URL to help clients recover.
 
@@ -404,6 +442,14 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
         Note: RFC EDITOR PLEASE DELETE THIS NOTE; Implementations of
         drafts of this specification MUST NOT use the version "1" in
+
+
+
+Yasskin                  Expires April 30, 2020                 [Page 8]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
+
         this byte string, and MUST instead define an implementation-
         specific string to identify which draft is implemented.  This
         string SHOULD match the version used in the draft's MIME type
@@ -441,15 +487,6 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
         describe a 52-byte bytestring + 52 bytes of section lengths + a
         1-byte array header for the 2 sections).
 
-
-
-
-
-Yasskin                  Expires April 27, 2020                 [Page 8]
-
-Internet-Draft           Bundled HTTP Exchanges             October 2019
-
-
    15.  Let "knownSections" be the subset of the Section 6.2 that this
         client has implemented.
 
@@ -460,6 +497,14 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
         the start of "stream".
 
    18.  Let "currentOffset" be "sectionsStart".
+
+
+
+
+Yasskin                  Expires April 30, 2020                 [Page 9]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
 
    19.  For each (""name"", "length") pair of adjacent elements in
         "sectionLengths":
@@ -498,14 +543,6 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
         2.  If ""name""'s Metadata field (Section 6.2) is "No", continue
             to the next triple.
 
-
-
-
-Yasskin                  Expires April 27, 2020                 [Page 9]
-
-Internet-Draft           Bundled HTTP Exchanges             October 2019
-
-
         3.  If ""name"" is in "ignoredSections", continue to the next
             triple.
 
@@ -515,6 +552,15 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
         5.  Let "sectionContents" be the result of reading "length"
             bytes from "stream".  If "sectionContents" is an error,
             return a "format error" with "fallbackUrl".
+
+
+
+
+
+Yasskin                  Expires April 30, 2020                [Page 10]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
 
         6.  Follow ""name""'s specification from "knownSections" to
             process the section, passing "sectionContents", "stream",
@@ -554,14 +600,6 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
    o  br;ja
 
-
-
-
-Yasskin                  Expires April 27, 2020                [Page 10]
-
-Internet-Draft           Bundled HTTP Exchanges             October 2019
-
-
    The order of variant-axes is important.  If the "variants-value" were
    "Accept-Language;en;fr;ja, Accept-Encoding;gzip;br" instead, the
    "location-in-responses" pairs would instead correspond to:
@@ -571,6 +609,14 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
    o  en;br
 
    o  fr;gzip
+
+
+
+
+Yasskin                  Expires April 30, 2020                [Page 11]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
 
    o  fr;br
 
@@ -582,9 +628,13 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
    only one resource at the specified URL and that no content
    negotiation is performed.
 
+
    index = {* whatwg-url => [ variants-value, +location-in-responses ] }
+
    variants-value = bstr
+
    location-in-responses = (offset: uint, length: uint)
+
 
    A "ResponseMetadata" struct identifies a byte range within the bundle
    stream, defined by an integer offset from the start of the stream and
@@ -610,20 +660,19 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
        "ResponseMetadata" struct or error by running the following sub-
        steps:
 
-
-
-
-Yasskin                  Expires April 27, 2020                [Page 11]
-
-Internet-Draft           Bundled HTTP Exchanges             October 2019
-
-
        1.  If "offset" + "length" is larger than
            "sectionOffsets["responses"].length", return an error.
 
        2.  Otherwise, return a "ResponseMetadata" struct whose offset is
            "sectionOffsets["responses"].offset" + "offset" and whose
            length is "length".
+
+
+
+Yasskin                  Expires April 30, 2020                [Page 12]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
 
    4.  For each ("url", "responses") entry in the "index" map:
 
@@ -667,14 +716,19 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
                ["0", "len(variantKeys)").  If any "MakeRelativeToStream"
                call returns an error, return an error.
 
+   5.  Set "metadata["requests"]" to "requests".
 
 
-Yasskin                  Expires April 27, 2020                [Page 12]
+
+
+
+
+
+
+Yasskin                  Expires April 30, 2020                [Page 13]
 
 Internet-Draft           Bundled HTTP Exchanges             October 2019
 
-
-   5.  Set "metadata["requests"]" to "requests".
 
 3.3.2.  Parsing the manifest section
 
@@ -688,7 +742,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
    manifest+json" ([appmanifest]) and an "accept-language" header of
    "es-419".
 
+
    manifest = whatwg-url
+
 
    To parse the manifest section, given its "sectionContents" and the
    "metadata" map to fill in, the parser MUST do the following:
@@ -725,7 +781,7 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                  Expires April 27, 2020                [Page 13]
+Yasskin                  Expires April 30, 2020                [Page 14]
 
 Internet-Draft           Bundled HTTP Exchanges             October 2019
 
@@ -745,31 +801,102 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
    A client might also choose different behavior for those kinds of
    authorities and keys.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Yasskin                  Expires April 30, 2020                [Page 15]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
+
 signatures = [
+
   authorities: [*authority],
+
   vouched-subsets: [*{
+
     authority: index-in-authorities,
+
     sig: bstr,
+
     signed: bstr  ; Expected to hold a signed-subset item.
+
   }],
+
 ]
+
 authority = augmented-certificate
+
 index-in-authorities = uint
 
+
+
 signed-subset = {
+
   validity-url: whatwg-url,
+
   auth-sha256: bstr,
+
   date: uint,
+
   expires: uint,
+
   subset-hashes: {+
+
     whatwg-url => [variants-value, +resource-integrity]
+
   },
+
   * tstr => any,
+
 }
+
 resource-integrity = (header-sha256: bstr, payload-integrity-header: tstr)
+
 
    The "augmented-certificate" CDDL rule comes from Section 3.3 of
    [I-D.yasskin-http-origin-signed-responses].
+
+
+
+
+Yasskin                  Expires April 30, 2020                [Page 16]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
 
    To parse the signatures section, given its "sectionContents", the
    "sectionOffsets" map, and the "metadata" map to fill in, the parser
@@ -778,13 +905,6 @@ resource-integrity = (header-sha256: bstr, payload-integrity-header: tstr)
    1.  Let "signatures" be the result of parsing "sectionContents" as a
        CBOR item matching the "signatures" rule in the above CDDL
        (Section 3.5).
-
-
-
-Yasskin                  Expires April 27, 2020                [Page 14]
-
-Internet-Draft           Bundled HTTP Exchanges             October 2019
-
 
    2.  Set "metadata["authorities"]" to the list of authorities in the
        first element of the "signatures" array.
@@ -798,7 +918,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
    needs to understand in order to load the bundle correctly.  Other
    sections are assumed to be optional.
 
+
    critical = [*tstr]
+
 
    To parse the critical section, given its "sectionContents" and the
    "metadata" map to fill in, the parser MUST do the following:
@@ -824,23 +946,29 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
    The length of a bundle is encoded as a big-endian integer inside a
    CBOR byte string at the end of the bundle.
 
+
+
+
+Yasskin                  Expires April 30, 2020                [Page 17]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
+
     +------------+-----+----+----+----+----+----+----+----+----+----+
+
     | first byte | ... | 48 | 00 | 00 | 00 | 00 | 00 | BC | 61 | 4E |
+
     +------------+-----+----+----+----+----+----+----+----+----+----+
+
                 /       \
+
           0xBC614E-10=12345668 omitted bytes
+
 
                      Figure 1: Example trailing bytes
 
    Parsing from the end allows the bundle to be appended to another
    format such as a self-extracting executable.
-
-
-
-Yasskin                  Expires April 27, 2020                [Page 15]
-
-Internet-Draft           Bundled HTTP Exchanges             October 2019
-
 
    To implement Section 2.2.1, taking a sequence of bytes "bytes", the
    client MUST:
@@ -870,6 +998,18 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
    5.  Return the result of running Section 3.3 with "stream" as input.
 
+
+
+
+
+
+
+
+Yasskin                  Expires April 30, 2020                [Page 18]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
+
 3.4.  Load a response from a bundle
 
    The result of Load a bundle's metadata maps each URL and Variant-Key
@@ -878,7 +1018,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
    stream before waiting for the payload, and similarly the payload can
    be streamed to downstream consumers.
 
+
    response = [headers: bstr .cbor headers, payload: bstr]
+
 
    To implement Section 2.3, the parser MUST run the following steps,
    taking the bundle's "stream", a "request" ([FETCH]), and a
@@ -889,14 +1031,6 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
    2.   Read 1 byte from "stream".  If this is an error or isn't "0x82",
         return an error.
-
-
-
-
-Yasskin                  Expires April 27, 2020                [Page 16]
-
-Internet-Draft           Bundled HTTP Exchanges             October 2019
-
 
    3.   Let "headerLength" be the result of getting the length of a CBOR
         bytestring header from "stream" (Section 3.5.2).  If
@@ -925,6 +1059,13 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
         CBOR bytestring header from "stream" (Section 3.5.2).  If
         "payloadLength" is an error, return that error.
 
+
+
+Yasskin                  Expires April 30, 2020                [Page 19]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
+
    10.  If "payloadLength" is greater than 0 and "headers" does not
         contain a "Content-Type" header, return an error.
 
@@ -946,13 +1087,6 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
         object.
 
    13.  Let "response" be a new response ([FETCH]) whose:
-
-
-
-Yasskin                  Expires April 27, 2020                [Page 17]
-
-Internet-Draft           Bundled HTTP Exchanges             October 2019
-
 
         *  Url list is "request"'s url list,
 
@@ -980,6 +1114,14 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
    2.  If "bytes" does not satisfy the core deterministic encoding
        requirements from Section 4.2.1 of [CBORbis], return an error.
        This format does not use floating point values or tags, so this
+
+
+
+Yasskin                  Expires April 30, 2020                [Page 20]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
+
        specification does not add any deterministic encoding rules for
        them.
 
@@ -1002,13 +1144,6 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
    To get the length of a CBOR bytestring header from a bundle's stream,
    the parser MUST do the following:
-
-
-
-Yasskin                  Expires April 27, 2020                [Page 18]
-
-Internet-Draft           Bundled HTTP Exchanges             October 2019
-
 
    1.  Let ("type", "argument") be the result of parsing the type and
        argument of a CBOR item from the stream (Section 3.5.3).  If this
@@ -1035,6 +1170,14 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
        0..23, inclusive  Return ("type", "firstByte & 0x1F").
 
+
+
+
+Yasskin                  Expires April 30, 2020                [Page 21]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
+
        24 Let "content" be the result of reading 1 byte from the stream.
           If "content" is an error or is less than 24, return an error.
 
@@ -1057,21 +1200,14 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
    5.  Return ("type", "argument").
 
-
-
-
-
-Yasskin                  Expires April 27, 2020                [Page 19]
-
-Internet-Draft           Bundled HTTP Exchanges             October 2019
-
-
 3.6.  Interpreting CBOR HTTP headers
 
    Bundles represent HTTP requests and responses as a list of headers,
    matching the following CDDL ([CDDL]):
 
+
    headers = {* bstr => bstr}
+
 
    Pseudo-headers starting with a ":" provide the non-header information
    needed to create a request or response as appropriate
@@ -1087,6 +1223,16 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
    3.  Let "pseudos" be an empty map ([INFRA]).
 
    4.  For each pair ("name", "value") in "item":
+
+
+
+
+
+
+Yasskin                  Expires April 30, 2020                [Page 22]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
 
        1.  If "name" contains any upper-case or non-ASCII characters,
            return an error.  This matches the requirement in
@@ -1114,14 +1260,6 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
        5.  Append ("name", "value") to "headers".
 
-
-
-
-Yasskin                  Expires April 27, 2020                [Page 20]
-
-Internet-Draft           Bundled HTTP Exchanges             October 2019
-
-
    5.  Return ("headers", "pseudos").
 
 4.  Guidelines for bundle authors
@@ -1144,6 +1282,13 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
    caching, bundling allows an attacker to guarantee that it happens.
    Future work in this specification might allow a bundle to constrain
    its resources to come from a consistent version.
+
+
+
+Yasskin                  Expires April 30, 2020                [Page 23]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
 
 5.2.  Content sniffing
 
@@ -1168,16 +1313,6 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
    1.  Only serve bundles from dedicated domains that don't have access
        to sensitive cookies or user storage.
 
-
-
-
-
-
-Yasskin                  Expires April 27, 2020                [Page 21]
-
-Internet-Draft           Bundled HTTP Exchanges             October 2019
-
-
    2.  Generate bundles "offline", that is, in response to a trusted
        author submitting content or existing signatures reaching a
        certain age, rather than in response to untrusted-reader queries.
@@ -1201,6 +1336,15 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
        3.  Restrict the number of items a request can direct the server
            to include in a bundle to less than 12, again to prevent
            attackers from controlling a whole CBOR length byte.
+
+
+
+
+
+Yasskin                  Expires April 30, 2020                [Page 24]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
 
        4.  Do not reflect request header fields into the set of response
            headers.
@@ -1227,13 +1371,6 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
    o  Subtype name: webbundle
 
-
-
-Yasskin                  Expires April 27, 2020                [Page 22]
-
-Internet-Draft           Bundled HTTP Exchanges             October 2019
-
-
    o  Required parameters:
 
       *  v: A string denoting the version of the file format.
@@ -1255,6 +1392,15 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
    o  Interoperability considerations: N/A
 
    o  Published specification: This document
+
+
+
+
+
+Yasskin                  Expires April 30, 2020                [Page 25]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
 
    o  Applications that use this media type: None yet, but it is
       expected that web browsers will use this format.
@@ -1282,14 +1428,6 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
    o  Change controller: The IESG iesg@ietf.org [5]
 
-
-
-
-Yasskin                  Expires April 27, 2020                [Page 23]
-
-Internet-Draft           Bundled HTTP Exchanges             October 2019
-
-
    o  Provisional registration?  Yes.
 
 6.2.  Web Bundle Section Name Registry
@@ -1302,6 +1440,23 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
    Review Process: Specification Required
 
    Initial Assignments:
+
+
+
+
+
+
+
+
+
+
+
+
+
+Yasskin                  Expires April 30, 2020                [Page 26]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
 
    +--------------+---------------+----------+-------------------------+
    | Section Name | Specification | Metadata | Metadata Fields         |
@@ -1334,18 +1489,6 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 7.  References
 
-
-
-
-
-
-
-
-Yasskin                  Expires April 27, 2020                [Page 24]
-
-Internet-Draft           Bundled HTTP Exchanges             October 2019
-
-
 7.1.  Normative References
 
    [appmanifest]
@@ -1363,6 +1506,13 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
               Express Concise Binary Object Representation (CBOR) and
               JSON Data Structures", RFC 8610, DOI 10.17487/RFC8610,
               June 2019, <https://www.rfc-editor.org/info/rfc8610>.
+
+
+
+Yasskin                  Expires April 30, 2020                [Page 27]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
 
    [FETCH]    WHATWG, "Fetch", October 2019,
               <https://fetch.spec.whatwg.org/>.
@@ -1393,15 +1543,6 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
               DOI 10.17487/RFC5234, January 2008,
               <https://www.rfc-editor.org/info/rfc5234>.
 
-
-
-
-
-Yasskin                  Expires April 27, 2020                [Page 25]
-
-Internet-Draft           Bundled HTTP Exchanges             October 2019
-
-
    [RFC7540]  Belshe, M., Peon, R., and M. Thomson, Ed., "Hypertext
               Transfer Protocol Version 2 (HTTP/2)", RFC 7540,
               DOI 10.17487/RFC7540, May 2015,
@@ -1420,6 +1561,14 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
               Yasskin, J., "Use Cases and Requirements for Web
               Packages", draft-yasskin-webpackage-use-cases-01 (work in
               progress), March 2018.
+
+
+
+
+Yasskin                  Expires April 30, 2020                [Page 28]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
 
    [RFC6265]  Barth, A., "HTTP State Management Mechanism", RFC 6265,
               DOI 10.17487/RFC6265, April 2011,
@@ -1451,13 +1600,6 @@ Appendix A.  Change Log
 
    o  Allow empty responses to omit their content type.
 
-
-
-Yasskin                  Expires April 27, 2020                [Page 26]
-
-Internet-Draft           Bundled HTTP Exchanges             October 2019
-
-
    o  Provisionally register application/webbundle.
 
    draft-01
@@ -1476,6 +1618,13 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
    o  Add a fallback URL in a fixed location in the format, and use that
       fallback URL as the primary URL of the bundle.
+
+
+
+Yasskin                  Expires April 30, 2020                [Page 29]
+
+Internet-Draft           Bundled HTTP Exchanges             October 2019
+
 
    o  Add a "signatures" section to let authorities (like domain-trusted
       X.509 certificates) vouch for subsets of a bundle.
@@ -1509,4 +1658,23 @@ Author's Address
 
 
 
-Yasskin                  Expires April 27, 2020                [Page 27]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Yasskin                  Expires April 30, 2020                [Page 30]

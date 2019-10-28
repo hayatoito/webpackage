@@ -326,7 +326,7 @@ ul.toc li {
 
   <meta name="dct.creator" content="Yasskin, J." />
   <meta name="dct.identifier" content="urn:ietf:id:draft-yasskin-wpack-bundled-exchanges-latest" />
-  <meta name="dct.issued" scheme="ISO8601" content="2019-10-25" />
+  <meta name="dct.issued" scheme="ISO8601" content="2019-10-28" />
   <meta name="dct.abstract" content="Bundled exchanges provide a way to bundle up groups of HTTP request+response pairs to transmit or store them together. They can include multiple top-level resources with one identified as the default by a primaryUrl metadata, provide random access to their component exchanges, and efficiently store 8-bit resources." />
   <meta name="description" content="Bundled exchanges provide a way to bundle up groups of HTTP request+response pairs to transmit or store them together. They can include multiple top-level resources with one identified as the default by a primaryUrl metadata, provide random access to their component exchanges, and efficiently store 8-bit resources." />
 
@@ -347,10 +347,10 @@ ul.toc li {
 </tr>
 <tr>
 <td class="left">Intended status: Standards Track</td>
-<td class="right">October 25, 2019</td>
+<td class="right">October 28, 2019</td>
 </tr>
 <tr>
-<td class="left">Expires: April 27, 2020</td>
+<td class="left">Expires: April 30, 2020</td>
 <td class="right"></td>
 </tr>
 
@@ -370,7 +370,7 @@ ul.toc li {
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on April 27, 2020.</p>
+<p>This Internet-Draft will expire on April 30, 2020.</p>
 <h1 id="rfc.copyrightnotice"><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
 <p>Copyright (c) 2019 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
@@ -545,23 +545,42 @@ ul.toc li {
 <p id="rfc.section.3.1.p.3">Future specifications can define new sections with extra data, and if necessary, these sections can be marked &#8220;critical&#8221; (<a href="#critical-section" class="xref">Section 3.3.4</a>) to prevent older parsers from using the rest of the bundle incorrectly.</p>
 <p id="rfc.section.3.1.p.4">The bundle is a CBOR item (<a href="#CBORbis" class="xref">[CBORbis]</a>) with the following CDDL (<a href="#CDDL" class="xref">[CDDL]</a>) schema:</p>
 <pre>
+
 webbundle = [
+
   ; &#127760;&#128230; in UTF-8.
+
   magic: h'F0 9F 8C 90 F0 9F 93 A6',
+
   version: bytes .size 4,
+
   primary-url: whatwg-url,
+
   section-lengths: bytes .cbor [* (section-name: tstr, length: uint) ],
+
   sections: [* any ],
+
   length: bytes .size 8,  ; Big-endian number of bytes in the bundle.
+
 ]
+
+
 
 $section-name /= "index" / "manifest" / "signatures" / "critical" / "responses"
 
+
+
 $section /= index / manifest / signatures / critical / responses
+
+
 
 responses = [*response]
 
+
+
 whatwg-url = tstr
+
+
 
 </pre>
 <h1 id="rfc.section.3.2">
@@ -579,7 +598,9 @@ whatwg-url = tstr
 </h1>
 <p id="rfc.section.3.3.p.1">A bundle holds a series of sections, which can be accessed randomly using the information in the <samp>section-lengths</samp> CBOR item, which holds a list of alternating section names and section lengths:</p>
 <pre>
+
 section-lengths = [* (section-name: tstr, length: uint) ],
+
 </pre>
 <p id="rfc.section.3.3.p.2">To implement <a href="#semantics-load-metadata" class="xref">Section 2.2</a>, the parser MUST run the following steps, taking the <samp>stream</samp> as input.</p>
 <p></p>
@@ -653,9 +674,13 @@ section-lengths = [* (section-name: tstr, length: uint) ],
 </ul>
 <p id="rfc.section.3.3.1.p.6">As a special case, an empty <samp>variants-value</samp> indicates that there is only one resource at the specified URL and that no content negotiation is performed.</p>
 <pre>
+
 index = {* whatwg-url =&gt; [ variants-value, +location-in-responses ] }
+
 variants-value = bstr
+
 location-in-responses = (offset: uint, length: uint)
+
 </pre>
 <p id="rfc.section.3.3.1.p.7">A <samp>ResponseMetadata</samp> struct identifies a byte range within the bundle stream, defined by an integer offset from the start of the stream and the integer number of bytes in the range.</p>
 <p id="rfc.section.3.3.1.p.8">To parse the index section, given its <samp>sectionContents</samp>, the <samp>sectionOffsets</samp> map, and the <samp>metadata</samp> map to fill in, the parser MUST do the following:</p>
@@ -694,7 +719,9 @@ location-in-responses = (offset: uint, length: uint)
 <p id="rfc.section.3.3.2.p.1">The &#8220;manifest&#8221; section records a single URL identifying the manifest of the bundle. The URL MUST refer to the one or more response(s) contained in the bundle itself.</p>
 <p id="rfc.section.3.3.2.p.2">The bundle can contain multiple resources at this URL, and the client is expected to content-negotiate for the best one. For example, a client might select the one with an <samp>accept</samp> header of <samp>application/manifest+json</samp> (<a href="#appmanifest" class="xref">[appmanifest]</a>) and an <samp>accept-language</samp> header of <samp>es-419</samp>.</p>
 <pre>
+
 manifest = whatwg-url
+
 </pre>
 <p id="rfc.section.3.3.2.p.3">To parse the manifest section, given its <samp>sectionContents</samp> and the <samp>metadata</samp> map to fill in, the parser MUST do the following:</p>
 <p></p>
@@ -721,28 +748,51 @@ manifest = whatwg-url
 </ul>
 <p id="rfc.section.3.3.3.p.5">A client might also choose different behavior for those kinds of authorities and keys.</p>
 <pre>
+
 signatures = [
+
   authorities: [*authority],
+
   vouched-subsets: [*{
+
     authority: index-in-authorities,
+
     sig: bstr,
+
     signed: bstr  ; Expected to hold a signed-subset item.
+
   }],
+
 ]
+
 authority = augmented-certificate
+
 index-in-authorities = uint
 
+
+
 signed-subset = {
+
   validity-url: whatwg-url,
+
   auth-sha256: bstr,
+
   date: uint,
+
   expires: uint,
+
   subset-hashes: {+
+
     whatwg-url =&gt; [variants-value, +resource-integrity]
+
   },
+
   * tstr =&gt; any,
+
 }
+
 resource-integrity = (header-sha256: bstr, payload-integrity-header: tstr)
+
 </pre>
 <p id="rfc.section.3.3.3.p.6">The <samp>augmented-certificate</samp> CDDL rule comes from Section 3.3 of <a href="#I-D.yasskin-http-origin-signed-responses" class="xref">[I-D.yasskin-http-origin-signed-responses]</a>.</p>
 <p id="rfc.section.3.3.3.p.7">To parse the signatures section, given its <samp>sectionContents</samp>, the <samp>sectionOffsets</samp> map, and the <samp>metadata</samp> map to fill in, the parser MUST do the following:</p>
@@ -758,7 +808,9 @@ resource-integrity = (header-sha256: bstr, payload-integrity-header: tstr)
 </h1>
 <p id="rfc.section.3.3.4.p.1">The &#8220;critical&#8221; section lists sections of the bundle that the client needs to understand in order to load the bundle correctly. Other sections are assumed to be optional.</p>
 <pre>
+
 critical = [*tstr]
+
 </pre>
 <p id="rfc.section.3.3.4.p.2">To parse the critical section, given its <samp>sectionContents</samp> and the <samp>metadata</samp> map to fill in, the parser MUST do the following:</p>
 <p></p>
@@ -779,11 +831,17 @@ critical = [*tstr]
 <div id="rfc.figure.1"></div>
 <div id="example-trailing-bytes"></div>
 <pre>
+
  +------------+-----+----+----+----+----+----+----+----+----+----+
+
  | first byte | ... | 48 | 00 | 00 | 00 | 00 | 00 | BC | 61 | 4E |
+
  +------------+-----+----+----+----+----+----+----+----+----+----+
+
              /       \
+
        0xBC614E-10=12345668 omitted bytes
+
 </pre>
 <p class="figure">Figure 1: Example trailing bytes</p>
 <p id="rfc.section.3.3.6.p.2">Parsing from the end allows the bundle to be appended to another format such as a self-extracting executable.</p>
@@ -808,7 +866,9 @@ critical = [*tstr]
 </h1>
 <p id="rfc.section.3.4.p.1">The result of <a href="#load-metadata" class="xref">Load a bundle&#8217;s metadata</a> maps each URL and Variant-Key (<a href="#I-D.ietf-httpbis-variants" class="xref">[I-D.ietf-httpbis-variants]</a>) to a response, which consists of headers and a payload. The headers can be loaded from the bundle&#8217;s stream before waiting for the payload, and similarly the payload can be streamed to downstream consumers.</p>
 <pre>
+
 response = [headers: bstr .cbor headers, payload: bstr]
+
 </pre>
 <p id="rfc.section.3.4.p.2">To implement <a href="#semantics-load-response" class="xref">Section 2.3</a>, the parser MUST run the following steps, taking the bundle&#8217;s <samp>stream</samp>, a <samp>request</samp> (<a href="#FETCH" class="xref">[FETCH]</a>), and a <samp>responseMetadata</samp> returned by <a href="#semantics-load-metadata" class="xref">Section 2.2</a> .</p>
 <p></p>
@@ -897,7 +957,9 @@ response = [headers: bstr .cbor headers, payload: bstr]
 </h1>
 <p id="rfc.section.3.6.p.1">Bundles represent HTTP requests and responses as a list of headers, matching the following CDDL (<a href="#CDDL" class="xref">[CDDL]</a>):</p>
 <pre>
+
 headers = {* bstr =&gt; bstr}
+
 </pre>
 <p id="rfc.section.3.6.p.2">Pseudo-headers starting with a <samp>:</samp> provide the non-header information needed to create a request or response as appropriate</p>
 <p id="rfc.section.3.6.p.3">To convert a CBOR item <samp>item</samp> into a <a href="#FETCH" class="xref">[FETCH]</a> header list and pseudoheaders, parsers MUST do the following:</p>

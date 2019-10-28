@@ -312,7 +312,7 @@ ul.toc li {
 
   <meta name="dct.creator" content="Yasskin, J." />
   <meta name="dct.identifier" content="urn:ietf:id:draft-yasskin-dispatch-web-packaging-latest" />
-  <meta name="dct.issued" scheme="ISO8601" content="2019-10-25" />
+  <meta name="dct.issued" scheme="ISO8601" content="2019-10-28" />
   <meta name="dct.abstract" content="Web Packages provide a way to bundle up groups of web resources to transmit them together. These bundles can be signed to establish their authenticity." />
   <meta name="description" content="Web Packages provide a way to bundle up groups of web resources to transmit them together. These bundles can be signed to establish their authenticity." />
 
@@ -333,10 +333,10 @@ ul.toc li {
 </tr>
 <tr>
 <td class="left">Intended status: Standards Track</td>
-<td class="right">October 25, 2019</td>
+<td class="right">October 28, 2019</td>
 </tr>
 <tr>
-<td class="left">Expires: April 27, 2020</td>
+<td class="left">Expires: April 30, 2020</td>
 <td class="right"></td>
 </tr>
 
@@ -353,7 +353,7 @@ ul.toc li {
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on April 27, 2020.</p>
+<p>This Internet-Draft will expire on April 30, 2020.</p>
 <h1 id="rfc.copyrightnotice"><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
 <p>Copyright (c) 2019 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
@@ -449,21 +449,37 @@ ul.toc li {
 </h1>
 <p id="rfc.section.2.2.p.1">The package is roughly a CBOR item with the following CDDL schema, but package parsers are required to successfully parse some byte strings that aren&#8217;t valid CBOR. For example, sections may have padding between them, or even overlap, as long as the embedded relative offsets cause the parsing algorithm in this specification to return data.</p>
 <pre>
+
 webpackage = [
+
   ; &#127760;&#128230; in UTF-8.
+
   magic1: h'F0 9F 8C 90 F0 9F 93 A6',
+
   section-offsets: { * (($section-name .within tstr) =&gt; uint) },
+
   sections: [ *$section ],
+
   length: uint,  ; Total number of bytes in the package.
+
   ; &#127760;&#128230; in UTF-8.
+
   magic2: h'F0 9F 8C 90 F0 9F 93 A6',
+
 ]
+
+
 
 $section-name /= "indexed-content" / "manifest"
 
+
+
 $section /= indexed-content / signed-manifest
 
+
+
 indexed-content = [index, [*response]]
+
 </pre>
 <p id="rfc.section.2.2.p.2">The parser MAY begin parsing at either the <a href="#from-start" class="xref">beginning</a> or <a href="#from-end" class="xref">end</a> of the byte string representing the package. Parsing from the end is useful when the package is embedded in another format such as a self-extracting executable, while parsing from the beginning is useful when loading from a stream.</p>
 <h1 id="rfc.section.2.2.1">
@@ -471,12 +487,19 @@ indexed-content = [index, [*response]]
 </h1>
 <p id="rfc.section.2.2.1.p.1">To parse from the end, the parser MUST load the last 18 bytes as the following <a href="#CDDL" class="xref">[CDDL]</a> group in array context: <a id="ednote-loading-cddl" class="info">[ednote-loading-cddl]<span class="info">jyasskin: CDDL doesn&#8217;t actually define how to use it as a schema to load CBOR data.</span></a></p>
 <pre>
+
 tail = (
+
   ; Total number of bytes in the package.
+
   length: uint,
+
   ; &#127760;&#128230; in UTF-8.
+
   magic2: h'F0 9F 8C 90 F0 9F 93 A6',
+
 )
+
 </pre>
 <p id="rfc.section.2.2.1.p.2">If the bytes don&#8217;t match this group or these two CBOR items don&#8217;t occupy exactly 18 bytes, parsing MUST fail.</p>
 <p id="rfc.section.2.2.1.p.3">Otherwise, continue as if the byte <samp>length</samp> bytes before the end of the string were the beginning of the package, and the parser were a <a href="#from-start" class="xref">from the beginning</a> parser.</p>
@@ -486,7 +509,9 @@ tail = (
 <p id="rfc.section.2.2.2.p.1">If the first 10 bytes of the package are not &#8220;85 48 F0 9F 8C 90 F0 9F 93 A6&#8221; (the CBOR encoding of the 5-item array header and 8-byte bytestring header, followed by &#127760;&#128230; in UTF-8), parsing MUST fail.</p>
 <p id="rfc.section.2.2.2.p.2">Parse one CBOR item starting at the 11th byte of the package. If this does not match the CDDL</p>
 <pre>
+
 section-offsets = { * tstr =&gt; uint },
+
 </pre>
 <p id="rfc.section.2.2.2.p.3">or it is not a Canonical CBOR item (Section 3.9 of <a href="#CBOR" class="xref">[CBOR]</a>), parsing MUST fail.</p>
 <p id="rfc.section.2.2.2.p.4">Let <em>sections-start</em> be the offset of the byte after the <samp>section-offsets</samp> item.  For example, if <samp>section-offsets</samp> were 52 bytes long, <em>sections-start</em> would be 63.</p>
@@ -505,12 +530,19 @@ section-offsets = { * tstr =&gt; uint },
 <p id="rfc.section.2.3.p.3">If the byte at <em>index-start</em> is not 0x82 (the <a href="#CBOR" class="xref">[CBOR]</a> header for a 2-element array), the parser MUST fail.</p>
 <p id="rfc.section.2.3.p.4">Load a CBOR item starting at <em>index-start</em> + 1 as the <samp>index</samp> array in the following CDDL:</p>
 <pre>
+
 index = [* [resource-key: http-headers,
+
             offset: uint,
+
             ? length: uint] ]
 
+
+
 ; http-headers is a byte string in HPACK format (RFC7541).
+
 http-headers = bstr
+
 </pre>
 <p id="rfc.section.2.3.p.5">If the item doesn&#8217;t match this CDDL, or it is not a Canonical CBOR item (Section 3.9 of <a href="#CBOR" class="xref">[CBOR]</a>), the parser MUST fail.</p>
 <p id="rfc.section.2.3.p.6">Let <em>resources-start</em> be the offset immediately after the <samp>index</samp> item. For example, if <em>index-start</em> were 75 and the <samp>index</samp> item were 105 bytes long, <em>resources-start</em> would be 75+1+105=181. (1 for the 0x82 array header.)</p>
@@ -535,38 +567,71 @@ http-headers = bstr
 <p id="rfc.section.2.4.p.2">To parse a manifest starting at <em>manifest-start</em>, a parser MUST do the following:</p>
 <p id="rfc.section.2.4.p.3">Load one CBOR item starting at <em>manifest-start</em> as a <samp>signed-manifest</samp> from the following CDDL:</p>
 <pre>
+
 signed-manifest = {
+
   manifest: manifest,
+
   certificates: [+ certificate],
+
   signatures: [+ signature]
+
 }
+
+
 
 manifest = {
+
   metadata: manifest-metadata,
+
   resource-hashes: {* hash-algorithm =&gt; [hash-value]},
+
   ? subpackages: [* subpackage],
+
 }
+
+
 
 manifest-metadata = {
+
   date: time,
+
   origin: uri,
+
   * tstr =&gt; any,
+
 }
+
+
 
 ; From https://www.w3.org/TR/CSP3/#grammardef-hash-algorithm.
+
 hash-algorithm /= "sha256" / "sha384" / "sha512"
+
 ; Note that a hash value is not base64-encoded, unlike in CSP.
+
 hash-value = bstr
 
+
+
 ; X.509 format; see https://tools.ietf.org/html/rfc5280
+
 certificate = bstr
 
+
+
 signature = {
+
   ; This is the index of the certificate within the
+
   ; certificates array to use to validate the signature.
+
   keyIndex: uint,
+
   signature: bstr,
+
 }
+
 </pre>
 <p id="rfc.section.2.4.p.4">If the item doesn&#8217;t match the CDDL or it&#8217;s not a Canonical CBOR item (Section 3.9 of <a href="#CBOR" class="xref">[CBOR]</a>), parsing MUST fail.</p>
 <p id="rfc.section.2.4.p.5">Parse the elements of <samp>certificates</samp> as X.509 certificates within the <a href="#RFC5280" class="xref">[RFC5280]</a> profile. If any certificate fails to parse, parsing MUST fail.</p>
@@ -610,44 +675,73 @@ signature = {
 </h1>
 <p id="rfc.section.2.4.1.p.1">A sub-package is represented by a <a href="#manifest" class="xref">Section 2.4</a> file looked up as a <a href="#resource" class="xref">Section 2.5</a> within the <samp>indexed-content</samp> section. The sub-package&#8217;s resources are not otherwise distinguished from the rest of the resources in the package. Sub-packages can form an arbitrarily-deep tree.</p>
 <pre>
+
 subpackage = [
+
   resource: resource-key,
+
   validation: {
+
     ? hash: {+ hash-algorithm =&gt; hash-value},
+
     ? notbefore: time,
+
   }
+
 ]
+
 </pre>
 <p id="rfc.section.2.4.1.p.2">There are three possible forms of dependencies on sub-packages, of which we allow two. Because a sub-package&#8217;s manifest is protected by its own signature, if the main package trusts the sub-package&#8217;s server, it could avoid specifying a version of the sub-package at all. However, this opens the main package up to downgrade attacks, where the sub-package is replaced by an older, vulnerable version, so we don&#8217;t allow this option.</p>
 <p id="rfc.section.2.4.1.p.3">If the main package wants to load either the sub-package it was built with or any upgrade, it can specify the date of the original sub-package:</p>
 <pre>
+
 [32("https://example.com/loginsdk.package"),
+
  {"notbefore": 1(1486429554)}]
+
 </pre>
 <p id="rfc.section.2.4.1.p.4">Constraining packages with their date makes it possible to link together sub-packages with common dependencies, even if the sub-packages were built at different times.</p>
 <p id="rfc.section.2.4.1.p.5">If the main package wants to be certain it&#8217;s loading the exact version of a sub-package that it was built with, it can constrain the sub-package with a hash of its manifest:</p>
 <pre>
+
 [32("https://example.com/loginsdk.package"),
+
  {"hash": {"sha256":
+
      b64'9qg0NGDuhsjeGwrcbaxMKZAvfzAHJ2d8L7NkDzXhgHk='}}]
+
 </pre>
 <p id="rfc.section.2.4.1.p.6">Note that because the sub-package may include sub-sub-packages by date, the top package may need to explicitly list those sub-sub-packages&#8217; hashes in order to be completely constrained. For example, if <samp>loginsdk.package</samp> has subpackages of the form:</p>
 <pre>
+
 [
+
   [32("https://other.example.com/helper.package"),
+
    {"notbefore": 1(1486429554)}]
+
 ]
+
 </pre>
 <p id="rfc.section.2.4.1.p.7">the top-level package needs to specify:</p>
 <pre>
+
 [
+
   [32("https://example.com/loginsdk.package"),
+
    {"hash": {"sha256":
+
         b64'9qg0NGDuhsjeGwrcbaxMKZAvfzAHJ2d8L7NkDzXhgHk='}}],
+
   [32("https://other.example.com/helper.package"),
+
    {"hash": {"sha256":
+
         b64'SG2GjbrpfVCh21HPLMIXD17fHNCst1Gz/MbQOqihG68='}}]
+
 ]
+
 </pre>
 <p id="rfc.section.2.4.1.p.8">in order to completely constrain all the versions of its dependencies.</p>
 <h1 id="rfc.section.2.5">
@@ -657,7 +751,9 @@ subpackage = [
 <p id="rfc.section.2.5.p.2">Find the (<em>resource-key</em>, <em>offset</em>, <em>length</em>) triple in <em>package</em>&#8217;s index where <em>resource-key</em> is the same as <em>header-list</em>. If no such triple exists, the parser MUST fail.</p>
 <p id="rfc.section.2.5.p.3">Parse one CBOR item starting at <em>offset</em> as the following CDDL:</p>
 <pre>
+
 response = [response-headers: http-headers, body: bstr]
+
 </pre>
 <p id="rfc.section.2.5.p.4">If the item doesn&#8217;t match the CDDL or it&#8217;s not a Canonical CBOR item (Section 3.9 of <a href="#CBOR" class="xref">[CBOR]</a>), parsing MUST fail.</p>
 <p id="rfc.section.2.5.p.5">Decode the <samp>response-headers</samp> field using <a href="#HPACK" class="xref">[HPACK]</a>, with an initially-empty dynamic table. The decoded <samp>response-headers</samp> is a header list (<a href="#HPACK" class="xref">[HPACK]</a>, Section 1.3), an ordered list of name-value pairs.</p>
@@ -673,15 +769,25 @@ response = [response-headers: http-headers, body: bstr]
 <p id="rfc.section.2.5.p.8">Let <em>origin</em> be the Web Origin <a href="#RFC6454" class="xref">[RFC6454]</a> of <em>header-list</em>&#8217;s &#8220;:scheme&#8221; and &#8220;:authority&#8221; headers.</p>
 <p id="rfc.section.2.5.p.9"><a name="hashing-resources"></a>Let <em>resource-bytes</em> be the result of encoding the array of [<em>header-list</em>, <samp>response-headers</samp>, <samp>body</samp>] as Canonical CBOR in the following CDDL schema: <a id="ednote-figure-in-list" class="info">[ednote-figure-in-list]<span class="info">jyasskin: This step would be inside the manifest-only block, but then the code block is rendered out-of-order.</span></a></p>
 <pre>
+
 resource-bytes = [
+
   request: [
+
     *(header-name: bstr, header-value: bstr)
+
   ],
+
   response-headers: [
+
     *(header-name: bstr, header-value: bstr)
+
   ],
+
   response-body: bstr
+
 ]
+
 </pre>
 <p id="rfc.section.2.5.p.10">Note that this uses the decoded header fields, not the bytes originally included in the package.</p>
 <p id="rfc.section.2.5.p.11">The hashed data differs from <a href="#SRI" class="xref">[SRI]</a>, which only hashes the body. Including the headers will usually prevent a package from relying on some of its contents being transferred as normal network responses, unless its author can guarantee the network won&#8217;t change or reorder the headers.</p>

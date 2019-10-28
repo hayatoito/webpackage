@@ -378,7 +378,7 @@ ul.toc li {
 
   <meta name="dct.creator" content="Yasskin, J." />
   <meta name="dct.identifier" content="urn:ietf:id:draft-yasskin-http-origin-signed-responses-latest" />
-  <meta name="dct.issued" scheme="ISO8601" content="2019-10-25" />
+  <meta name="dct.issued" scheme="ISO8601" content="2019-10-28" />
   <meta name="dct.abstract" content="This document specifies how a server can send an HTTP exchange&#8212;a request URL, content negotiation information, and a response&#8212;with signatures that vouch for that exchange&#8217;s authenticity. These signatures can be verified against an origin&#8217;s certificate to establish that the exchange is authoritative for an origin even if it was transferred over a connection that isn&#8217;t. The signatures can also be used in other ways described in the appendices.These signatures contain countermeasures against downgrade and protocol-confusion attacks." />
   <meta name="description" content="This document specifies how a server can send an HTTP exchange&#8212;a request URL, content negotiation information, and a response&#8212;with signatures that vouch for that exchange&#8217;s authenticity. These signatures can be verified against an origin&#8217;s certificate to establish that the exchange is authoritative for an origin even if it was transferred over a connection that isn&#8217;t. The signatures can also be used in other ways described in the appendices.These signatures contain countermeasures against downgrade and protocol-confusion attacks." />
 
@@ -399,10 +399,10 @@ ul.toc li {
 </tr>
 <tr>
 <td class="left">Intended status: Standards Track</td>
-<td class="right">October 25, 2019</td>
+<td class="right">October 28, 2019</td>
 </tr>
 <tr>
-<td class="left">Expires: April 27, 2020</td>
+<td class="left">Expires: April 30, 2020</td>
 <td class="right"></td>
 </tr>
 
@@ -423,7 +423,7 @@ ul.toc li {
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on April 27, 2020.</p>
+<p>This Internet-Draft will expire on April 30, 2020.</p>
 <h1 id="rfc.copyrightnotice"><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
 <p>Copyright (c) 2019 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
@@ -661,7 +661,9 @@ ul.toc li {
 <p id="rfc.section.3.1.p.1">The <samp>Signature</samp> header field conveys a list of signatures for an exchange, each one accompanied by information about how to determine the authority of and refresh that signature. Each signature directly signs the exchange&#8217;s URL and response headers and identifies one of those headers that enforces the integrity of the exchange&#8217;s payload.</p>
 <p id="rfc.section.3.1.p.2">The <samp>Signature</samp> header is a Structured Header as defined by <a href="#I-D.ietf-httpbis-header-structure" class="xref">[I-D.ietf-httpbis-header-structure]</a>. Its value MUST be a parameterised list (Section 3.4 of <a href="#I-D.ietf-httpbis-header-structure" class="xref">[I-D.ietf-httpbis-header-structure]</a>). Its ABNF is:</p>
 <pre>
+
 Signature = sh-param-list
+
 </pre>
 <p id="rfc.section.3.1.p.3">Each parameterised identifier in the list MUST have parameters named &#8220;sig&#8221;, &#8220;integrity&#8221;, &#8220;validity-url&#8221;, &#8220;date&#8221;, and &#8220;expires&#8221;. Each parameterised identifier MUST also have either &#8220;cert-url&#8221; and &#8220;cert-sha256&#8221; parameters or an &#8220;ed25519key&#8221; parameter. This specification gives no meaning to the identifier itself, which can be used as a human-readable identifier for the signature (however, this is likely to change soon; see <a href="#parameterised-binary" class="xref">Section 3.1.2, Paragraph 1</a>). The present parameters MUST have the following values:</p>
 <p></p>
@@ -689,34 +691,63 @@ Signature = sh-param-list
 </h1>
 <p id="rfc.section.3.1.1.p.1">The following header is included in the response for an exchange with effective request URI <samp>https://example.com/resource.html</samp>. Newlines are added for readability.</p>
 <pre>
+
 Signature:
+
  sig1;
+
   sig=*MEUCIQDXlI2gN3RNBlgFiuRNFpZXcDIaUpX6HIEwcZEc0cZYLAIga9DsVOMM+g5YpwEBdGW3sS+bvnmAJJiSMwhuBdqp5UY=*;
+
   integrity="digest/mi-sha256";
+
   validity-url="https://example.com/resource.validity.1511128380";
+
   cert-url="https://example.com/oldcerts";
+
   cert-sha256=*W7uB969dFW3Mb5ZefPS9Tq5ZbH5iSmOILpjv2qEArmI=*;
+
   date=1511128380; expires=1511733180,
+
  sig2;
+
   sig=*MEQCIGjZRqTRf9iKNkGFyzRMTFgwf/BrY2ZNIP/dykhUV0aYAiBTXg+8wujoT4n/W+cNgb7pGqQvIUGYZ8u8HZJ5YH26Qg==*;
+
   integrity="digest/mi-sha256";
+
   validity-url="https://example.com/resource.validity.1511128380";
+
   cert-url="https://example.com/newcerts";
+
   cert-sha256=*J/lEm9kNRODdCmINbvitpvdYKNQ+YgBj99DlYp4fEXw=*;
+
   date=1511128380; expires=1511733180,
+
  srisig;
+
   sig=*lGZVaJJM5f2oGczFlLmBdKTDL+QADza4BgeO494ggACYJOvrof6uh5OJCcwKrk7DK+LBch0jssDYPp5CLc1SDA==*;
+
   integrity="digest/mi-sha256";
+
   validity-url="https://example.com/resource.validity.1511128380";
+
   ed25519key=*zsSevyFsxyZHiUluVBDd4eypdRLTqyWRVOJuuKUz+A8=*
+
   date=1511128380; expires=1511733180,
+
  thirdpartysig;
+
   sig=*MEYCIQCNxJzn6Rh2fNxsobktir8TkiaJYQFhWTuWI1i4PewQaQIhAMs2TVjc4rTshDtXbgQEOwgj2mRXALhfXPztXgPupii+*;
+
   integrity="digest/mi-sha256";
+
   validity-url="https://thirdparty.example.com/resource.validity.1511161860";
+
   cert-url="https://thirdparty.example.com/certs";
+
   cert-sha256=*UeOwUPkvxlGRTyvHcsMUN0A2oNsZbU8EUvg8A9ZAnNc=*;
+
   date=1511133060; expires=1511478660,
+
 </pre>
 <p id="rfc.section.3.1.1.p.2">There are 4 signatures: 2 from different secp256r1 certificates within <samp>https://example.com/</samp>, one using a raw ed25519 public key that&#8217;s also controlled by <samp>example.com</samp>, and a fourth using a secp256r1 certificate owned by <samp>thirdparty.example.com</samp>.</p>
 <p id="rfc.section.3.1.1.p.3">All 4 signatures rely on the <samp>Digest</samp> response header with the mi-sha256 digest algorithm to guard the integrity of the response payload.</p>
@@ -745,42 +776,72 @@ Signature:
 </h1>
 <p id="rfc.section.3.2.1.p.1">Given the HTTP exchange:</p>
 <pre>
+
 GET / HTTP/1.1
+
 Host: example.com
+
 Accept: */*
 
+
+
 HTTP/1.1 200
+
 Content-Type: text/html
+
 Digest: mi-sha256=dcRDgR2GM35DluAV13PzgnG6+pvQwPywfFvAu1UeFrs=
+
 Signed-Headers: "content-type", "digest"
 
+
+
 &lt;!doctype html&gt;
+
 &lt;html&gt;
+
 ...
+
 </pre>
 <p id="rfc.section.3.2.1.p.2">The cbor representation consists of the following item, represented using the extended diagnostic notation from <a href="#CDDL" class="xref">[CDDL]</a> appendix G:</p>
 <pre>
+
 {
+
   'digest': 'mi-sha256=dcRDgR2GM35DluAV13PzgnG6+pvQwPywfFvAu1UeFrs=',
+
   ':status': '200',
+
   'content-type': 'text/html'
+
 }
+
 </pre>
 <h1 id="rfc.section.3.3">
 <a href="#rfc.section.3.3">3.3.</a> <a href="#cert-chain-format" id="cert-chain-format">Loading a certificate chain</a>
 </h1>
 <p id="rfc.section.3.3.p.1">The resource at a signature&#8217;s <samp>cert-url</samp> MUST have the <samp>application/cert-chain+cbor</samp> content type, MUST be canonically-encoded CBOR (<a href="#canonical-cbor" class="xref">Section 3.4</a>), and MUST match the following CDDL:</p>
 <pre>
+
 cert-chain = [
+
   "&#128220;&#9939;", ; U+1F4DC U+26D3
+
   + augmented-certificate
+
 ]
+
 augmented-certificate = {
+
   cert: bytes,
+
   ? ocsp: bytes,
+
   ? sct: bytes,
+
   * tstr =&gt; any,
+
 }
+
 </pre>
 <p id="rfc.section.3.3.p.2">The first map (second item) in the CBOR array is treated as the end-entity certificate, and the client will attempt to build a path (<a href="#RFC5280" class="xref">[RFC5280]</a>) to it from a trusted root using the other certificates in the chain.</p>
 <p></p>
@@ -913,12 +974,19 @@ augmented-certificate = {
 <p id="rfc.section.3.6.p.4">Each version of a signed exchange SHOULD have its own validity URLs, since each version needs different signatures and becomes obsolete at different times.</p>
 <p id="rfc.section.3.6.p.5">The resource at a &#8220;validity-url&#8221; is &#8220;validity data&#8221;, a CBOR map matching the following CDDL (<a href="#CDDL" class="xref">[CDDL]</a>):</p>
 <pre>
+
 validity = {
+
   ? signatures: [ + bytes ]
+
   ? update: {
+
     ? size: uint,
+
   }
+
 ]
+
 </pre>
 <p id="rfc.section.3.6.p.6">The elements of the <samp>signatures</samp> array are parameterised identifiers (Section 4.2.6 of <a href="#I-D.ietf-httpbis-header-structure" class="xref">[I-D.ietf-httpbis-header-structure]</a>) meant to replace the signatures within the <samp>Signature</samp> header field pointing to this validity data. If the signed exchange contains a bug severe enough that clients need to stop using the content, the <samp>signatures</samp> array MUST NOT be present.</p>
 <p id="rfc.section.3.6.p.7">If the the <samp>update</samp> map is present, that indicates that a new version of the signed exchange is available at its effective request URI (Section 5.5 of <a href="#RFC7230" class="xref">[RFC7230]</a>) and can give an estimate of the size of the updated exchange (<samp>update.size</samp>). If the signed exchange is currently the most recent version, the <samp>update</samp> SHOULD NOT be present.</p>
@@ -928,58 +996,107 @@ validity = {
 </h1>
 <p id="rfc.section.3.6.1.p.1">For example, say a signed exchange whose URL is <samp>https://example.com/resource</samp> has the following <samp>Signature</samp> header field (with line breaks included and irrelevant fields omitted for ease of reading).</p>
 <pre>
+
 Signature:
+
  sig1;
+
   sig=*MEUCIQ...*;
+
   ...
+
   validity-url="https://example.com/resource.validity.1511157180";
+
   cert-url="https://example.com/oldcerts";
+
   date=1511128380; expires=1511733180,
+
  sig2;
+
   sig=*MEQCIG...*;
+
   ...
+
   validity-url="https://example.com/resource.validity.1511157180";
+
   cert-url="https://example.com/newcerts";
+
   date=1511128380; expires=1511733180,
+
  thirdpartysig;
+
   sig=*MEYCIQ...*;
+
   ...
+
   validity-url="https://thirdparty.example.com/resource.validity.1511161860";
+
   cert-url="https://thirdparty.example.com/certs";
+
   date=1511478660; expires=1511824260
+
 </pre>
 <p id="rfc.section.3.6.1.p.2">At 2017-11-27 11:02 UTC, <samp>sig1</samp> and <samp>sig2</samp> have expired, but <samp>thirdpartysig</samp> doesn&#8217;t exipire until 23:11 that night, so the client needs to fetch <samp>https://example.com/resource.validity.1511157180</samp> (the <samp>validity-url</samp> of <samp>sig1</samp> and <samp>sig2</samp>) if it wishes to update those signatures. This URL might contain:</p>
 <pre>
+
 {
+
   "signatures": [
+
     'sig1; '
+
     'sig=*MEQCIC/I9Q+7BZFP6cSDsWx43pBAL0ujTbON/+7RwKVk+ba5AiB3FSFLZqpzmDJ0NumNwN04pqgJZE99fcK86UjkPbj4jw==*; '
+
     'validity-url="https://example.com/resource.validity.1511157180"; '
+
     'integrity="digest/mi-sha256"; '
+
     'cert-url="https://example.com/newcerts"; '
+
     'cert-sha256=*J/lEm9kNRODdCmINbvitpvdYKNQ+YgBj99DlYp4fEXw=*; '
+
     'date=1511733180; expires=1512337980'
+
   ],
+
   "update": {
+
     "size": 5557452
+
   }
+
 }
+
 </pre>
 <p id="rfc.section.3.6.1.p.3">This indicates that the client could fetch a newer version at <samp>https://example.com/resource</samp> (the original URL of the exchange), or that the validity period of the old version can be extended by replacing the first two of the original signatures (the ones with a validity-url of <samp>https://example.com/resource.validity.1511157180</samp>) with the single new signature provided. (This might happen at the end of a migration to a new root certificate.) The signatures of the updated signed exchange would be:</p>
 <pre>
+
 Signature:
+
  sig1;
+
   sig=*MEQCIC...*;
+
   ...
+
   validity-url="https://example.com/resource.validity.1511157180";
+
   cert-url="https://example.com/newcerts";
+
   date=1511733180; expires=1512337980,
+
  thirdpartysig;
+
   sig=*MEYCIQ...*;
+
   ...
+
   validity-url="https://thirdparty.example.com/resource.validity.1511161860";
+
   cert-url="https://thirdparty.example.com/certs";
+
   date=1511478660; expires=1511824260
+
 </pre>
 <p><samp>https://example.com/resource.validity.1511157180</samp> could also expand the set of signatures if its <samp>signatures</samp> array contained more than 2 elements.</p>
 <h1 id="rfc.section.3.7">
@@ -989,7 +1106,9 @@ Signature:
 <p id="rfc.section.3.7.p.2">When a server receives an <samp>Accept-Signature</samp> header field in a client request, it SHOULD reply with any available <samp>Signature</samp> header fields for its response that the <samp>Accept-Signature</samp> header field indicates the client supports. However, if the <samp>Accept-Signature</samp> value violates a requirement in this section, the server MUST behave as if it hadn&#8217;t received any <samp>Accept-Signature</samp> header at all.</p>
 <p id="rfc.section.3.7.p.3">The <samp>Accept-Signature</samp> header field is a Structured Header as defined by <a href="#I-D.ietf-httpbis-header-structure" class="xref">[I-D.ietf-httpbis-header-structure]</a>. Its value MUST be a parameterised list (Section 3.4 of <a href="#I-D.ietf-httpbis-header-structure" class="xref">[I-D.ietf-httpbis-header-structure]</a>). Its ABNF is:</p>
 <pre>
+
 Accept-Signature = sh-param-list
+
 </pre>
 <p id="rfc.section.3.7.p.4">The order of identifiers in the <samp>Accept-Signature</samp> list is not significant.  Identifiers, ignoring any initial &#8220;-&#8220; character, MUST NOT be duplicated.</p>
 <p id="rfc.section.3.7.p.5">Each identifier in the <samp>Accept-Signature</samp> header field&#8217;s value indicates that a feature of the <samp>Signature</samp> header field (<a href="#signature-header" class="xref">Section 3.1</a>) is supported. If the identifier begins with a &#8220;-&#8220; character, it instead indicates that the feature named by the rest of the identifier is not supported. Unknown identifiers and parameters MUST be ignored because new identifiers and new parameters on existing identifiers may be defined by future specifications.</p>
@@ -1008,18 +1127,27 @@ Accept-Signature = sh-param-list
 </h1>
 <p id="rfc.section.3.7.3.p.1">The &#8220;ed25519key&#8221; identifier has parameters indicating the public keys that will be used to validate the returned signature. Each parameter&#8217;s name is re-interpreted as a byte sequence (Section 3.10 of <a href="#I-D.ietf-httpbis-header-structure" class="xref">[I-D.ietf-httpbis-header-structure]</a>) encoding a prefix of the public key. For example, if the client will validate signatures using the public key whose base64 encoding is <samp>11qYAYKxCrfVS/7TyWQHOg7hcvPapiMlrwIaaPcHURo=</samp>, valid <samp>Accept-Signature</samp> header fields include:</p>
 <pre>
+
 Accept-Signature: ..., ed25519key; *11qYAYKxCrfVS/7TyWQHOg7hcvPapiMlrwIaaPcHURo=*
+
 Accept-Signature: ..., ed25519key; *11qYAYKxCrfVS/7TyWQHOg==*
+
 Accept-Signature: ..., ed25519key; *11qYAQ==*
+
 Accept-Signature: ..., ed25519key; **
+
 </pre>
 <p id="rfc.section.3.7.3.p.2">but not</p>
 <pre>
+
 Accept-Signature: ..., ed25519key; *11qYA===*
+
 </pre>
 <p id="rfc.section.3.7.3.p.3">because 5 bytes isn&#8217;t a valid length for encoded base64, and not</p>
 <pre>
+
 Accept-Signature: ..., ed25519key; 11qYAQ
+
 </pre>
 <p id="rfc.section.3.7.3.p.4">because it doesn&#8217;t start or end with the <samp>*</samp>s that indicate a byte sequence.</p>
 <p id="rfc.section.3.7.3.p.5">Note that <samp>ed25519key; **</samp> is an empty prefix, which matches all public keys, so it&#8217;s useful in subresource integrity (<a href="#uc-sri" class="xref">Appendix A.3</a>) cases like <samp>&lt;link rel=preload as=script href="..."&gt;</samp> where the public key isn&#8217;t known until the matching <samp>&lt;script src="..." integrity="..."&gt;</samp> tag.</p>
@@ -1027,11 +1155,15 @@ Accept-Signature: ..., ed25519key; 11qYAQ
 <a href="#rfc.section.3.7.4">3.7.4.</a> <a href="#accept-signature-examples" id="accept-signature-examples">Examples</a>
 </h1>
 <pre>
+
 Accept-Signature: digest/mi-sha256
+
 </pre>
 <p id="rfc.section.3.7.4.p.1">states that the client will accept signatures with payload integrity assured by the <samp>Digest</samp> header and <samp>mi-sha256</samp> digest algorithm and implies that the client will accept signatures from ECDSA keys on the secp256r1 curve.</p>
 <pre>
+
 Accept-Signature: -ecdsa/secp256r1, ecdsa/secp384r1
+
 </pre>
 <p id="rfc.section.3.7.4.p.2">states that the client will accept ECDSA keys on the secp384r1 curve but not the secp256r1 curve and payload integrity assured with the <samp>Digest: mi-sha256</samp> header field.</p>
 <h1 id="rfc.section.3.7.5">
@@ -1152,9 +1284,13 @@ Accept-Signature: -ecdsa/secp256r1, ecdsa/secp384r1
 </h1>
 <p id="rfc.section.4.2.p.1">We define a new X.509 extension, CanSignHttpExchanges to be used in the certificate when the certificate permits the usage of signed exchanges.  When this extension is not present the client MUST NOT accept a signature from the certificate as proof that a signed exchange is authoritative for a domain covered by the certificate. When it is present, the client MUST follow the validation procedure in <a href="#cross-origin-trust" class="xref">Section 4</a>.</p>
 <pre>
+
    id-ce-canSignHttpExchanges OBJECT IDENTIFIER ::= { TBD }
 
+
+
    CanSignHttpExchanges ::= NULL
+
 </pre>
 <p id="rfc.section.4.2.p.2">Note that this extension contains an ASN.1 NULL (bytes <samp>05 00</samp>) because some implementations have bugs with empty extensions.</p>
 <p id="rfc.section.4.2.p.3">Leaf certificates without this extension need to be revoked if the private key is exposed to an unauthorized entity, but they generally don&#8217;t need to be revoked if a signing oracle is exposed and then removed.</p>
@@ -1172,8 +1308,11 @@ Accept-Signature: -ecdsa/secp256r1, ecdsa/secp384r1
 <p id="rfc.section.4.2.p.10">Clients MUST NOT accept certificates with this extension in TLS connections (Section 4.4.2.2 of <a href="#RFC8446" class="xref">[RFC8446]</a>).</p>
 <p id="rfc.section.4.2.p.11">RFC EDITOR PLEASE DELETE THE REST OF THE PARAGRAPHS IN THIS SECTION</p>
 <pre>
+
    id-ce-google OBJECT IDENTIFIER ::= { 1 3 6 1 4 1 11129 }
+
    id-ce-canSignHttpExchangesDraft OBJECT IDENTIFIER ::= { id-ce-google 2 1 22 }
+
 </pre>
 <p id="rfc.section.4.2.p.12">Implementations of drafts of this specification MAY recognize the <samp>id-ce-canSignHttpExchangesDraft</samp> OID as identifying the CanSignHttpExchanges extension. This OID might or might not be used as the final OID for the extension, so certificates including it might need to be reissued once the final RFC is published.</p>
 <p id="rfc.section.4.2.p.13">Some certificates have already been issued with this extension and with validity periods longer than 90 days. These certificates will not immediately be treated as invalid. Instead:</p>
@@ -1222,7 +1361,9 @@ Accept-Signature: -ecdsa/secp256r1, ecdsa/secp384r1
 <p id="rfc.section.5.1.2.p.2">This header field appears once instead of being incorporated into the signatures&#8217; parameters because the signed header fields need to be consistent across all signatures of an exchange, to avoid forcing higher-level protocols to merge the header field lists of valid signatures.</p>
 <p><samp>Signed-Headers</samp> is a Structured Header as defined by <a href="#I-D.ietf-httpbis-header-structure" class="xref">[I-D.ietf-httpbis-header-structure]</a>. Its value MUST be a list (Section 3.2 of <a href="#I-D.ietf-httpbis-header-structure" class="xref">[I-D.ietf-httpbis-header-structure]</a>). Its ABNF is:</p>
 <pre>
+
 Signed-Headers = sh-list
+
 </pre>
 <p id="rfc.section.5.1.2.p.4">Each element of the <samp>Signed-Headers</samp> list must be a lowercase string (Section 3.8 of <a href="#I-D.ietf-httpbis-header-structure" class="xref">[I-D.ietf-httpbis-header-structure]</a>) naming an HTTP response header field. Pseudo-header field names (Section 8.1.2.1 of <a href="#RFC7540" class="xref">[RFC7540]</a>) MUST NOT appear in this list.</p>
 <p id="rfc.section.5.1.2.p.5">Higher-level protocols SHOULD place requirements on the minimum set of headers to include in the <samp>Signed-Headers</samp> header field.</p>
@@ -1305,13 +1446,21 @@ Signed-Headers = sh-list
 </h1>
 <p id="rfc.section.5.3.2.p.1">An example <samp>application/signed-exchange</samp> file representing a possible signed exchange with <a href="https://example.com/">https://example.com/</a> follows, with lengths represented by descriptions in <samp>&lt;&gt;</samp>s, CBOR represented in the extended diagnostic format defined in Appendix G of <a href="#CDDL" class="xref">[CDDL]</a>, and most of the <samp>Signature</samp> header field and payload elided with a &#8230;:</p>
 <pre>
+
 sxg1\0\0\0\0&lt;2-byte length of the following url string&gt;
+
 https://example.com/&lt;3-byte length of the following header
+
 value&gt;&lt;3-byte length of the encoding of the
+
 following map&gt;sig1; sig=*...; integrity="digest/mi-sha256"; ...{
+
   ':status': '200',
+
   'content-type': 'text/html'
+
 }&lt;!doctype html&gt;\r\n&lt;html&gt;...
+
 </pre>
 <h1 id="rfc.section.5.3.3">
 <a href="#rfc.section.5.3.3">5.3.3.</a> <a href="#oq-application-signed-exchange" id="oq-application-signed-exchange">Open Questions</a>
@@ -1792,7 +1941,9 @@ following map&gt;sig1; sig=*...; integrity="digest/mi-sha256"; ...{
 <p id="rfc.section.A.1.p.1">To reduce round trips, a server might use HTTP/2 Push (Section 8.2 of <a href="#RFC7540" class="xref">[RFC7540]</a>) to inject a subresource from another server into the client&#8217;s cache. If anything about the subresource is expired or can&#8217;t be verified, the client would fetch it from the original server.</p>
 <p id="rfc.section.A.1.p.2">For example, if <samp>https://example.com/index.html</samp> includes</p>
 <pre>
+
 &lt;script src="https://jquery.com/jquery-1.2.3.min.js"&gt;
+
 </pre>
 <p id="rfc.section.A.1.p.3">Then to avoid the need to look up and connect to <samp>jquery.com</samp> in the critical path, <samp>example.com</samp> might push that resource signed by <samp>jquery.com</samp>.</p>
 <h1 id="rfc.appendix.A.2">
@@ -1800,12 +1951,17 @@ following map&gt;sig1; sig=*...; integrity="digest/mi-sha256"; ...{
 </h1>
 <p id="rfc.section.A.2.p.1">In order to speed up loading but still maintain control over its content, an HTML page in a particular origin <samp>O.com</samp> could tell clients to load its subresources from an intermediate content distributor that&#8217;s not authoritative, but require that those resources be signed by <samp>O.com</samp> so that the distributor couldn&#8217;t modify the resources. This is more constrained than the common CDN case where <samp>O.com</samp> has a CNAME granting the CDN the right to serve arbitrary content as <samp>O.com</samp>.</p>
 <pre>
+
 &lt;img logicalsrc="https://O.com/img.png"
+
      physicalsrc="https://distributor.com/O.com/img.png"&gt;
+
 </pre>
 <p id="rfc.section.A.2.p.2">To make it easier to configure the right distributor for a given request, computation of the <samp>physicalsrc</samp> could be encapsulated in a custom element:</p>
 <pre>
+
 &lt;dist-img src="https://O.com/img.png"&gt;&lt;/dist-img&gt;
+
 </pre>
 <p id="rfc.section.A.2.p.3">where the <samp>&lt;dist-img&gt;</samp> implementation generates an appropriate <samp>&lt;img&gt;</samp> based on, for example, a <samp>&lt;meta name="dist-base"&gt;</samp> tag elsewhere in the page. However, this has the downside that the <a href="https://calendar.perfplanet.com/2013/big-bad-preloader/">preloader</a> can no longer see the physical source to download it. The resulting delay might cancel out the benefit of using a distributor.</p>
 <p id="rfc.section.A.2.p.4">This could be used for some of the same purposes as SRI (<a href="#uc-sri" class="xref">Appendix A.3</a>).</p>
@@ -1927,39 +2083,69 @@ following map&gt;sig1; sig=*...; integrity="digest/mi-sha256"; ...{
 </h1>
 <p id="rfc.section.C.1.p.1">For example, given a stored exchange of:</p>
 <pre>
+
 GET  / HTTP/1.1
+
 Host: example.com
+
 Accept: */*
 
+
+
 HTTP/1.1 200
+
 Date: Mon, 20 Nov 2017 10:00:00 UTC
+
 Content-Type: text/html
+
 Date: Tue, 21 Nov 2017 10:00:00 UTC
+
 Expires: Sun, 26 Nov 2017 10:00:00 UTC
 
+
+
 &lt;!doctype html&gt;
+
 &lt;html&gt;
+
 ...
+
 </pre>
 <p id="rfc.section.C.1.p.2">And an update listing the following headers:</p>
 <pre>
+
 Expires: Fri, 1 Dec 2017 10:00:00 UTC
+
 Date: Sat, 25 Nov 2017 10:00:00 UTC
+
 </pre>
 <p id="rfc.section.C.1.p.3">The resulting stored exchange would be:</p>
 <pre>
+
 GET / HTTP/1.1
+
 Host: example.com
+
 Accept: */*
 
+
+
 HTTP/1.1 200
+
 Content-Type: text/html
+
 Expires: Fri, 1 Dec 2017 10:00:00 UTC
+
 Date: Sat, 25 Nov 2017 10:00:00 UTC
 
+
+
 &lt;!doctype html&gt;
+
 &lt;html&gt;
+
 ...
+
 </pre>
 <h1 id="rfc.appendix.C.2">
 <a href="#rfc.appendix.C.2">C.2.</a> <a href="#downsides-of-cache-control" id="downsides-of-cache-control">Downsides of updating cache control</a>
