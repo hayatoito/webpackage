@@ -296,10 +296,11 @@ ul.toc li {
 <link href="#rfc.section.2.2.4" rel="Chapter" title="2.2.4 Building packages from multiple libraries">
 <link href="#rfc.section.2.2.5" rel="Chapter" title="2.2.5 Cross-CDN Serving">
 <link href="#rfc.section.2.2.6" rel="Chapter" title="2.2.6 Pre-installed applications">
-<link href="#rfc.section.2.2.7" rel="Chapter" title="2.2.7 Installation from a self-extracting executable">
-<link href="#rfc.section.2.2.8" rel="Chapter" title="2.2.8 Packages in version control">
-<link href="#rfc.section.2.2.9" rel="Chapter" title="2.2.9 Subresource bundling">
-<link href="#rfc.section.2.2.10" rel="Chapter" title="2.2.10 Archival">
+<link href="#rfc.section.2.2.7" rel="Chapter" title="2.2.7 Protecting Users from a Compromised Frontend">
+<link href="#rfc.section.2.2.8" rel="Chapter" title="2.2.8 Installation from a self-extracting executable">
+<link href="#rfc.section.2.2.9" rel="Chapter" title="2.2.9 Packages in version control">
+<link href="#rfc.section.2.2.10" rel="Chapter" title="2.2.10 Subresource bundling">
+<link href="#rfc.section.2.2.11" rel="Chapter" title="2.2.11 Archival">
 <link href="#rfc.section.3" rel="Chapter" title="3 Requirements">
 <link href="#rfc.section.3.1" rel="Chapter" title="3.1 Essential">
 <link href="#rfc.section.3.1.1" rel="Chapter" title="3.1.1 Indexed by URL">
@@ -316,19 +317,20 @@ ul.toc li {
 <link href="#rfc.section.3.1.12" rel="Chapter" title="3.1.12 Implementations are hard to get wrong">
 <link href="#rfc.section.3.2" rel="Chapter" title="3.2 Nice to have">
 <link href="#rfc.section.3.2.1" rel="Chapter" title="3.2.1 Streamed loading">
-<link href="#rfc.section.3.2.2" rel="Chapter" title="3.2.2 Additional signatures">
-<link href="#rfc.section.3.2.3" rel="Chapter" title="3.2.3 Binary">
-<link href="#rfc.section.3.2.4" rel="Chapter" title="3.2.4 Deduplication of diamond dependencies">
-<link href="#rfc.section.3.2.5" rel="Chapter" title="3.2.5 Old crypto can be removed">
-<link href="#rfc.section.3.2.6" rel="Chapter" title="3.2.6 Compress transfers">
-<link href="#rfc.section.3.2.7" rel="Chapter" title="3.2.7 Compress stored packages">
-<link href="#rfc.section.3.2.8" rel="Chapter" title="3.2.8 Subsetting and reordering">
-<link href="#rfc.section.3.2.9" rel="Chapter" title="3.2.9 Packaged validity information">
-<link href="#rfc.section.3.2.10" rel="Chapter" title="3.2.10 Signing uses existing TLS certificates">
-<link href="#rfc.section.3.2.11" rel="Chapter" title="3.2.11 External dependencies">
-<link href="#rfc.section.3.2.12" rel="Chapter" title="3.2.12 Trailing length">
-<link href="#rfc.section.3.2.13" rel="Chapter" title="3.2.13 Time-shifting execution">
-<link href="#rfc.section.3.2.14" rel="Chapter" title="3.2.14 Service Worker integration">
+<link href="#rfc.section.3.2.2" rel="Chapter" title="3.2.2 Signing without origin trust">
+<link href="#rfc.section.3.2.3" rel="Chapter" title="3.2.3 Additional signatures">
+<link href="#rfc.section.3.2.4" rel="Chapter" title="3.2.4 Binary">
+<link href="#rfc.section.3.2.5" rel="Chapter" title="3.2.5 Deduplication of diamond dependencies">
+<link href="#rfc.section.3.2.6" rel="Chapter" title="3.2.6 Old crypto can be removed">
+<link href="#rfc.section.3.2.7" rel="Chapter" title="3.2.7 Compress transfers">
+<link href="#rfc.section.3.2.8" rel="Chapter" title="3.2.8 Compress stored packages">
+<link href="#rfc.section.3.2.9" rel="Chapter" title="3.2.9 Subsetting and reordering">
+<link href="#rfc.section.3.2.10" rel="Chapter" title="3.2.10 Packaged validity information">
+<link href="#rfc.section.3.2.11" rel="Chapter" title="3.2.11 Signing uses existing TLS certificates">
+<link href="#rfc.section.3.2.12" rel="Chapter" title="3.2.12 External dependencies">
+<link href="#rfc.section.3.2.13" rel="Chapter" title="3.2.13 Trailing length">
+<link href="#rfc.section.3.2.14" rel="Chapter" title="3.2.14 Time-shifting execution">
+<link href="#rfc.section.3.2.15" rel="Chapter" title="3.2.15 Service Worker integration">
 <link href="#rfc.section.4" rel="Chapter" title="4 Non-goals">
 <link href="#rfc.section.4.1" rel="Chapter" title="4.1 Store confidential data">
 <link href="#rfc.section.4.2" rel="Chapter" title="4.2 Generate packages on the fly">
@@ -347,7 +349,7 @@ ul.toc li {
 
   <meta name="dct.creator" content="Yasskin, J." />
   <meta name="dct.identifier" content="urn:ietf:id:draft-yasskin-webpackage-use-cases-latest" />
-  <meta name="dct.issued" scheme="ISO8601" content="2019-10-29" />
+  <meta name="dct.issued" scheme="ISO8601" content="2019-10-30" />
   <meta name="dct.abstract" content="This document lists use cases for signing and/or bundling collections of web pages, and extracts a set of requirements from them." />
   <meta name="description" content="This document lists use cases for signing and/or bundling collections of web pages, and extracts a set of requirements from them." />
 
@@ -368,10 +370,10 @@ ul.toc li {
 </tr>
 <tr>
 <td class="left">Intended status: Informational</td>
-<td class="right">October 29, 2019</td>
+<td class="right">October 30, 2019</td>
 </tr>
 <tr>
-<td class="left">Expires: May 1, 2020</td>
+<td class="left">Expires: May 2, 2020</td>
 <td class="right"></td>
 </tr>
 
@@ -391,7 +393,7 @@ ul.toc li {
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on May 1, 2020.</p>
+<p>This Internet-Draft will expire on May 2, 2020.</p>
 <h1 id="rfc.copyrightnotice"><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
 <p>Copyright (c) 2019 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
@@ -429,13 +431,15 @@ ul.toc li {
 </li>
 <li>2.2.6.   <a href="#rfc.section.2.2.6">Pre-installed applications</a>
 </li>
-<li>2.2.7.   <a href="#rfc.section.2.2.7">Installation from a self-extracting executable</a>
+<li>2.2.7.   <a href="#rfc.section.2.2.7">Protecting Users from a Compromised Frontend</a>
 </li>
-<li>2.2.8.   <a href="#rfc.section.2.2.8">Packages in version control</a>
+<li>2.2.8.   <a href="#rfc.section.2.2.8">Installation from a self-extracting executable</a>
 </li>
-<li>2.2.9.   <a href="#rfc.section.2.2.9">Subresource bundling</a>
+<li>2.2.9.   <a href="#rfc.section.2.2.9">Packages in version control</a>
 </li>
-<li>2.2.10.   <a href="#rfc.section.2.2.10">Archival</a>
+<li>2.2.10.   <a href="#rfc.section.2.2.10">Subresource bundling</a>
+</li>
+<li>2.2.11.   <a href="#rfc.section.2.2.11">Archival</a>
 </li>
 </ul></ul><li>3.   <a href="#rfc.section.3">Requirements</a>
 </li>
@@ -469,31 +473,33 @@ ul.toc li {
 </li>
 <ul><li>3.2.1.   <a href="#rfc.section.3.2.1">Streamed loading</a>
 </li>
-<li>3.2.2.   <a href="#rfc.section.3.2.2">Additional signatures</a>
+<li>3.2.2.   <a href="#rfc.section.3.2.2">Signing without origin trust</a>
 </li>
-<li>3.2.3.   <a href="#rfc.section.3.2.3">Binary</a>
+<li>3.2.3.   <a href="#rfc.section.3.2.3">Additional signatures</a>
 </li>
-<li>3.2.4.   <a href="#rfc.section.3.2.4">Deduplication of diamond dependencies</a>
+<li>3.2.4.   <a href="#rfc.section.3.2.4">Binary</a>
 </li>
-<li>3.2.5.   <a href="#rfc.section.3.2.5">Old crypto can be removed</a>
+<li>3.2.5.   <a href="#rfc.section.3.2.5">Deduplication of diamond dependencies</a>
 </li>
-<li>3.2.6.   <a href="#rfc.section.3.2.6">Compress transfers</a>
+<li>3.2.6.   <a href="#rfc.section.3.2.6">Old crypto can be removed</a>
 </li>
-<li>3.2.7.   <a href="#rfc.section.3.2.7">Compress stored packages</a>
+<li>3.2.7.   <a href="#rfc.section.3.2.7">Compress transfers</a>
 </li>
-<li>3.2.8.   <a href="#rfc.section.3.2.8">Subsetting and reordering</a>
+<li>3.2.8.   <a href="#rfc.section.3.2.8">Compress stored packages</a>
 </li>
-<li>3.2.9.   <a href="#rfc.section.3.2.9">Packaged validity information</a>
+<li>3.2.9.   <a href="#rfc.section.3.2.9">Subsetting and reordering</a>
 </li>
-<li>3.2.10.   <a href="#rfc.section.3.2.10">Signing uses existing TLS certificates</a>
+<li>3.2.10.   <a href="#rfc.section.3.2.10">Packaged validity information</a>
 </li>
-<li>3.2.11.   <a href="#rfc.section.3.2.11">External dependencies</a>
+<li>3.2.11.   <a href="#rfc.section.3.2.11">Signing uses existing TLS certificates</a>
 </li>
-<li>3.2.12.   <a href="#rfc.section.3.2.12">Trailing length</a>
+<li>3.2.12.   <a href="#rfc.section.3.2.12">External dependencies</a>
 </li>
-<li>3.2.13.   <a href="#rfc.section.3.2.13">Time-shifting execution</a>
+<li>3.2.13.   <a href="#rfc.section.3.2.13">Trailing length</a>
 </li>
-<li>3.2.14.   <a href="#rfc.section.3.2.14">Service Worker integration</a>
+<li>3.2.14.   <a href="#rfc.section.3.2.14">Time-shifting execution</a>
+</li>
+<li>3.2.15.   <a href="#rfc.section.3.2.15">Service Worker integration</a>
 </li>
 </ul></ul><li>4.   <a href="#rfc.section.4">Non-goals</a>
 </li>
@@ -753,26 +759,44 @@ ul.toc li {
 <ul><li>
 <a href="#service-worker-integration" class="xref">Service Worker integration</a>: To pass the package into the <samp>install</samp> event and from there get its contents into a <samp>Cache</samp>.</li></ul>
 <h1 id="rfc.section.2.2.7">
-<a href="#rfc.section.2.2.7">2.2.7.</a> <a href="#self-extracting" id="self-extracting">Installation from a self-extracting executable</a>
+<a href="#rfc.section.2.2.7">2.2.7.</a> <a href="#compromised-frontend" id="compromised-frontend">Protecting Users from a Compromised Frontend</a>
 </h1>
-<p id="rfc.section.2.2.7.p.1">The Node and Electron communities would like to install packages using self-extracting executables. The traditional way to design a self-extracting executable is to concatenate the package to the end of the executable, have the executable look for a length at its own end, and seek backwards from there for the start of the package.</p>
-<p id="rfc.section.2.2.7.p.2">Associated requirements:</p>
+<p id="rfc.section.2.2.7.p.1">If an attacker gains control over a frontend server, any user who visits that server while they have control can have their web app upgraded to a hostile version. On the other hand, native applications either control their own update process or delegate it to an app store, which allows them to protect users by requiring that updates are signed by a trusted key. This protection isn&#8217;t perfect&#8212;it&#8217;s a Trust-On-First-Use mechanism that doesn&#8217;t protect users who first install the application while the attacker controls the server they get it from, and attackers can bypass it by compromising the app&#8217;s build system&#8212;but since both of those risks also apply to web apps, it does make the attack surface for native applications smaller than for web apps.</p>
+<p id="rfc.section.2.2.7.p.2">Not all application developers should choose to require signed updates, since doing so adds the risk of losing the signing key, but having this option gives security-sensitive applications like <a href="https://app.dashlane.com/">Dashlane</a> an incentive to build native apps instead of web apps.</p>
+<p id="rfc.section.2.2.7.p.3">It has been difficult to add a signature requirement for web app upgrades because we haven&#8217;t had a way to sign web resources. Web Packaging is expected to provide that, so we&#8217;ll be able to consider the best way to do it.</p>
+<p id="rfc.section.2.2.7.p.4">Both HTTP Strict Transport Security (HSTS, <a href="#RFC6797" class="xref">[RFC6797]</a>) and HTTP Public Key Pinning (HPKP, <a href="#RFC7469" class="xref">[RFC7469]</a>) have established ways to pin assertions about a site&#8217;s security for a bounded time after a visit. We could do the same with a web app&#8217;s signing key.</p>
+<p id="rfc.section.2.2.7.p.5">Note that HPKP <a href="https://groups.google.com/a/chromium.org/d/topic/blink-dev/he9tr7p3rZ8/discussion">has been turned off in Chromium</a> because it was difficult to use and made it too easy to &#8220;brick&#8221; a website. To reduce the chance of bricking the website, this key pinning design could require an active Service Worker before enforcing the pins. It could also allow a new key to be used if it&#8217;s seen consistently for a particular amount of time, instead of waiting for the whole pin to expire, to prevent users from needing to take manual action. However, these mitigations don&#8217;t guarantee that browsers would find the tradeoffs more acceptable than they did for HPKP.</p>
+<p id="rfc.section.2.2.7.p.6">One can think of a CDN as a potentially-compromised frontend and use this mechanism to limit the damage it can cause. However, this doesn&#8217;t make it safe to use a wholly-untrustworthy CDN because of the risk to first-time users.</p>
+<p id="rfc.section.2.2.7.p.7">Associated requirements:</p>
 <p></p>
 
-<ul><li><a href="#trailing-length" class="xref">Trailing length</a></li></ul>
+<ul>
+<li>
+<a href="#non-origin-signatures" class="xref">Signing without origin trust</a>: To let a backend system vouch for the content. This would likely be augmented with origin trust by receiving the signed content over TLS.</li>
+<li>
+<a href="#streamed-loading" class="xref">Streamed loading</a>: To get optimal performance, the browser should be able to start loading early parts of a resource before the server finishes sending the whole resource.</li>
+</ul>
 <h1 id="rfc.section.2.2.8">
-<a href="#rfc.section.2.2.8">2.2.8.</a> <a href="#version-control" id="version-control">Packages in version control</a>
+<a href="#rfc.section.2.2.8">2.2.8.</a> <a href="#self-extracting" id="self-extracting">Installation from a self-extracting executable</a>
 </h1>
-<p id="rfc.section.2.2.8.p.1">Once packages are generated, they should be stored in version control. Many popular VC systems auto-detect text files in order to &#8220;fix&#8221; their line endings.  If the first bytes of a package look like text, while later bytes store binary data, VC may break the package.</p>
+<p id="rfc.section.2.2.8.p.1">The Node and Electron communities would like to install packages using self-extracting executables. The traditional way to design a self-extracting executable is to concatenate the package to the end of the executable, have the executable look for a length at its own end, and seek backwards from there for the start of the package.</p>
 <p id="rfc.section.2.2.8.p.2">Associated requirements:</p>
 <p></p>
 
-<ul><li><a href="#binary" class="xref">Binary</a></li></ul>
+<ul><li><a href="#trailing-length" class="xref">Trailing length</a></li></ul>
 <h1 id="rfc.section.2.2.9">
-<a href="#rfc.section.2.2.9">2.2.9.</a> <a href="#bundling" id="bundling">Subresource bundling</a>
+<a href="#rfc.section.2.2.9">2.2.9.</a> <a href="#version-control" id="version-control">Packages in version control</a>
 </h1>
-<p id="rfc.section.2.2.9.p.1">Text based subresources often benefit from improved compression ratios when bundled together.</p>
-<p id="rfc.section.2.2.9.p.2">At the same time, the current practice of JS and CSS bundling, by compiling everything into a single JS file, also has negative side-effects:</p>
+<p id="rfc.section.2.2.9.p.1">Once packages are generated, they should be stored in version control. Many popular VC systems auto-detect text files in order to &#8220;fix&#8221; their line endings.  If the first bytes of a package look like text, while later bytes store binary data, VC may break the package.</p>
+<p id="rfc.section.2.2.9.p.2">Associated requirements:</p>
+<p></p>
+
+<ul><li><a href="#binary" class="xref">Binary</a></li></ul>
+<h1 id="rfc.section.2.2.10">
+<a href="#rfc.section.2.2.10">2.2.10.</a> <a href="#bundling" id="bundling">Subresource bundling</a>
+</h1>
+<p id="rfc.section.2.2.10.p.1">Text based subresources often benefit from improved compression ratios when bundled together.</p>
+<p id="rfc.section.2.2.10.p.2">At the same time, the current practice of JS and CSS bundling, by compiling everything into a single JS file, also has negative side-effects:</p>
 <p></p>
 
 <ol>
@@ -780,9 +804,9 @@ ul.toc li {
 <li>Loss of caching granularity - Modification of <em>any</em> of the resources results in caching invalidation of <em>all</em> of them.</li>
 <li>Loss of module semantics - ES6 modules must be delivered as independent resources. Therefore, current bundling methods, which deliver them with other resources under a common URL, require transpilation to ES5 and result in loss of ES6 module semantics.</li>
 </ol>
-<p id="rfc.section.2.2.9.p.4">An on-the-fly readable packaging format, that will enable resources to maintain their own URLs while being physically delivered with other resources, can resolve the above downsides while keeping the upsides of improved compression ratios.</p>
-<p id="rfc.section.2.2.9.p.5">To improve cache granularity, the client needs to tell the server which versions of which resources are already cached, which it could do with a Service Worker or perhaps with <a href="#I-D.ietf-httpbis-cache-digest" class="xref">[I-D.ietf-httpbis-cache-digest]</a>.</p>
-<p id="rfc.section.2.2.9.p.6">Associated requirements:</p>
+<p id="rfc.section.2.2.10.p.4">An on-the-fly readable packaging format, that will enable resources to maintain their own URLs while being physically delivered with other resources, can resolve the above downsides while keeping the upsides of improved compression ratios.</p>
+<p id="rfc.section.2.2.10.p.5">To improve cache granularity, the client needs to tell the server which versions of which resources are already cached, which it could do with a Service Worker or perhaps with <a href="#I-D.ietf-httpbis-cache-digest" class="xref">[I-D.ietf-httpbis-cache-digest]</a>.</p>
+<p id="rfc.section.2.2.10.p.6">Associated requirements:</p>
 <p></p>
 
 <ul>
@@ -796,12 +820,12 @@ ul.toc li {
 <li>
 <a href="#unsigned-content" class="xref">Unsigned content</a>: Signing same-origin content wastes space.</li>
 </ul>
-<h1 id="rfc.section.2.2.10">
-<a href="#rfc.section.2.2.10">2.2.10.</a> <a href="#archival" id="archival">Archival</a>
+<h1 id="rfc.section.2.2.11">
+<a href="#rfc.section.2.2.11">2.2.11.</a> <a href="#archival" id="archival">Archival</a>
 </h1>
-<p id="rfc.section.2.2.10.p.1">Existing formats like WARC (<a href="#ISO28500" class="xref">[ISO28500]</a>) do a good job of accurately representing the state of a web server at a particular time, but a browser can&#8217;t currently use them to give a person the experience of that website at the time it was archived. It&#8217;s not obvious to the author of this draft that a new packaging format is likely to improve on WARC, compared to, for example, implementing support for WARC in browsers, but folks who know about archiving seem interested, e.g.: <a href="https://twitter.com/anjacks0n/status/950861384266416134">https://twitter.com/anjacks0n/status/950861384266416134</a>.</p>
-<p id="rfc.section.2.2.10.p.2">Because of the time scales involved in archival, any signatures from the original host would likely not be trusted anymore by the time the archive is viewed, so implementations would need to sandbox the content instead of running it on the original origin.</p>
-<p id="rfc.section.2.2.10.p.3">Associated requirements:</p>
+<p id="rfc.section.2.2.11.p.1">Existing formats like WARC (<a href="#ISO28500" class="xref">[ISO28500]</a>) do a good job of accurately representing the state of a web server at a particular time, but a browser can&#8217;t currently use them to give a person the experience of that website at the time it was archived. It&#8217;s not obvious to the author of this draft that a new packaging format is likely to improve on WARC, compared to, for example, implementing support for WARC in browsers, but folks who know about archiving seem interested, e.g.: <a href="https://twitter.com/anjacks0n/status/950861384266416134">https://twitter.com/anjacks0n/status/950861384266416134</a>.</p>
+<p id="rfc.section.2.2.11.p.2">Because of the time scales involved in archival, any signatures from the original host would likely not be trusted anymore by the time the archive is viewed, so implementations would need to sandbox the content instead of running it on the original origin.</p>
+<p id="rfc.section.2.2.11.p.3">Associated requirements:</p>
 <p></p>
 
 <ul>
@@ -837,10 +861,9 @@ ul.toc li {
 <a href="#rfc.section.3.1.4">3.1.4.</a> <a href="#signing" id="signing">Signing as an origin</a>
 </h1>
 <p id="rfc.section.3.1.4.p.1">Resources within a package are provably from an entity with the ability to serve HTTPS requests for those resources&#8217; origin <a href="#RFC6454" class="xref">[RFC6454]</a>.</p>
-<p id="rfc.section.3.1.4.p.2">Resources within a package are provably from an entity with the ability to serve HTTPS requests for those resources&#8217; origin <a href="#RFC6454" class="xref">[RFC6454]</a>.</p>
-<p id="rfc.section.3.1.4.p.3">Note that previous attempts to sign HTTP messages (<a href="#I-D.thomson-http-content-signature" class="xref">[I-D.thomson-http-content-signature]</a>, <a href="#I-D.burke-content-signature" class="xref">[I-D.burke-content-signature]</a>, and <a href="#I-D.cavage-http-signatures" class="xref">[I-D.cavage-http-signatures]</a>) omit a description of how a client should use a signature to prove that a resource comes from a particular origin, and they&#8217;re probably not usable for that purpose.</p>
-<p id="rfc.section.3.1.4.p.4">This would require an extension to the <a href="#ZIP" class="xref">[ZIP]</a> format, similar to <a href="#JAR" class="xref">[JAR]</a>&#8217;s signatures.</p>
-<p id="rfc.section.3.1.4.p.5">In any cryptographic system, the specification is responsible to make correct implementations easier to deploy than incorrect implementations (<a href="#easy-implementation" class="xref">Section 3.1.12</a>).</p>
+<p id="rfc.section.3.1.4.p.2">Note that previous attempts to sign HTTP messages (<a href="#I-D.thomson-http-content-signature" class="xref">[I-D.thomson-http-content-signature]</a>, <a href="#I-D.burke-content-signature" class="xref">[I-D.burke-content-signature]</a>, and <a href="#I-D.cavage-http-signatures" class="xref">[I-D.cavage-http-signatures]</a>) omit a description of how a client should use a signature to prove that a resource comes from a particular origin, and they&#8217;re probably not usable for that purpose.</p>
+<p id="rfc.section.3.1.4.p.3">This would require an extension to the <a href="#ZIP" class="xref">[ZIP]</a> format, similar to <a href="#JAR" class="xref">[JAR]</a>&#8217;s signatures.</p>
+<p id="rfc.section.3.1.4.p.4">In any cryptographic system, the specification is responsible to make correct implementations easier to deploy than incorrect implementations (<a href="#easy-implementation" class="xref">Section 3.1.12</a>).</p>
 <h1 id="rfc.section.3.1.5">
 <a href="#rfc.section.3.1.5">3.1.5.</a> <a href="#random-access" id="random-access">Random access</a>
 </h1>
@@ -854,7 +877,7 @@ ul.toc li {
 <a href="#rfc.section.3.1.7">3.1.7.</a> <a href="#crypto-agility" id="crypto-agility">Cryptographic agility</a>
 </h1>
 <p id="rfc.section.3.1.7.p.1">Obsolete cryptographic algorithms can be replaced.</p>
-<p id="rfc.section.3.1.7.p.2">Planning to upgrade the cryptography also means we should include some way to know when it&#8217;s safe to remove old cryptography (<a href="#crypto-removal" class="xref">Section 3.2.5</a>).</p>
+<p id="rfc.section.3.1.7.p.2">Planning to upgrade the cryptography also means we should include some way to know when it&#8217;s safe to remove old cryptography (<a href="#crypto-removal" class="xref">Section 3.2.6</a>).</p>
 <h1 id="rfc.section.3.1.8">
 <a href="#rfc.section.3.1.8">3.1.8.</a> <a href="#unsigned-content" id="unsigned-content">Unsigned content</a>
 </h1>
@@ -892,60 +915,64 @@ ul.toc li {
 <p id="rfc.section.3.2.1.p.1">The browser can load a package as it downloads.</p>
 <p id="rfc.section.3.2.1.p.2">This conflicts with ZIP, since ZIP&#8217;s index is at the end.</p>
 <h1 id="rfc.section.3.2.2">
-<a href="#rfc.section.3.2.2">3.2.2.</a> <a href="#additional-signatures" id="additional-signatures">Additional signatures</a>
+<a href="#rfc.section.3.2.2">3.2.2.</a> <a href="#non-origin-signatures" id="non-origin-signatures">Signing without origin trust</a>
 </h1>
-<p id="rfc.section.3.2.2.p.1">Third-parties can vouch for packages by signing them.</p>
+<p id="rfc.section.3.2.2.p.1">It&#8217;s possible to sign a resource with a key that has some effect on trust other than asserting that the origin&#8217;s owner vouches for it. These keys could be expressed as raw public keys or as certificates with other key usages.</p>
 <h1 id="rfc.section.3.2.3">
-<a href="#rfc.section.3.2.3">3.2.3.</a> <a href="#binary" id="binary">Binary</a>
+<a href="#rfc.section.3.2.3">3.2.3.</a> <a href="#additional-signatures" id="additional-signatures">Additional signatures</a>
 </h1>
-<p id="rfc.section.3.2.3.p.1">The format is identified as binary by tools that might try to &#8220;fix&#8221; line endings.</p>
-<p id="rfc.section.3.2.3.p.2">This conflicts with using an <a href="#MHTML" class="xref">[MHTML]</a>-based format.</p>
+<p id="rfc.section.3.2.3.p.1">Third-parties can vouch for packages by signing them.</p>
 <h1 id="rfc.section.3.2.4">
-<a href="#rfc.section.3.2.4">3.2.4.</a> <a href="#deduplication" id="deduplication">Deduplication of diamond dependencies</a>
+<a href="#rfc.section.3.2.4">3.2.4.</a> <a href="#binary" id="binary">Binary</a>
 </h1>
-<p id="rfc.section.3.2.4.p.1">Nested packages that have multiple dependency routes to the same sub-package, can be transmitted and stored with only one copy of that sub-package.</p>
+<p id="rfc.section.3.2.4.p.1">The format is identified as binary by tools that might try to &#8220;fix&#8221; line endings.</p>
+<p id="rfc.section.3.2.4.p.2">This conflicts with using an <a href="#MHTML" class="xref">[MHTML]</a>-based format.</p>
 <h1 id="rfc.section.3.2.5">
-<a href="#rfc.section.3.2.5">3.2.5.</a> <a href="#crypto-removal" id="crypto-removal">Old crypto can be removed</a>
+<a href="#rfc.section.3.2.5">3.2.5.</a> <a href="#deduplication" id="deduplication">Deduplication of diamond dependencies</a>
 </h1>
-<p id="rfc.section.3.2.5.p.1">The ecosystem can identify when an obsolete cryptographic algorithm is no longer needed and can be removed.</p>
+<p id="rfc.section.3.2.5.p.1">Nested packages that have multiple dependency routes to the same sub-package, can be transmitted and stored with only one copy of that sub-package.</p>
 <h1 id="rfc.section.3.2.6">
-<a href="#rfc.section.3.2.6">3.2.6.</a> <a href="#transfer-compression" id="transfer-compression">Compress transfers</a>
+<a href="#rfc.section.3.2.6">3.2.6.</a> <a href="#crypto-removal" id="crypto-removal">Old crypto can be removed</a>
 </h1>
-<p id="rfc.section.3.2.6.p.1">Transferring a package over the network takes as few bytes as possible. This is an easier problem than <a href="#stored-compression" class="xref">Compress stored packages</a> since it doesn&#8217;t have to preserve <a href="#random-access" class="xref">Random access</a>.</p>
+<p id="rfc.section.3.2.6.p.1">The ecosystem can identify when an obsolete cryptographic algorithm is no longer needed and can be removed.</p>
 <h1 id="rfc.section.3.2.7">
-<a href="#rfc.section.3.2.7">3.2.7.</a> <a href="#stored-compression" id="stored-compression">Compress stored packages</a>
+<a href="#rfc.section.3.2.7">3.2.7.</a> <a href="#transfer-compression" id="transfer-compression">Compress transfers</a>
 </h1>
-<p id="rfc.section.3.2.7.p.1">Storing a package on disk takes as few bytes as possible.</p>
+<p id="rfc.section.3.2.7.p.1">Transferring a package over the network takes as few bytes as possible. This is an easier problem than <a href="#stored-compression" class="xref">Compress stored packages</a> since it doesn&#8217;t have to preserve <a href="#random-access" class="xref">Random access</a>.</p>
 <h1 id="rfc.section.3.2.8">
-<a href="#rfc.section.3.2.8">3.2.8.</a> <a href="#subsetting" id="subsetting">Subsetting and reordering</a>
+<a href="#rfc.section.3.2.8">3.2.8.</a> <a href="#stored-compression" id="stored-compression">Compress stored packages</a>
 </h1>
-<p id="rfc.section.3.2.8.p.1">Resources can be removed from and reordered within a package, without breaking <a href="#signing" class="xref">signatures</a>.</p>
+<p id="rfc.section.3.2.8.p.1">Storing a package on disk takes as few bytes as possible.</p>
 <h1 id="rfc.section.3.2.9">
-<a href="#rfc.section.3.2.9">3.2.9.</a> <a href="#packaged-validity" id="packaged-validity">Packaged validity information</a>
+<a href="#rfc.section.3.2.9">3.2.9.</a> <a href="#subsetting" id="subsetting">Subsetting and reordering</a>
+</h1>
+<p id="rfc.section.3.2.9.p.1">Resources can be removed from and reordered within a package, without breaking <a href="#signing" class="xref">signatures</a>.</p>
+<h1 id="rfc.section.3.2.10">
+<a href="#rfc.section.3.2.10">3.2.10.</a> <a href="#packaged-validity" id="packaged-validity">Packaged validity information</a>
 </h1>
 <p><a href="#revocation" class="xref">Certificate revocation</a> and <a href="#no-downgrades" class="xref">Downgrade prevention</a> information can itself be packaged or included in other packages.</p>
-<h1 id="rfc.section.3.2.10">
-<a href="#rfc.section.3.2.10">3.2.10.</a> <a href="#existing-certs" id="existing-certs">Signing uses existing TLS certificates</a>
-</h1>
-<p id="rfc.section.3.2.10.p.1">A &#8220;normal&#8221; TLS certificate can be used for signing packages. Avoiding extra requirements like &#8220;code signing&#8221; certificates makes packaging more accessible to all sites.</p>
 <h1 id="rfc.section.3.2.11">
-<a href="#rfc.section.3.2.11">3.2.11.</a> <a href="#external-dependencies" id="external-dependencies">External dependencies</a>
+<a href="#rfc.section.3.2.11">3.2.11.</a> <a href="#existing-certs" id="existing-certs">Signing uses existing TLS certificates</a>
 </h1>
-<p id="rfc.section.3.2.11.p.1">Sub-packages can be &#8220;external&#8221; to the main package, meaning the browser will need to either fetch them separately or already have them.  (<a href="https://github.com/WICG/webpackage/issues/35">#35, App Installer Story</a>)</p>
+<p id="rfc.section.3.2.11.p.1">A &#8220;normal&#8221; TLS certificate can be used for signing packages. Avoiding extra requirements like &#8220;code signing&#8221; certificates makes packaging more accessible to all sites.</p>
 <h1 id="rfc.section.3.2.12">
-<a href="#rfc.section.3.2.12">3.2.12.</a> <a href="#trailing-length" id="trailing-length">Trailing length</a>
+<a href="#rfc.section.3.2.12">3.2.12.</a> <a href="#external-dependencies" id="external-dependencies">External dependencies</a>
 </h1>
-<p id="rfc.section.3.2.12.p.1">The package&#8217;s length in bytes appears a fixed offset from the end of the package.</p>
-<p id="rfc.section.3.2.12.p.2">This conflicts with <a href="#MHTML" class="xref">[MHTML]</a>.</p>
+<p id="rfc.section.3.2.12.p.1">Sub-packages can be &#8220;external&#8221; to the main package, meaning the browser will need to either fetch them separately or already have them.  (<a href="https://github.com/WICG/webpackage/issues/35">#35, App Installer Story</a>)</p>
 <h1 id="rfc.section.3.2.13">
-<a href="#rfc.section.3.2.13">3.2.13.</a> <a href="#timeshifting" id="timeshifting">Time-shifting execution</a>
+<a href="#rfc.section.3.2.13">3.2.13.</a> <a href="#trailing-length" id="trailing-length">Trailing length</a>
 </h1>
-<p id="rfc.section.3.2.13.p.1">In some unsigned packages, Javascript time-telling functions should return the timestamp of the package, rather than the true current time.</p>
-<p id="rfc.section.3.2.13.p.2">We should explore if this has security implications.</p>
+<p id="rfc.section.3.2.13.p.1">The package&#8217;s length in bytes appears a fixed offset from the end of the package.</p>
+<p id="rfc.section.3.2.13.p.2">This conflicts with <a href="#MHTML" class="xref">[MHTML]</a>.</p>
 <h1 id="rfc.section.3.2.14">
-<a href="#rfc.section.3.2.14">3.2.14.</a> <a href="#service-worker-integration" id="service-worker-integration">Service Worker integration</a>
+<a href="#rfc.section.3.2.14">3.2.14.</a> <a href="#timeshifting" id="timeshifting">Time-shifting execution</a>
 </h1>
-<p id="rfc.section.3.2.14.p.1">When a web page inside a package registers a Service Worker, that Service Worker&#8217;s <samp>install</samp> event should receive a reference to the full package, with a way to copy the package&#8217;s contents into a <samp>Cache</samp> object.  (<a href="#ServiceWorkers" class="xref">[ServiceWorkers]</a>)</p>
+<p id="rfc.section.3.2.14.p.1">In some unsigned packages, Javascript time-telling functions should return the timestamp of the package, rather than the true current time.</p>
+<p id="rfc.section.3.2.14.p.2">We should explore if this has security implications.</p>
+<h1 id="rfc.section.3.2.15">
+<a href="#rfc.section.3.2.15">3.2.15.</a> <a href="#service-worker-integration" id="service-worker-integration">Service Worker integration</a>
+</h1>
+<p id="rfc.section.3.2.15.p.1">When a web page inside a package registers a Service Worker, that Service Worker&#8217;s <samp>install</samp> event should receive a reference to the full package, with a way to copy the package&#8217;s contents into a <samp>Cache</samp> object.  (<a href="#ServiceWorkers" class="xref">[ServiceWorkers]</a>)</p>
 <h1 id="rfc.section.4">
 <a href="#rfc.section.4">4.</a> <a href="#non-goals" id="non-goals">Non-goals</a>
 </h1>
@@ -1062,9 +1089,19 @@ ul.toc li {
 <a>Barth, A.</a>, "<a href="https://tools.ietf.org/html/rfc6454">The Web Origin Concept</a>", RFC 6454, DOI 10.17487/RFC6454, December 2011.</td>
 </tr>
 <tr>
+<td class="reference"><b id="RFC6797">[RFC6797]</b></td>
+<td class="top">
+<a>Hodges, J.</a>, <a>Jackson, C.</a> and <a>A. Barth</a>, "<a href="https://tools.ietf.org/html/rfc6797">HTTP Strict Transport Security (HSTS)</a>", RFC 6797, DOI 10.17487/RFC6797, November 2012.</td>
+</tr>
+<tr>
 <td class="reference"><b id="RFC6962">[RFC6962]</b></td>
 <td class="top">
 <a>Laurie, B.</a>, <a>Langley, A.</a> and <a>E. Kasper</a>, "<a href="https://tools.ietf.org/html/rfc6962">Certificate Transparency</a>", RFC 6962, DOI 10.17487/RFC6962, June 2013.</td>
+</tr>
+<tr>
+<td class="reference"><b id="RFC7469">[RFC7469]</b></td>
+<td class="top">
+<a>Evans, C.</a>, <a>Palmer, C.</a> and <a>R. Sleevi</a>, "<a href="https://tools.ietf.org/html/rfc7469">Public Key Pinning Extension for HTTP</a>", RFC 7469, DOI 10.17487/RFC7469, April 2015.</td>
 </tr>
 <tr>
 <td class="reference"><b id="RFC7515">[RFC7515]</b></td>
