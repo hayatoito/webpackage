@@ -5,7 +5,7 @@
 Network Working Group                                         J. Yasskin
 Internet-Draft                                               K. Sakamoto
 Intended status: Standards Track                                  Google
-Expires: May 3, 2020                                    October 31, 2019
+Expires: May 4, 2020                                   November 01, 2019
 
 
             Signed HTTP Exchanges Implementation Checkpoints
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on May 3, 2020.
+   This Internet-Draft will expire on May 4, 2020.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                  [Page 1]
+Yasskin & Sakamoto         Expires May 4, 2020                  [Page 1]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
    (https://trustee.ietf.org/license-info) in effect on the date of
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                  [Page 2]
+Yasskin & Sakamoto         Expires May 4, 2020                  [Page 2]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
 1.  Introduction
@@ -165,9 +165,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                  [Page 3]
+Yasskin & Sakamoto         Expires May 4, 2020                  [Page 3]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
 3.  Signing an exchange
@@ -221,9 +221,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                  [Page 4]
+Yasskin & Sakamoto         Expires May 4, 2020                  [Page 4]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
    "integrity"  A string (Section 3.8 of
@@ -277,9 +277,9 @@ Signature:
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                  [Page 5]
+Yasskin & Sakamoto         Expires May 4, 2020                  [Page 5]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
    The signature includes a "validity-url" that includes the first time
@@ -333,9 +333,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                  [Page 6]
+Yasskin & Sakamoto         Expires May 4, 2020                  [Page 6]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
   {
@@ -389,9 +389,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                  [Page 7]
+Yasskin & Sakamoto         Expires May 4, 2020                  [Page 7]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
    2.  Let "certificate-chain" be the array of certificates and
@@ -445,9 +445,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                  [Page 8]
+Yasskin & Sakamoto         Expires May 4, 2020                  [Page 8]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
 3.5.  Signature validity
@@ -501,9 +501,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                  [Page 9]
+Yasskin & Sakamoto         Expires May 4, 2020                  [Page 9]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
         *  "cert-url" be the signature's "cert-url" parameter, if any.
@@ -557,9 +557,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 10]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 10]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
         2.  A context string: the ASCII encoding of "HTTP Exchange 1
@@ -613,9 +613,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 11]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 11]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
         Type-Options: nosniff" header field ([FETCH]) to the extracted
@@ -669,9 +669,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 12]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 12]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
    validity = {
@@ -725,9 +725,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 13]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 13]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
 {
@@ -781,9 +781,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 14]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 14]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
    The client MUST parse the "Signature" header into a list of
@@ -837,9 +837,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 15]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 15]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
            Note that this does not check for revocation of intermediate
@@ -893,9 +893,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 16]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 16]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
 4.1.1.  Stateful header fields
@@ -949,9 +949,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 17]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 17]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
       CanSignHttpExchanges ::= NULL
@@ -1005,9 +1005,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 18]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 18]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
    o  Clients MUST reject certificates with this extension that were
@@ -1061,9 +1061,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 19]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 19]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
        they match and, if they don't, either stop parsing or redirect to
@@ -1117,9 +1117,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 20]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 20]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
 5.3.2.  Content negotiation
@@ -1173,9 +1173,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 21]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 21]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
    For non-executable resource types, a signed response can improve the
@@ -1229,9 +1229,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 22]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 22]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
 9.  References
@@ -1244,7 +1244,7 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
               JSON Data Structures", RFC 8610, DOI 10.17487/RFC8610,
               June 2019, <https://www.rfc-editor.org/info/rfc8610>.
 
-   [FETCH]    WHATWG, "Fetch", October 2019,
+   [FETCH]    WHATWG, "Fetch", November 2019,
               <https://fetch.spec.whatwg.org/>.
 
    [I-D.ietf-httpbis-header-structure-10]
@@ -1285,9 +1285,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 23]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 23]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
    [RFC5280]  Cooper, D., Santesson, S., Farrell, S., Boeyen, S.,
@@ -1341,12 +1341,12 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 24]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 24]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
-   [URL]      WHATWG, "URL", October 2019,
+   [URL]      WHATWG, "URL", November 2019,
               <https://url.spec.whatwg.org/>.
 
 9.2.  Informative References
@@ -1397,9 +1397,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 25]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 25]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
    [RFC6797]  Hodges, J., Jackson, C., and A. Barth, "HTTP Strict
@@ -1453,9 +1453,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 26]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 26]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
    [5] http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/
@@ -1509,9 +1509,9 @@ Appendix A.  Change Log
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 27]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 27]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
    o  Allow mismatches between the MIME type and file signature to
@@ -1565,9 +1565,9 @@ Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 28]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 28]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
    o  Only 1 signature is supported.
@@ -1621,9 +1621,9 @@ Appendix B.  Acknowledgements
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 29]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 29]
 
-Internet-DrafSigned HTTP Exchanges Implementation Checkpoin October 2019
+Internet-DraftSigned HTTP Exchanges Implementation CheckpoiNovember 2019
 
 
 Authors' Addresses
@@ -1677,4 +1677,4 @@ Authors' Addresses
 
 
 
-Yasskin & Sakamoto         Expires May 3, 2020                 [Page 30]
+Yasskin & Sakamoto         Expires May 4, 2020                 [Page 30]

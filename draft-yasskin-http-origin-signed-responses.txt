@@ -4,8 +4,8 @@
 
 Network Working Group                                         J. Yasskin
 Internet-Draft                                                    Google
-Intended status: Standards Track                        October 31, 2019
-Expires: May 3, 2020
+Intended status: Standards Track                       November 01, 2019
+Expires: May 4, 2020
 
 
                          Signed HTTP Exchanges
@@ -48,14 +48,14 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on May 3, 2020.
+   This Internet-Draft will expire on May 4, 2020.
 
 
 
 
-Yasskin                    Expires May 3, 2020                  [Page 1]
+Yasskin                    Expires May 4, 2020                  [Page 1]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
 Copyright Notice
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Yasskin                    Expires May 3, 2020                  [Page 2]
+Yasskin                    Expires May 4, 2020                  [Page 2]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
        5.2.1.  Indicating support for cross-origin Server Push . . .  28
@@ -165,9 +165,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                  [Page 3]
+Yasskin                    Expires May 4, 2020                  [Page 3]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
      B.3.  Response lifespan . . . . . . . . . . . . . . . . . . . .  53
@@ -221,9 +221,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                  [Page 4]
+Yasskin                    Expires May 4, 2020                  [Page 4]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    Author  The entity that wrote the content in a particular resource.
@@ -277,9 +277,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                  [Page 5]
+Yasskin                    Expires May 4, 2020                  [Page 5]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    Each signature is parameterised with information to let a client
@@ -333,9 +333,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                  [Page 6]
+Yasskin                    Expires May 4, 2020                  [Page 6]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    "cert-sha256"  Byte sequence (Section 3.10 of
@@ -389,9 +389,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                  [Page 7]
+Yasskin                    Expires May 4, 2020                  [Page 7]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
 Signature:
@@ -445,9 +445,9 @@ Signature:
 
 
 
-Yasskin                    Expires May 3, 2020                  [Page 8]
+Yasskin                    Expires May 4, 2020                  [Page 8]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    "https://example.com/".  The publisher might be using two
@@ -501,9 +501,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                  [Page 9]
+Yasskin                    Expires May 4, 2020                  [Page 9]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
 3.2.1.  Example
@@ -557,9 +557,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 10]
+Yasskin                    Expires May 4, 2020                 [Page 10]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    1.  Each "cert" value MUST be a DER-encoded X.509v3 certificate
@@ -613,9 +613,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 11]
+Yasskin                    Expires May 4, 2020                 [Page 11]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
       3.  -1, encoded as 20.
@@ -669,9 +669,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 12]
+Yasskin                    Expires May 4, 2020                 [Page 12]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    This algorithm accepts a "forceFetch" flag that avoids the cache when
@@ -725,9 +725,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 13]
+Yasskin                    Expires May 4, 2020                 [Page 13]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
             5.  If "publicKey" is a key using the secp256r1 elliptic
@@ -781,9 +781,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 14]
+Yasskin                    Expires May 4, 2020                 [Page 14]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
         8.  The 8-byte big-endian encoding of the length in bytes of
@@ -837,9 +837,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 15]
+Yasskin                    Expires May 4, 2020                 [Page 15]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
         ensures that final implementations don't need to handle
@@ -893,9 +893,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 16]
+Yasskin                    Expires May 4, 2020                 [Page 16]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    The resource at a "validity-url" is "validity data", a CBOR map
@@ -949,9 +949,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 17]
+Yasskin                    Expires May 4, 2020                 [Page 17]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
 Signature:
@@ -1005,9 +1005,9 @@ Signature:
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 18]
+Yasskin                    Expires May 4, 2020                 [Page 18]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    end of a migration to a new root certificate.)  The signatures of the
@@ -1061,9 +1061,9 @@ Signature:
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 19]
+Yasskin                    Expires May 4, 2020                 [Page 19]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    Each identifier in the "Accept-Signature" header field's value
@@ -1117,9 +1117,9 @@ Accept-Signature: ..., ed25519key; **
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 20]
+Yasskin                    Expires May 4, 2020                 [Page 20]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    but not
@@ -1173,9 +1173,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 21]
+Yasskin                    Expires May 4, 2020                 [Page 21]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
 4.  Cross-origin trust
@@ -1229,9 +1229,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 22]
+Yasskin                    Expires May 4, 2020                 [Page 22]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
            Let "path" be the path that was used from the "main-
@@ -1285,9 +1285,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 23]
+Yasskin                    Expires May 4, 2020                 [Page 23]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
       *  Proxy-Connection
@@ -1341,9 +1341,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 24]
+Yasskin                    Expires May 4, 2020                 [Page 24]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
 4.2.  Certificate Requirements
@@ -1397,9 +1397,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 25]
+Yasskin                    Expires May 4, 2020                 [Page 25]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    id-ce-google OBJECT IDENTIFIER ::= { 1 3 6 1 4 1 11129 }
@@ -1453,9 +1453,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 26]
+Yasskin                    Expires May 4, 2020                 [Page 26]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    o  The effective request URI (Section 5.5 of [RFC7230]) of the
@@ -1509,9 +1509,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 27]
+Yasskin                    Expires May 4, 2020                 [Page 27]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    provides a hook to let other higher-level protocols reject such
@@ -1565,9 +1565,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 28]
+Yasskin                    Expires May 4, 2020                 [Page 28]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    by Section 5.5 of [RFC7540].  If a server were to send a cross-origin
@@ -1621,9 +1621,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 29]
+Yasskin                    Expires May 4, 2020                 [Page 29]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
        If this returns "invalid", the client MUST treat the response as
@@ -1677,9 +1677,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 30]
+Yasskin                    Expires May 4, 2020                 [Page 30]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
        format so that parsers encountering unknown versions can always
@@ -1733,9 +1733,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 31]
+Yasskin                    Expires May 4, 2020                 [Page 31]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    sxg1\0\0\0\0<2-byte length of the following url string>
@@ -1789,9 +1789,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 32]
+Yasskin                    Expires May 4, 2020                 [Page 32]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    This specification defends against cookie-based attacks by blocking
@@ -1845,9 +1845,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 33]
+Yasskin                    Expires May 4, 2020                 [Page 33]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    However, CAs might future-date their OCSP responses, in which case
@@ -1901,9 +1901,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 34]
+Yasskin                    Expires May 4, 2020                 [Page 34]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    guarantee that the exchange isn't out of date (as long as
@@ -1957,9 +1957,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 35]
+Yasskin                    Expires May 4, 2020                 [Page 35]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
 6.7.  Key re-use with TLS
@@ -2013,9 +2013,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 36]
+Yasskin                    Expires May 4, 2020                 [Page 36]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    would also be safe for that domain to serve the SXG's content
@@ -2069,9 +2069,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 37]
+Yasskin                    Expires May 4, 2020                 [Page 37]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    For non-executable resource types, a signed response can improve the
@@ -2125,9 +2125,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 38]
+Yasskin                    Expires May 4, 2020                 [Page 38]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
 8.3.  Signed-Headers Header Field Registration
@@ -2181,9 +2181,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 39]
+Yasskin                    Expires May 4, 2020                 [Page 39]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    Type name: application
@@ -2237,9 +2237,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 40]
+Yasskin                    Expires May 4, 2020                 [Page 40]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    Intended usage: COMMON
@@ -2293,9 +2293,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 41]
+Yasskin                    Expires May 4, 2020                 [Page 41]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    Intended usage: COMMON
@@ -2322,13 +2322,13 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
               JSON Data Structures", RFC 8610, DOI 10.17487/RFC8610,
               June 2019, <https://www.rfc-editor.org/info/rfc8610>.
 
-   [FETCH]    WHATWG, "Fetch", October 2019,
+   [FETCH]    WHATWG, "Fetch", November 2019,
               <https://fetch.spec.whatwg.org/>.
 
    [I-D.ietf-httpbis-header-structure]
               Nottingham, M. and P. Kamp, "Structured Headers for HTTP",
-              draft-ietf-httpbis-header-structure-13 (work in progress),
-              August 2019.
+              draft-ietf-httpbis-header-structure-14 (work in progress),
+              October 2019.
 
    [I-D.ietf-httpbis-variants]
               Nottingham, M., "HTTP Representation Variants", draft-
@@ -2349,9 +2349,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 42]
+Yasskin                    Expires May 4, 2020                 [Page 42]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    [POSIX]    IEEE and The Open Group, "The Open Group Base
@@ -2405,9 +2405,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 43]
+Yasskin                    Expires May 4, 2020                 [Page 43]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    [RFC7049]  Bormann, C. and P. Hoffman, "Concise Binary Object
@@ -2447,7 +2447,7 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
               Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
               <https://www.rfc-editor.org/info/rfc8446>.
 
-   [URL]      WHATWG, "URL", October 2019,
+   [URL]      WHATWG, "URL", November 2019,
               <https://url.spec.whatwg.org/>.
 
 9.2.  Informative References
@@ -2461,9 +2461,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 44]
+Yasskin                    Expires May 4, 2020                 [Page 44]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    [CRLSets]  Langley, A., "Revocation checking and Chrome's CRL",
@@ -2517,9 +2517,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 45]
+Yasskin                    Expires May 4, 2020                 [Page 45]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    [RFC2965]  Kristol, D. and L. Montulli, "HTTP State Management
@@ -2573,9 +2573,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 46]
+Yasskin                    Expires May 4, 2020                 [Page 46]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    [RFC8017]  Moriarty, K., Ed., Kaliski, B., Jonsson, J., and A. Rusch,
@@ -2629,9 +2629,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 47]
+Yasskin                    Expires May 4, 2020                 [Page 47]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    [9] https://url.spec.whatwg.org/#percent-encode
@@ -2685,9 +2685,9 @@ A.2.  Explicit use of a content distributor for subresources
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 48]
+Yasskin                    Expires May 4, 2020                 [Page 48]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    case where "O.com" has a CNAME granting the CDN the right to serve
@@ -2741,9 +2741,9 @@ A.3.  Subresource Integrity
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 49]
+Yasskin                    Expires May 4, 2020                 [Page 49]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
 A.4.  Binary Transparency
@@ -2797,9 +2797,9 @@ B.1.  Proof of origin
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 50]
+Yasskin                    Expires May 4, 2020                 [Page 50]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
 B.1.1.  Certificate constraints
@@ -2853,9 +2853,9 @@ B.1.3.  Retrieving the certificate
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 51]
+Yasskin                    Expires May 4, 2020                 [Page 51]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    in an HTTP header, certificates are also unusually large for that
@@ -2909,9 +2909,9 @@ B.2.1.  Conveying the signed headers
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 52]
+Yasskin                    Expires May 4, 2020                 [Page 52]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    There's no way in current HTTP for the response to a client-initiated
@@ -2965,9 +2965,9 @@ B.3.2.  Response downgrade attacks
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 53]
+Yasskin                    Expires May 4, 2020                 [Page 53]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    mistakes, clients should stop trusting the old signed content in a
@@ -3021,9 +3021,9 @@ B.4.2.  Bounded-buffering integrity checking
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 54]
+Yasskin                    Expires May 4, 2020                 [Page 54]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    To allow the network layer to verify signed exchanges using a bounded
@@ -3077,9 +3077,9 @@ C.1.  Example of updating cache control
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 55]
+Yasskin                    Expires May 4, 2020                 [Page 55]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    GET  / HTTP/1.1
@@ -3133,9 +3133,9 @@ C.2.  Downsides of updating cache control
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 56]
+Yasskin                    Expires May 4, 2020                 [Page 56]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
 Appendix D.  Change Log
@@ -3189,9 +3189,9 @@ Appendix D.  Change Log
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 57]
+Yasskin                    Expires May 4, 2020                 [Page 57]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    o  Make the signed message format a concatenation of byte sequences,
@@ -3245,9 +3245,9 @@ Internet-Draft            Signed HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 58]
+Yasskin                    Expires May 4, 2020                 [Page 58]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
    draft-03
@@ -3301,9 +3301,9 @@ Appendix E.  Acknowledgements
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 59]
+Yasskin                    Expires May 4, 2020                 [Page 59]
 
-Internet-Draft            Signed HTTP Exchanges             October 2019
+Internet-Draft            Signed HTTP Exchanges            November 2019
 
 
 Author's Address
@@ -3357,4 +3357,4 @@ Author's Address
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 60]
+Yasskin                    Expires May 4, 2020                 [Page 60]

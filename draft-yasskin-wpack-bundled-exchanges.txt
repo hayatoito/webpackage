@@ -4,8 +4,8 @@
 
 Network Working Group                                         J. Yasskin
 Internet-Draft                                                    Google
-Intended status: Standards Track                        October 31, 2019
-Expires: May 3, 2020
+Intended status: Standards Track                       November 01, 2019
+Expires: May 4, 2020
 
 
                          Bundled HTTP Exchanges
@@ -43,7 +43,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on May 3, 2020.
+   This Internet-Draft will expire on May 4, 2020.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Yasskin                    Expires May 3, 2020                  [Page 1]
+Yasskin                    Expires May 4, 2020                  [Page 1]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Yasskin                    Expires May 3, 2020                  [Page 2]
+Yasskin                    Expires May 4, 2020                  [Page 2]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
    Appendix B.  Acknowledgements . . . . . . . . . . . . . . . . . .  27
@@ -165,9 +165,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                  [Page 3]
+Yasskin                    Expires May 4, 2020                  [Page 3]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
    Bundle parsers support two operations, Load a bundle's metadata
@@ -221,9 +221,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                  [Page 4]
+Yasskin                    Expires May 4, 2020                  [Page 4]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
       *  A single "ResponseMetadata" value for a non-content-negotiated
@@ -277,9 +277,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                  [Page 5]
+Yasskin                    Expires May 4, 2020                  [Page 5]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
    SHOULD use the algorithm in Section 4 of [I-D.ietf-httpbis-variants]
@@ -333,9 +333,9 @@ whatwg-url = tstr
 
 
 
-Yasskin                    Expires May 3, 2020                  [Page 6]
+Yasskin                    Expires May 4, 2020                  [Page 6]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
 3.2.  Serving constraints
@@ -389,9 +389,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                  [Page 7]
+Yasskin                    Expires May 4, 2020                  [Page 7]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
         Note: From this point forward, errors also include the fallback
@@ -445,9 +445,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                  [Page 8]
+Yasskin                    Expires May 4, 2020                  [Page 8]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
    15.  Let "knownSections" be the subset of the Section 6.2 that this
@@ -501,9 +501,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                  [Page 9]
+Yasskin                    Expires May 4, 2020                  [Page 9]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
         3.  If ""name"" is in "ignoredSections", continue to the next
@@ -557,9 +557,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 10]
+Yasskin                    Expires May 4, 2020                 [Page 10]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
    The order of variant-axes is important.  If the "variants-value" were
@@ -613,9 +613,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 11]
+Yasskin                    Expires May 4, 2020                 [Page 11]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
        1.  If "offset" + "length" is larger than
@@ -669,9 +669,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 12]
+Yasskin                    Expires May 4, 2020                 [Page 12]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
    5.  Set "metadata["requests"]" to "requests".
@@ -725,9 +725,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 13]
+Yasskin                    Expires May 4, 2020                 [Page 13]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
    o  Reject all signatures by an RSA public key.
@@ -781,9 +781,9 @@ resource-integrity = (header-sha256: bstr, payload-integrity-header: tstr)
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 14]
+Yasskin                    Expires May 4, 2020                 [Page 14]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
    2.  Set "metadata["authorities"]" to the list of authorities in the
@@ -837,9 +837,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 15]
+Yasskin                    Expires May 4, 2020                 [Page 15]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
    To implement Section 2.2.1, taking a sequence of bytes "bytes", the
@@ -893,9 +893,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 16]
+Yasskin                    Expires May 4, 2020                 [Page 16]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
    3.   Let "headerLength" be the result of getting the length of a CBOR
@@ -949,9 +949,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 17]
+Yasskin                    Expires May 4, 2020                 [Page 17]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
         *  Url list is "request"'s url list,
@@ -1005,9 +1005,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 18]
+Yasskin                    Expires May 4, 2020                 [Page 18]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
    1.  Let ("type", "argument") be the result of parsing the type and
@@ -1061,9 +1061,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 19]
+Yasskin                    Expires May 4, 2020                 [Page 19]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
 3.6.  Interpreting CBOR HTTP headers
@@ -1117,9 +1117,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 20]
+Yasskin                    Expires May 4, 2020                 [Page 20]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
    5.  Return ("headers", "pseudos").
@@ -1173,9 +1173,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 21]
+Yasskin                    Expires May 4, 2020                 [Page 21]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
    2.  Generate bundles "offline", that is, in response to a trusted
@@ -1229,9 +1229,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 22]
+Yasskin                    Expires May 4, 2020                 [Page 22]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
    o  Required parameters:
@@ -1285,9 +1285,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 23]
+Yasskin                    Expires May 4, 2020                 [Page 23]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
    o  Provisional registration?  Yes.
@@ -1341,9 +1341,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 24]
+Yasskin                    Expires May 4, 2020                 [Page 24]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
 7.1.  Normative References
@@ -1364,7 +1364,7 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
               JSON Data Structures", RFC 8610, DOI 10.17487/RFC8610,
               June 2019, <https://www.rfc-editor.org/info/rfc8610>.
 
-   [FETCH]    WHATWG, "Fetch", October 2019,
+   [FETCH]    WHATWG, "Fetch", November 2019,
               <https://fetch.spec.whatwg.org/>.
 
    [I-D.ietf-httpbis-variants]
@@ -1380,7 +1380,7 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
               IANA, "Media Types",
               <http://www.iana.org/assignments/media-types>.
 
-   [INFRA]    WHATWG, "Infra", October 2019,
+   [INFRA]    WHATWG, "Infra", November 2019,
               <https://infra.spec.whatwg.org/>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
@@ -1397,9 +1397,9 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 25]
+Yasskin                    Expires May 4, 2020                 [Page 25]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
    [RFC7540]  Belshe, M., Peon, R., and M. Thomson, Ed., "Hypertext
@@ -1411,7 +1411,7 @@ Internet-Draft           Bundled HTTP Exchanges             October 2019
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
-   [URL]      WHATWG, "URL", October 2019,
+   [URL]      WHATWG, "URL", November 2019,
               <https://url.spec.whatwg.org/>.
 
 7.2.  Informative References
@@ -1453,9 +1453,9 @@ Appendix A.  Change Log
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 26]
+Yasskin                    Expires May 4, 2020                 [Page 26]
 
-Internet-Draft           Bundled HTTP Exchanges             October 2019
+Internet-Draft           Bundled HTTP Exchanges            November 2019
 
 
    o  Provisionally register application/webbundle.
@@ -1509,4 +1509,4 @@ Author's Address
 
 
 
-Yasskin                    Expires May 3, 2020                 [Page 27]
+Yasskin                    Expires May 4, 2020                 [Page 27]
