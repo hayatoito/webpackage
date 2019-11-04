@@ -333,6 +333,8 @@ ul.toc li {
 <link href="#rfc.section.6.7" rel="Chapter" title="6.7 Key re-use with TLS">
 <link href="#rfc.section.6.8" rel="Chapter" title="6.8 Content sniffing">
 <link href="#rfc.section.7" rel="Chapter" title="7 Privacy considerations">
+<link href="#rfc.section.7.1" rel="Chapter" title="7.1 Visibility of resource requests">
+<link href="#rfc.section.7.2" rel="Chapter" title="7.2 User ID transfer">
 <link href="#rfc.section.8" rel="Chapter" title="8 IANA considerations">
 <link href="#rfc.section.8.1" rel="Chapter" title="8.1 Signature Header Field Registration">
 <link href="#rfc.section.8.2" rel="Chapter" title="8.2 Accept-Signature Header Field Registration">
@@ -535,7 +537,11 @@ ul.toc li {
 </li>
 </ul><li>7.   <a href="#rfc.section.7">Privacy considerations</a>
 </li>
-<li>8.   <a href="#rfc.section.8">IANA considerations</a>
+<ul><li>7.1.   <a href="#rfc.section.7.1">Visibility of resource requests</a>
+</li>
+<li>7.2.   <a href="#rfc.section.7.2">User ID transfer</a>
+</li>
+</ul><li>8.   <a href="#rfc.section.8">IANA considerations</a>
 </li>
 <ul><li>8.1.   <a href="#rfc.section.8.1">Signature Header Field Registration</a>
 </li>
@@ -1410,10 +1416,26 @@ following map&gt;sig1; sig=*...; integrity="digest/mi-sha256"; ...{
 <h1 id="rfc.section.7">
 <a href="#rfc.section.7">7.</a> <a href="#privacy-considerations" id="privacy-considerations">Privacy considerations</a>
 </h1>
-<p id="rfc.section.7.p.1">Normally, when a client fetches <samp>https://o1.com/resource.js</samp>, <samp>o1.com</samp> learns that the client is interested in the resource. If <samp>o1.com</samp> signs <samp>resource.js</samp>, <samp>o2.com</samp> serves it as <samp>https://o2.com/o1resource.js</samp>, and the client fetches it from there, then <samp>o2.com</samp> learns that the client is interested, and if the client executes the Javascript, that could also report the client&#8217;s interest back to <samp>o1.com</samp>.</p>
-<p id="rfc.section.7.p.2">Often, <samp>o2.com</samp> already knew about the client&#8217;s interest, because it&#8217;s the entity that directed the client to <samp>o1resource.js</samp>, but there may be cases where this leaks extra information.</p>
-<p id="rfc.section.7.p.3">For non-executable resource types, a signed response can improve the privacy situation by hiding the client&#8217;s interest from the original publisher.</p>
-<p id="rfc.section.7.p.4">To prevent network operators other than <samp>o1.com</samp> or <samp>o2.com</samp> from learning which exchanges were read, clients SHOULD only load exchanges fetched over a transport that&#8217;s protected from eavesdroppers. This can be difficult to determine when the exchange is being loaded from local disk, but when the client itself requested the exchange over a network it SHOULD require TLS (<a href="#RFC8446" class="xref">[RFC8446]</a>) or a successor transport layer, and MUST NOT accept exchanges transferred over plain HTTP without TLS.</p>
+<h1 id="rfc.section.7.1">
+<a href="#rfc.section.7.1">7.1.</a> <a href="#visibility-of-resource-requests" id="visibility-of-resource-requests">Visibility of resource requests</a>
+</h1>
+<p id="rfc.section.7.1.p.1">Normally, when a client follows a link from https://source.example/page.html to <samp>https://publisher.example/page.html</samp>, <samp>publisher.example</samp> learns that the client is interested in the resource. <samp>source.example</samp> also has several ways of discovering that the client has clicked the link, including the use of Javascript to record the click or having the link point to a URL that serves a 302 redirect to the real target.</p>
+<p id="rfc.section.7.1.p.2">If <samp>publisher.example</samp> signs <samp>page.html</samp> into <samp>page.sxg</samp>, <samp>distributor.example</samp> serves it as <samp>https://distributor.example/publisher/page.sxg</samp>, and the client fetches it from there, then <samp>distributor.example</samp> learns that the client is interested, and if the client executes some Javascript on the page or makes subresource requests, that could also report the client&#8217;s interest back to <samp>publisher.example</samp>.</p>
+<p id="rfc.section.7.1.p.3">To prevent network operators other than <samp>distributor.example</samp> or <samp>publisher.example</samp> from learning which exchanges were read, clients SHOULD only load exchanges fetched over a transport that&#8217;s protected from eavesdroppers.  This can be difficult to determine when the exchange is being loaded from local disk, but when the client itself requested the exchange over a network it SHOULD require TLS (<a href="#RFC8446" class="xref">[RFC8446]</a>) or a successor transport layer, and MUST NOT accept exchanges transferred over plain HTTP without TLS.</p>
+<p id="rfc.section.7.1.p.4">If <samp>source.example</samp> and <samp>distributor.example</samp> are controlled by the same entity, no extra information escapes here. If they are run by different entities, a similar amount of information escapes as if <samp>source.example</samp> had implemented its click tracking by outsourcing to a service like <a href="https://bit.ly/">https://bit.ly/</a>.</p>
+<p id="rfc.section.7.1.p.5">There has been discussion of allowing a publisher to restrict the set of distributors that can host its signed content. If that&#8217;s added, then the privacy situation becomes more similar to the situation with CDNs, where a publisher chooses a CDN to serve their content, and the CDN learns about all requests for that content. Here the publisher would choose one or more distributors, and the distributor(s) would learn about requests for the content.</p>
+<p id="rfc.section.7.1.p.6">For non-executable resource types, a signed response can improve the privacy situation by hiding the client&#8217;s interest from the original publisher.</p>
+<h1 id="rfc.section.7.2">
+<a href="#rfc.section.7.2">7.2.</a> <a href="#user-id-transfer" id="user-id-transfer">User ID transfer</a>
+</h1>
+<p id="rfc.section.7.2.p.1">If a request for <samp>https://distributor.example/publisher/page.sxg</samp> comes with the source&#8217;s or distributor&#8217;s user ID for the user, either because it&#8217;s sent with the distributor&#8217;s cookies or because the source stashes an encoded user ID into either the request&#8217;s path or a subdomain, the distributor has a few ways to pass that user ID on to the publisher that signed the page:</p>
+<p></p>
+
+<ol>
+<li>If the distributor has the publisher&#8217;s signing keys, it can sign a new page with its user ID directly embedded.</li>
+<li>Otherwise, the publisher can sign lots of copies of their package, and the distributor can choose a particular copy to send a subset of the bits in its user ID to the publisher on each click, which will eventually transfer the whole thing.</li>
+</ol>
+<p id="rfc.section.7.2.p.3">To prevent this, the request for a signed exchange needs to omit credentials and block them from appearing in the URL in the same way it would block them from appearing in a cross-origin URL. We&#8217;re exploring ways the link can mark the request so user agents can take the right counter-measures.</p>
 <h1 id="rfc.section.8">
 <a href="#rfc.section.8">8.</a> <a href="#iana-considerations" id="iana-considerations">IANA considerations</a>
 </h1>
@@ -1970,11 +1992,15 @@ Date: Sat, 25 Nov 2017 10:00:00 UTC
 <a href="#rfc.appendix.D">Appendix D.</a> <a href="#change-log" id="change-log">Change Log</a>
 </h1>
 <p id="rfc.section.D.p.1">RFC EDITOR PLEASE DELETE THIS SECTION.</p>
-<p id="rfc.section.D.p.2">draft-07</p>
+<p id="rfc.section.D.p.2">draft-08</p>
+<p></p>
+
+<ul><li>Improve the privacy considerations.</li></ul>
+<p id="rfc.section.D.p.4">draft-07</p>
 <p></p>
 
 <ul><li>Provisionally register application/signed-exchange and application/cert-chain+cbor.</li></ul>
-<p id="rfc.section.D.p.4">draft-06</p>
+<p id="rfc.section.D.p.6">draft-06</p>
 <p></p>
 
 <ul>
@@ -1983,7 +2009,7 @@ Date: Sat, 25 Nov 2017 10:00:00 UTC
 <li>Limit certificate lifetimes to 90 days.</li>
 <li>UTF-8 decode the fallback URL.</li>
 </ul>
-<p id="rfc.section.D.p.6">draft-05</p>
+<p id="rfc.section.D.p.8">draft-05</p>
 <p></p>
 
 <ul>
@@ -2001,7 +2027,7 @@ Date: Sat, 25 Nov 2017 10:00:00 UTC
 <li>Update to draft-ietf-httpbis-header-structure-09.</li>
 <li>Update to the final TLS 1.3 RFC.</li>
 </ul>
-<p id="rfc.section.D.p.8">draft-04</p>
+<p id="rfc.section.D.p.10">draft-04</p>
 <p></p>
 
 <ul>
@@ -2021,7 +2047,7 @@ Date: Sat, 25 Nov 2017 10:00:00 UTC
 <li>Forbid RSA keys, and only require clients to support secp256r1 keys.</li>
 <li>Add a test OID for the CanSignHttpExchanges X.509 extension.</li>
 </ul>
-<p id="rfc.section.D.p.10">draft-03</p>
+<p id="rfc.section.D.p.12">draft-03</p>
 <p></p>
 
 <ul>
@@ -2030,7 +2056,7 @@ Date: Sat, 25 Nov 2017 10:00:00 UTC
 <li>Define a CBOR structure to hold the certificate chain instead of re-using the TLS1.3 message. The TLS 1.3 parser fails on unexpected extensions while this format should ignore them, and apparently TLS implementations don&#8217;t expose their message parsers enough to allow passing a message to a certificate verifier.</li>
 <li>Require an X.509 extension for the signing certificate.</li>
 </ul>
-<p id="rfc.section.D.p.12">draft-02</p>
+<p id="rfc.section.D.p.14">draft-02</p>
 <p></p>
 
 <ul>
@@ -2046,7 +2072,7 @@ Date: Sat, 25 Nov 2017 10:00:00 UTC
 <h1 id="rfc.appendix.E">
 <a href="#rfc.appendix.E">Appendix E.</a> <a href="#acknowledgements" id="acknowledgements">Acknowledgements</a>
 </h1>
-<p id="rfc.section.E.p.1">Thanks to Andrew Ayer, Devin Mullins, Ilari Liusvaara, Justin Schuh, Mark Nottingham, Mike Bishop, Ryan Sleevi, and Yoav Weiss for comments that improved this draft.</p>
+<p id="rfc.section.E.p.1">Thanks to Andrew Ayer, Devin Mullins, Ilari Liusvaara, John Wilander, Justin Schuh, Mark Nottingham, Mike Bishop, Ryan Sleevi, and Yoav Weiss for comments that improved this draft.</p>
 <h1 id="rfc.authors"><a href="#rfc.authors">Author's Address</a></h1>
 <div class="avoidbreak">
   <address class="vcard">
