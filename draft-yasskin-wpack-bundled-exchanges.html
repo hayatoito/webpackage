@@ -5,7 +5,7 @@
 <head profile="http://www.w3.org/2006/03/hcard http://dublincore.org/documents/2008/08/04/dc-html/">
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
 
-  <title>Bundled HTTP Exchanges</title>
+  <title>Web Bundles</title>
 
   
 <style type="text/css">/*<![CDATA[*/
@@ -327,8 +327,8 @@ ul.toc li {
   <meta name="dct.creator" content="Yasskin, J." />
   <meta name="dct.identifier" content="urn:ietf:id:draft-yasskin-wpack-bundled-exchanges-latest" />
   <meta name="dct.issued" scheme="ISO8601" content="2019-11-08" />
-  <meta name="dct.abstract" content="Bundled exchanges provide a way to bundle up groups of HTTP request+response pairs to transmit or store them together. They can include multiple top-level resources with one identified as the default by a primaryUrl metadata, provide random access to their component exchanges, and efficiently store 8-bit resources." />
-  <meta name="description" content="Bundled exchanges provide a way to bundle up groups of HTTP request+response pairs to transmit or store them together. They can include multiple top-level resources with one identified as the default by a primaryUrl metadata, provide random access to their component exchanges, and efficiently store 8-bit resources." />
+  <meta name="dct.abstract" content="Web bundles provide a way to bundle up groups of HTTP responses, with the URLs and request URLs that produced them, to transmit or store them together. They can include multiple top-level resources with one identified as the default by a primaryUrl metadata, provide random access to their component exchanges, and efficiently store 8-bit resources." />
+  <meta name="description" content="Web bundles provide a way to bundle up groups of HTTP responses, with the URLs and request URLs that produced them, to transmit or store them together. They can include multiple top-level resources with one identified as the default by a primaryUrl metadata, provide random access to their component exchanges, and efficiently store 8-bit resources." />
 
 </head>
 
@@ -358,11 +358,11 @@ ul.toc li {
     </tbody>
   </table>
 
-  <p class="title">Bundled HTTP Exchanges<br />
+  <p class="title">Web Bundles<br />
   <span class="filename">draft-yasskin-wpack-bundled-exchanges-latest</span></p>
   
   <h1 id="rfc.abstract"><a href="#rfc.abstract">Abstract</a></h1>
-<p>Bundled exchanges provide a way to bundle up groups of HTTP request+response pairs to transmit or store them together. They can include multiple top-level resources with one identified as the default by a primaryUrl metadata, provide random access to their component exchanges, and efficiently store 8-bit resources.</p>
+<p>Web bundles provide a way to bundle up groups of HTTP responses, with the URLs and request URLs that produced them, to transmit or store them together. They can include multiple top-level resources with one identified as the default by a primaryUrl metadata, provide random access to their component exchanges, and efficiently store 8-bit resources.</p>
 <h1><a>Note to Readers</a></h1>
 <p>Discussion of this draft takes place on the wpack mailing list (wpack@ietf.org), which is archived at <a href="https://www.ietf.org/mailman/listinfo/wpack">https://www.ietf.org/mailman/listinfo/wpack</a>.</p>
 <p>The source code and issues list for this draft can be found in <a href="https://github.com/WICG/webpackage">https://github.com/WICG/webpackage</a>.</p>
@@ -960,7 +960,7 @@ headers = {* bstr =&gt; bstr}
 <h1 id="rfc.section.6.1">
 <a href="#rfc.section.6.1">6.1.</a> <a href="#internet-media-type-registration" id="internet-media-type-registration">Internet Media Type Registration</a>
 </h1>
-<p id="rfc.section.6.1.p.1">IANA is requested to register the MIME media type (<a href="#IANA.media-types" class="xref">[IANA.media-types]</a>) for bundled exchanges, application/webbundle, as follows:</p>
+<p id="rfc.section.6.1.p.1">IANA is requested to register the MIME media type (<a href="#IANA.media-types" class="xref">[IANA.media-types]</a>) for web bundles, application/webbundle, as follows:</p>
 <p></p>
 
 <ul>
