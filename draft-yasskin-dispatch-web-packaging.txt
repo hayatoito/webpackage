@@ -4,8 +4,8 @@
 
 Network Working Group                                         J. Yasskin
 Internet-Draft                                                    Google
-Intended status: Standards Track                         4 December 2019
-Expires: 6 June 2020
+Intended status: Standards Track                        12 December 2019
+Expires: 14 June 2020
 
 
                              Web Packaging
@@ -32,7 +32,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 June 2020.
+   This Internet-Draft will expire on 14 June 2020.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Yasskin                    Expires 6 June 2020                  [Page 1]
+Yasskin                   Expires 14 June 2020                  [Page 1]
 
 Internet-Draft                Web Packaging                December 2019
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Yasskin                    Expires 6 June 2020                  [Page 2]
+Yasskin                   Expires 14 June 2020                  [Page 2]
 
 Internet-Draft                Web Packaging                December 2019
 
@@ -165,7 +165,7 @@ Internet-Draft                Web Packaging                December 2019
 
 
 
-Yasskin                    Expires 6 June 2020                  [Page 3]
+Yasskin                   Expires 14 June 2020                  [Page 3]
 
 Internet-Draft                Web Packaging                December 2019
 
@@ -204,9 +204,11 @@ Internet-Draft                Web Packaging                December 2019
 2.2.1.  From the end
 
    To parse from the end, the parser MUST load the last 18 bytes as the
-   following [CDDL] group in array context: // CDDL doesn't actually
-   define how to use it as a schema to load // CBOR data. // // --
-   jyasskin
+   following [CDDL] group in array context:
+   // CDDL doesn't actually define how to use it as a schema to load
+   // CBOR data.
+   //
+   // -- jyasskin
 
    tail = (
      ; Total number of bytes in the package.
@@ -215,16 +217,17 @@ Internet-Draft                Web Packaging                December 2019
      magic2: h'F0 9F 8C 90 F0 9F 93 A6',
    )
 
-   If the bytes don't match this group or these two CBOR items don't
-   occupy exactly 18 bytes, parsing MUST fail.
 
 
 
 
-Yasskin                    Expires 6 June 2020                  [Page 4]
+Yasskin                   Expires 14 June 2020                  [Page 4]
 
 Internet-Draft                Web Packaging                December 2019
 
+
+   If the bytes don't match this group or these two CBOR items don't
+   occupy exactly 18 bytes, parsing MUST fail.
 
    Otherwise, continue as if the byte "length" bytes before the end of
    the string were the beginning of the package, and the parser were a
@@ -256,8 +259,10 @@ Internet-Draft                Web Packaging                December 2019
    fail.
 
    The parser MUST ignore unknown keys in the "section-offsets" map
-   because new sections may be defined in future specifications.  // Do
-   we need to mark critical section names? // // -- jyasskin
+   because new sections may be defined in future specifications.
+   // Do we need to mark critical section names?
+   //
+   // -- jyasskin
 
    Let _index_ be the result of parsing the bytes starting at offset
    _sections-start_ + "section-offsets"["indexed-content"] using the
@@ -270,17 +275,15 @@ Internet-Draft                Web Packaging                December 2019
    The parser MAY return a semantic package consisting of _index_, and,
    if initialized, _manifest_.
 
-   To parse each resource described within _index_, the parser MUST
-   follow the instructions in Section 2.5.
 
 
-
-
-
-Yasskin                    Expires 6 June 2020                  [Page 5]
+Yasskin                   Expires 14 June 2020                  [Page 5]
 
 Internet-Draft                Web Packaging                December 2019
 
+
+   To parse each resource described within _index_, the parser MUST
+   follow the instructions in Section 2.5.
 
 2.3.  Parsing the index
 
@@ -315,28 +318,29 @@ Internet-Draft                Web Packaging                December 2019
    the 0x82 array header.)
 
    Decode all of the "resource-key"s using [HPACK], with an initially-
-   empty dynamic table for each one.  // This spec has different
-   security constraints from the ones that // drove HPACK, so we may be
-   able to do better with another // compression format. // // --
-   jyasskin"resource-key"s are header lists ([HPACK], Section 1.3),
-   ordered lists of name-value pairs.
+   empty dynamic table for each one.
+   // This spec has different security constraints from the ones that
+   // drove HPACK, so we may be able to do better with another
+   // compression format.
+   //
+   // -- jyasskin"resource-key"s are header lists ([HPACK],
+   Section 1.3), ordered lists of name-value pairs.
 
    The parser MUST fail if any of the following is true:
 
    1.  HPACK decoding encountered an error.
 
-   2.  Any "resource-key"'s first three headers are not named ":scheme",
-       ":authority", and ":path", in that order.  Note that ":method" is
-       intentionally omitted because only the GET method is meaningful.
 
 
 
-
-
-Yasskin                    Expires 6 June 2020                  [Page 6]
+Yasskin                   Expires 14 June 2020                  [Page 6]
 
 Internet-Draft                Web Packaging                December 2019
 
+
+   2.  Any "resource-key"'s first three headers are not named ":scheme",
+       ":authority", and ":path", in that order.  Note that ":method" is
+       intentionally omitted because only the GET method is meaningful.
 
    3.  Any of the pseudo-headers' values violates a requirement in
        Section 8.1.2.3 of [HTTP2].
@@ -365,10 +369,12 @@ Internet-Draft                Web Packaging                December 2019
    used in Section 2.5, Paragraph 10, for all resources included in that
    package; and validity information for any sub-packages
    (Section 2.4.1) the package depends on.  The manifest is signed, so
-   that UAs can trust that it comes from its claimed origin.  // This
-   section doesn't describe a manifest (https://www.merriam- //
-   webster.com/dictionary/manifest#h3), so consider renaming it to //
-   something like "authenticity". // // -- jyasskin
+   that UAs can trust that it comes from its claimed origin.
+   // This section doesn't describe a manifest (https://www.merriam-
+   // webster.com/dictionary/manifest#h3), so consider renaming it to
+   // something like "authenticity".
+   //
+   // -- jyasskin
 
    To parse a manifest starting at _manifest-start_, a parser MUST do
    the following:
@@ -383,13 +389,7 @@ Internet-Draft                Web Packaging                December 2019
 
 
 
-
-
-
-
-
-
-Yasskin                    Expires 6 June 2020                  [Page 7]
+Yasskin                   Expires 14 June 2020                  [Page 7]
 
 Internet-Draft                Web Packaging                December 2019
 
@@ -445,7 +445,7 @@ Internet-Draft                Web Packaging                December 2019
 
 
 
-Yasskin                    Expires 6 June 2020                  [Page 8]
+Yasskin                   Expires 14 June 2020                  [Page 8]
 
 Internet-Draft                Web Packaging                December 2019
 
@@ -501,7 +501,7 @@ Internet-Draft                Web Packaging                December 2019
 
 
 
-Yasskin                    Expires 6 June 2020                  [Page 9]
+Yasskin                   Expires 14 June 2020                  [Page 9]
 
 Internet-Draft                Web Packaging                December 2019
 
@@ -557,7 +557,7 @@ Internet-Draft                Web Packaging                December 2019
 
 
 
-Yasskin                    Expires 6 June 2020                 [Page 10]
+Yasskin                   Expires 14 June 2020                 [Page 10]
 
 Internet-Draft                Web Packaging                December 2019
 
@@ -613,7 +613,7 @@ Internet-Draft                Web Packaging                December 2019
 
 
 
-Yasskin                    Expires 6 June 2020                 [Page 11]
+Yasskin                   Expires 14 June 2020                 [Page 11]
 
 Internet-Draft                Web Packaging                December 2019
 
@@ -639,9 +639,11 @@ Internet-Draft                Web Packaging                December 2019
 
    Let _resource-bytes_ be the result of encoding the array of [_header-
    list_, "response-headers", "body"] as Canonical CBOR in the following
-   CDDL schema: // This step would be inside the manifest-only block,
-   but then the // code block is rendered out-of-order. // // --
-   jyasskin
+   CDDL schema:
+   // This step would be inside the manifest-only block, but then the
+   // code block is rendered out-of-order.
+   //
+   // -- jyasskin
 
    resource-bytes = [
      request: [
@@ -664,16 +666,15 @@ Internet-Draft                Web Packaging                December 2019
 
    If the _package_ contains a _manifest_:
 
-   1.  *TODO:* Let _origin-manifest_ be the signed manifest for
 
 
 
-
-Yasskin                    Expires 6 June 2020                 [Page 12]
+Yasskin                   Expires 14 June 2020                 [Page 12]
 
 Internet-Draft                Web Packaging                December 2019
 
 
+   1.  *TODO:* Let _origin-manifest_ be the signed manifest for
        _origin_, found by searching through _manifest_'s subpackages for
        a matching origin.
 
@@ -721,15 +722,15 @@ Internet-Draft                Web Packaging                December 2019
 
    Relaxing the requirement to consult DNS when determining authority
    for an origin means that an attacker who possesses a valid
-   certificate no longer needs to be on-path to redirect traffic to
 
 
 
-Yasskin                    Expires 6 June 2020                 [Page 13]
+Yasskin                   Expires 14 June 2020                 [Page 13]
 
 Internet-Draft                Web Packaging                December 2019
 
 
+   certificate no longer needs to be on-path to redirect traffic to
    them; instead of modifying DNS, they need only convince the user to
    visit another Web site, in order to serve packages signed as the
    target.
@@ -750,9 +751,12 @@ Internet-Draft                Web Packaging                December 2019
 
    *  Type name: application
 
-   *  Subtype name: package+cbor // I suspect the mime type will need to
-      be a bit longer: application/ // webpackage+cbor or similar. // //
-      -- jyasskin
+   *  Subtype name: package+cbor
+      // I suspect the mime type will need to be a bit longer:
+      application/
+      // webpackage+cbor or similar.
+      //
+      // -- jyasskin
 
    *  Required parameters: N/A
 
@@ -775,16 +779,16 @@ Internet-Draft                Web Packaging                December 2019
 
       -  Deprecated alias names for this type: N/A
 
-      -  Magic number(s): 85 48 F0 9F 8C 90 F0 9F 93 A6
-
-      -  File extension(s): .wpk
 
 
-
-Yasskin                    Expires 6 June 2020                 [Page 14]
+Yasskin                   Expires 14 June 2020                 [Page 14]
 
 Internet-Draft                Web Packaging                December 2019
 
+
+      -  Magic number(s): 85 48 F0 9F 8C 90 F0 9F 93 A6
+
+      -  File extension(s): .wpk
 
       -  Macintosh file type code(s): N/A
 
@@ -831,17 +835,15 @@ Internet-Draft                Web Packaging                December 2019
               DOI 10.17487/RFC7540, May 2015,
               <https://www.rfc-editor.org/info/rfc7540>.
 
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119,
 
 
-
-
-Yasskin                    Expires 6 June 2020                 [Page 15]
+Yasskin                   Expires 14 June 2020                 [Page 15]
 
 Internet-Draft                Web Packaging                December 2019
 
 
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/info/rfc2119>.
 
@@ -888,16 +890,16 @@ Internet-Draft                Web Packaging                December 2019
 
    [I-D.yasskin-wpack-use-cases]
               Yasskin, J., "Use Cases and Requirements for Web
-              Packages", Work in Progress, Internet-Draft, draft-
-              yasskin-wpack-use-cases-00, 30 October 2019,
 
 
 
-Yasskin                    Expires 6 June 2020                 [Page 16]
+Yasskin                   Expires 14 June 2020                 [Page 16]
 
 Internet-Draft                Web Packaging                December 2019
 
 
+              Packages", Work in Progress, Internet-Draft, draft-
+              yasskin-wpack-use-cases-00, 30 October 2019,
               <http://www.ietf.org/internet-drafts/draft-yasskin-wpack-
               use-cases-00.txt>.
 
@@ -947,6 +949,4 @@ Author's Address
 
 
 
-
-
-Yasskin                    Expires 6 June 2020                 [Page 17]
+Yasskin                   Expires 14 June 2020                 [Page 17]
