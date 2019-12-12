@@ -1,6 +1,60 @@
 [
 
   {
+    "url": "https://api.github.com/repos/WICG/webpackage/issues/543",
+    "repository_url": "https://api.github.com/repos/WICG/webpackage",
+    "labels_url": "https://api.github.com/repos/WICG/webpackage/issues/543/labels{/name}",
+    "comments_url": "https://api.github.com/repos/WICG/webpackage/issues/543/comments",
+    "events_url": "https://api.github.com/repos/WICG/webpackage/issues/543/events",
+    "html_url": "https://github.com/WICG/webpackage/pull/543",
+    "id": 536914779,
+    "node_id": "MDExOlB1bGxSZXF1ZXN0MzUyMzYxNTUw",
+    "number": 543,
+    "title": "WIP: make certurl.CreateOCSPRequest compliant with rfc5019",
+    "user": {
+      "login": "tomokinat",
+      "id": 49511064,
+      "node_id": "MDQ6VXNlcjQ5NTExMDY0",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/49511064?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tomokinat",
+      "html_url": "https://github.com/tomokinat",
+      "followers_url": "https://api.github.com/users/tomokinat/followers",
+      "following_url": "https://api.github.com/users/tomokinat/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tomokinat/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tomokinat/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tomokinat/subscriptions",
+      "organizations_url": "https://api.github.com/users/tomokinat/orgs",
+      "repos_url": "https://api.github.com/users/tomokinat/repos",
+      "events_url": "https://api.github.com/users/tomokinat/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tomokinat/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2019-12-12T11:17:12Z",
+    "updated_at": "2019-12-12T11:45:28Z",
+    "closed_at": null,
+    "author_association": "CONTRIBUTOR",
+    "pull_request": {
+      "url": "https://api.github.com/repos/WICG/webpackage/pulls/543",
+      "html_url": "https://github.com/WICG/webpackage/pull/543",
+      "diff_url": "https://github.com/WICG/webpackage/pull/543.diff",
+      "patch_url": "https://github.com/WICG/webpackage/pull/543.patch"
+    },
+    "body": "https://tools.ietf.org/html/rfc5019#section-5 requires a OCSP client to use GET for small enough OCSP requests. Although [this is mainly for enabling HTTP caching](https://tools.ietf.org/html/rfc2560#appendix-A.1.1) and `certurl.FetchOCSPResponse` doesn't cache any response, it's worth supporting as `certurl.CreateOCSPRequest` is also exported.\r\n\r\nIn order to add a test which checks the \"POST\" side of the function, we need data of `len(\"http://<responder>/<encoded OCSP req>\") > 255`. I though like creating a dummy cert whose responder url is super long was the easiest (as I wrote in the test tentatively), I don't know where the existing `test-cert.pem` came from, which has a responder url \"http://ocsp.digicert.com\" and doesn't look like a \"dummy\". Would appreciate some guidance."
+  },
+  {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/542",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
     "labels_url": "https://api.github.com/repos/WICG/webpackage/issues/542/labels{/name}",
@@ -43,7 +97,7 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2019-12-04T02:05:19Z",
-    "updated_at": "2019-12-10T00:51:27Z",
+    "updated_at": "2019-12-10T09:27:24Z",
     "closed_at": null,
     "author_association": "COLLABORATOR",
     "pull_request": {
@@ -721,7 +775,7 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2019-11-11T22:27:51Z",
-    "updated_at": "2019-12-10T01:15:36Z",
+    "updated_at": "2019-12-12T22:40:22Z",
     "closed_at": null,
     "author_association": "MEMBER",
     "pull_request": {
@@ -775,10 +829,10 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2019-11-11T15:39:36Z",
-    "updated_at": "2019-11-12T01:14:14Z",
+    "updated_at": "2019-12-11T02:58:51Z",
     "closed_at": null,
     "author_association": "NONE",
-    "body": "in https://wicg.github.io/webpackage/draft-yasskin-wpack-bundled-exchanges.html#rfc.section.3.3\r\n\r\n> 2. If reading 10 bytes from stream returns an error or doesn’t return the bytes with hex encoding “86 48 F0 9F 8C 90 F0 9F 93 A6” (the CBOR encoding of the 6-item array initial byte and 8-byte bytestring initial byte, followed by 🌐📦 in UTF-8), return a “format error”.\r\n\r\nI think this will cause implements like below\r\n\r\n```\r\nhead = read_first_10_byte(path)\r\n\r\nif (head == [86 48 F0 9F 8C 90 F0 9F 93 A6]) {\r\n  // this is web bundle\r\n switch (parse_cbor(path)['version']) {\r\n    // version switch\r\n  }\r\n} else {\r\n  // this is not web bundle\r\n}\r\n```\r\n\r\nbut if webbundle format will change like below in the future. and also version ++.\r\n\r\n```\r\nwebbundle = [\r\n  magic\r\n  version // *2*\r\n  primary-url\r\n  section-lengths\r\n  sections\r\n  extension // *new*\r\n  length\r\n]\r\n```\r\n\r\nthe length of array will increase and first 10 byte will change.\r\n\r\nthis cause previous code not working, should be like this\r\n\r\n```\r\nhead = read_first_10_byte(path)\r\n\r\nif (head == [86 48 F0 9F 8C 90 F0 9F 93 A6]) {\r\n  // this is web bundle\r\n switch (parse_cbor(path)['version']) {\r\n    // version switch\r\n  }\r\n} else if (head == [*87* 48 F0 9F 8C 90 F0 9F 93 A6]\r\n  // this is also new web bundle\r\n switch (parse_cbor(path)['version']) {\r\n    // version switch\r\n  }\r\n} else {\r\n  // this is not web bundle\r\n}\r\n```\r\n\r\nso, this version model is not allow adding meta-section to webbundle cbor array.\r\nif you think *cbor array should not change from 6 forever*, it works.\r\nbut I think it seems better to find other way to \r\n\r\n1. magic number should usable for file detection\r\n2. cbor structure update could detect by version, and not affect to 1\r\n\r\nfor example\r\n\r\n```\r\nwebbundle = [\r\n  magic\r\n  body\r\n  length\r\n]\r\n\r\nbody = [\r\n  version\r\n  primary-url\r\n  section-lengths\r\n  sections\r\n]\r\n```"
+    "body": "in https://wicg.github.io/webpackage/draft-yasskin-wpack-bundled-exchanges.html#rfc.section.3.3\r\n\r\n> 2. If reading 10 bytes from stream returns an error or doesn’t return the bytes with hex encoding “86 48 F0 9F 8C 90 F0 9F 93 A6” (the CBOR encoding of the 6-item array initial byte and 8-byte bytestring initial byte, followed by 🌐📦 in UTF-8), return a “format error”.\r\n\r\nI think this will cause implements like below\r\n\r\n```js\r\nhead = read_first_10_byte(path)\r\n\r\nif (head == [86 48 F0 9F 8C 90 F0 9F 93 A6]) {\r\n  // this is web bundle\r\n  switch (parse_cbor(path)['version']) {\r\n    // version switch\r\n  }\r\n} else {\r\n  // this is not web bundle\r\n}\r\n```\r\n\r\nbut if webbundle format will change like below in the future. and also version ++.\r\n\r\n```js\r\nwebbundle = [\r\n  magic\r\n  version // *2*\r\n  primary-url\r\n  section-lengths\r\n  sections\r\n  extension // *new*\r\n  length\r\n]\r\n```\r\n\r\nthe length of array will increase and first 10 byte will change.\r\n\r\nthis cause previous code not working, should be like this\r\n\r\n```js\r\nhead = read_first_10_byte(path)\r\n\r\nif (head == [86 48 F0 9F 8C 90 F0 9F 93 A6]) {\r\n  // this is web bundle\r\n  switch (parse_cbor(path)['version']) {\r\n    // version switch\r\n  }\r\n} else if (head == [*87* 48 F0 9F 8C 90 F0 9F 93 A6]\r\n  // this is also new web bundle\r\n  switch (parse_cbor(path)['version']) {\r\n    // version switch\r\n  }\r\n} else {\r\n  // this is not web bundle\r\n}\r\n```\r\n\r\nso, this version model is not allow adding meta-section to webbundle cbor array.\r\nif you think *cbor array should not change from 6 forever*, it works.\r\nbut I think it seems better to find other way to \r\n\r\n1. magic number should usable for file detection\r\n2. cbor structure update could detect by version, and not affect to 1\r\n\r\nfor example\r\n\r\n```js\r\nwebbundle = [\r\n  magic\r\n  body\r\n  length\r\n]\r\n\r\nbody = [\r\n  version\r\n  primary-url\r\n  section-lengths\r\n  sections\r\n]\r\n```"
   },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/527",
@@ -1563,7 +1617,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/514.patch"
     },
     "body": ""
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/513",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -1617,10 +1674,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/513.patch"
     },
     "body": ""
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/512",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -3207,7 +3261,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/484.patch"
     },
     "body": "Does this make sense?"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/483",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -3261,10 +3318,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/483.patch"
     },
     "body": ""
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/482",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -4835,7 +4889,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/454.patch"
     },
     "body": "Thanks irori for noticing!"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/453",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -4889,10 +4946,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/453.patch"
     },
     "body": "When fetching with the `-uri` flag, the go http client can give us a more helpful error message than `unknown magic bytes: [60 33 100 111 99 116 121 112]`\r\n\r\nThis PR checks the mime type of the response against the expected mime type for the version it is requesting and if they do not equal, it will error with `GET \"https://example.com\" responded with unexpected content type \"text/html; charset=utf-8\"`"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/452",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -6554,7 +6608,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/424.patch"
     },
     "body": "@johnwilander, here's an attempt to make your threat model a little more formal so that we can evaluate a range of attacks and mitigations against it. Did I capture roughly what the WebKit team is thinking? Thanks for engaging!"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/423",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -6602,10 +6659,7 @@
     "closed_at": null,
     "author_association": "NONE",
     "body": "As brought up by @cramforce in https://github.com/WICG/webpackage/issues/422#issuecomment-485054801, we should require cross-site loads of signed packages to be stateless. Specifically:\r\n- The request chain must be credential-less. Maybe we can leverage some Fetch policy here.\r\n- It must be an HTTP GET request.\r\n- The request URL must not have a query string or fragment.\r\n- The path of the package request must be the same as the path on the target domain.\r\n\r\nThe above requirements are to ensure that cross-site tracking or personalization information is not transferred in the request for the package."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/422",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -8197,7 +8251,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/394.patch"
     },
     "body": "\n\n\n<!--\n    This comment and the below content is programatically generated.\n    You may add a comma-separated list of anchors you'd like a\n    direct link to below (e.g. #idl-serializers, #idl-sequence):\n#exchange-signature-integrity-header, #read-a-body\n    Don't remove this comment or modify anything below this line.\n    If you don't want a preview generated for this pull request,\n    just replace the whole of this comment's content by \"no preview\"\n    and remove what's below.\n-->\n***\n<a href=\"https://pr-preview.s3.amazonaws.com/jyasskin/webpackage/pull/394.html\" title=\"Last updated on Feb 7, 2019, 10:49 PM UTC (d8b73dd)\">Preview</a> (<a href=\"https://pr-preview.s3.amazonaws.com/jyasskin/webpackage/pull/394.html#exchange-signature-integrity-header\" title=\"#exchange-signature-integrity-header\">#exchange-signature-…</a>) (<a href=\"https://pr-preview.s3.amazonaws.com/jyasskin/webpackage/pull/394.html#read-a-body\" title=\"#read-a-body\">#read-a-body</a>) | <a href=\"https://pr-preview.s3.amazonaws.com/WICG/webpackage/394/3997c75...jyasskin:d8b73dd.html\" title=\"Last updated on Feb 7, 2019, 10:49 PM UTC (d8b73dd)\">Diff</a>"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/393",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -8245,10 +8302,7 @@
     "closed_at": "2019-02-08T01:43:32Z",
     "author_association": "COLLABORATOR",
     "body": "The loading spec defines [integrity header](https://wicg.github.io/webpackage/loading.html#exchange-signature-integrity-header) as a list whose value is the result of splitting the `integrity` signature parameter on `/`.\r\n\r\nhttps://wicg.github.io/webpackage/loading.html#parsing-signature\r\n\r\n> 8. Set result’s integrity header to the result of strictly splitting the \"integrity\" parameter of parsed[0] on U+002F (/).\r\n\r\nBut,\r\n\r\nhttps://wicg.github.io/webpackage/loading.html#read-a-body\r\n\r\n> 1. If signature’s integrity header's first item is:\r\n>   ↪ \"digest/mi-sha256-03\"\r\n\r\nThis can't be true. It should check if signature’s integrity header is a two-elements list [\"digest\", \"mi-sha256-03\"]. Or maybe just let _integrity header_ a byte sequence, not a list?\r\n"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/392",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -9956,7 +10010,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/364.patch"
     },
     "body": "@irori We should merge the changes w/ https://github.com/WICG/webpackage/pull/363"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/363",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -10010,10 +10067,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/363.patch"
     },
     "body": "This is part of #362."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/362",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -11649,7 +11703,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/333.patch"
     },
     "body": "This adds -verify option to dump-signedexhcange, which runs\r\nthe verification algorithm [1] on the given signed-exchange.\r\n\r\nBy default certificate chain is fetched from signature's cert-url,\r\nbut that can be overridden by -cert flag.\r\n\r\nCurrently it only checks signature validity [2], and does not\r\nperform certificate verification (step 7 of [2]).\r\n\r\n[1] draft-yasskin-http-origin-signed-responses.html#cross-origin-trust\r\n[2] draft-yasskin-http-origin-signed-responses.html#signature-validity"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/332",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -11703,10 +11760,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/332.patch"
     },
     "body": "It was a method of Signer, but will be used by verifier too.\r\n\r\nThis is part of #319."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/331",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -13448,7 +13502,10 @@
     "closed_at": null,
     "author_association": "COLLABORATOR",
     "body": ""
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/302",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -13510,10 +13567,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/302.patch"
     },
     "body": "Add `go.mod` and `go.sum` so that the dependent library versions are specified explicitly. This affects Go 1.11 module usages (without $GOPATH), and should not affect the current usual usage (with $GOPATH).\r\n\r\nThis is a preparation for Go modules which will be officially introduced at Go 1.12.\r\n\r\nNote: you can test this by:\r\n\r\n1. Checking out https://github.com/WICG/webpackage at your local machine, not under `$GOPATH/src`\r\n2. Run `GO111MODULE=on go test ./...`\r\n"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/301",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -15037,7 +15091,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/273.patch"
     },
     "body": "@nyaxt Do you think this is worth merging?"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/272",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -15091,10 +15148,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/272.patch"
     },
     "body": "Use `.sxg` and `.wbn` instead of `.htxg` and `.webbundle`."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/271",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -16786,7 +16840,10 @@
     "closed_at": "2018-07-09T05:14:39Z",
     "author_association": "COLLABORATOR",
     "body": "> -sct should be optional (if not, we should fix gen-certurl), so we can omit it.\r\nThe `-sct` command-line flag of the `gen-certurl` tool is not currently optional"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/242",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -16834,10 +16891,7 @@
     "closed_at": "2018-08-20T07:21:21Z",
     "author_association": "MEMBER",
     "body": "Chromium would like to be able to ship these formats and then continue evolving them as they make their way through the standards process. QUIC attempts something like this by defining [\"invariants\"](https://tools.ietf.org/html/draft-ietf-quic-invariants-01), \"properties of the QUIC transport protocol that are expected to remain unchanged over time as new versions of the protocol are developed.\" To try the same thing in these specifications, it might make sense to put a fallback URL in a fixed place in both the signed exchange and bundles formats.\r\n\r\nFor signed exchanges, this would be the request URL that's currently encoded as the `:url` field in the [request headers](https://tools.ietf.org/html/draft-yasskin-http-origin-signed-responses-04#section-3.2). For bundles, it would be the [`start_url`](https://www.w3.org/TR/appmanifest/#start_url-member) that's expected to be in the bundle's [manifest](https://tools.ietf.org/html/draft-yasskin-wpack-bundled-exchanges-00#section-3.2.2). In both cases, the value would be moved instead of copied to the new location, to avoid the possibility of inconsistencies.\r\n\r\nWhen the client receives an unknown version of the format (either too old or too new), it would redirect to the fallback URL. Offline users would be out of luck, but online ones would still be able to get the content.\r\n\r\nThis could also be accomplished using content negotiation on the `Accept` header, but that's a [joint that might rust shut](https://www.imperialviolet.org/2016/05/16/agility.html), so we should try to make things work even if it's rusty, if possible.\r\n\r\nThoughts?"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/241",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -18396,7 +18450,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/213.patch"
     },
     "body": "To prepare for bundle.Read"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/212",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -18452,10 +18509,7 @@
     "closed_at": "2018-06-22T18:51:37Z",
     "author_association": "COLLABORATOR",
     "body": "# Goal\r\n- Easier streaming consumption of large bundles.\r\n- Easier non-streaming consumption of the small bundles.\r\n\r\n# Background\r\nIn the current bundle spec, the structure of the responses section is allowed to be very flexible and not required to be a CBOR construct.\r\n\r\n## Streaming loading algorithm for current format\r\nWhen loading a bundle in a streamed fashion, currently the parser will:\r\n1. Consume the index section\r\n1. Sort the exchanges by their response range offset\r\n1. Consume the other sections up till the responses section\r\n1. Discard the bytes until it reaches the first exchange in the sorted list\r\n1. Buffer the bytes until it reaches the end of the the first exchange\r\n1. The first exchange becomes ready for its use:\r\n  1. Parse its responses header CBOR map\r\n  1. Read its payload\r\n1. Append bytes to the buffer until it reaches the end of the next item.\r\n1. The second exchange becomes ready for its use.\r\n1. ...\r\n\r\nSince there may be overlap in the response exchange, we need to keep around the original responses section in the buffer (which probably will reside on memory), since they may theoretically be used more than 1 time in a different CBOR interpretation. It is non-trivial to compute the \"done\" part of the responses section which are not referenced in later exchanges to partially free the original responses bytes buffer.\r\n\r\n## Non-streaming consumption of the small bundles\r\nIf the entire bundle is guaranteed to be a valid CBOR, it will become very easy to consume small packages which will easily fit in memory. If efficiency is not an issue, you can feed the entire package to CBOR parser, and consume the exchanges without implementing the full parsing algorithm.\r\n\r\nFor example, @irori created [a live web demo of unbundler](\r\nhttps://bundle-load-test.surge.sh/) which assumes that the bundler output a CBOR array as response section.\r\n\r\n# Proposals\r\n- Specify the structure of the responses section\r\n  - A valid CBOR array? \r\n- An index section entry references the response via array index, not offset\r\n  - Enforces the start of the response is aligned to the start of the item in the responses CBOR array\r\n  - Can save an alignment assert in the parser\r\n- Require the responses section to be always after the index section"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/211",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -20153,7 +20207,10 @@
     "closed_at": null,
     "author_association": "COLLABORATOR",
     "body": "Google App Engine apparently has a small (undocumented) per-header-line size limit [1]. I imagine other such containers might have similar limits. This will be a problem with Signature (esp. if multiple sigs) and Link, unless a signer is allowed split them by newline.\r\n\r\nhttps://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html#cbor-representation doesn't specify a canonical way to join duplicate response headers; could/should it?\r\n\r\n[1] Was 497, per [stackoverflow](https://stackoverflow.com/questions/15280027/is-there-a-size-limit-for-http-response-headers-on-google-app-engine), but may have increased to 1k or so."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/182",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -20207,10 +20264,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/182.patch"
     },
     "body": "Digests require buffering the whole response body before determining that it's\r\nvalid, which unnecessarily increases the complexity in the verifier.\r\n\r\nThis change also puts a bound on the MI record size, also to limit the needed buffering.\r\n\r\n@davidben, have I explained the right reasons for doing this?\r\n\r\nFixes #138\r\n\r\n[Preview](https://jyasskin.github.io/webpackage/remove-digest/draft-yasskin-http-origin-signed-responses.html), [Diff](https://tools.ietf.org/rfcdiff?url1=https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.txt&url2=https://jyasskin.github.io/webpackage/remove-digest/draft-yasskin-http-origin-signed-responses.txt)\r\n"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/181",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -21923,7 +21977,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/153.patch"
     },
     "body": "This is just an editorial change rather than a behavior change.\r\n\r\n[Preview](https://jyasskin.github.io/webpackage/publisher-author/draft-yasskin-http-origin-signed-responses.html), [Diff](https://tools.ietf.org/rfcdiff?url1=https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.txt&url2=https://jyasskin.github.io/webpackage/publisher-author/draft-yasskin-http-origin-signed-responses.txt)"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/152",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -22009,10 +22066,7 @@
     "closed_at": "2018-03-20T07:00:37Z",
     "author_association": "COLLABORATOR",
     "body": "That would be useful for generating test htxg.\r\n\r\ncc: @hajimehoshi "
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/151",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -23689,7 +23743,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/123.patch"
     },
     "body": "Closes https://github.com/WICG/webpackage/issues/101"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/122",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -23743,10 +23800,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/122.patch"
     },
     "body": "Use a custom CBOR certificate chain format instead.\r\n\r\nAlso register this format with IANA.\r\n\r\n@sleevi, better?\r\n\r\n[Preview](https://jyasskin.github.io/webpackage/avoid-tls-messages/draft-yasskin-http-origin-signed-responses.html), [Diff](https://tools.ietf.org/rfcdiff?url1=https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.txt&url2=https://jyasskin.github.io/webpackage/avoid-tls-messages/draft-yasskin-http-origin-signed-responses.txt)"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/121",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -25305,7 +25359,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/93.patch"
     },
     "body": "[Preview](https://jyasskin.github.io/webpackage/ilari-issues/draft-yasskin-http-origin-signed-responses.html), [Diff](https://tools.ietf.org/rfcdiff?url1=https://jyasskin.github.io/webpackage/draft-yasskin-http-origin-signed-responses.txt&url2=https://jyasskin.github.io/webpackage/ilari-issues/draft-yasskin-http-origin-signed-responses.txt)"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/92",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -25359,10 +25416,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/92.patch"
     },
     "body": "In the hopes of getting deep links.\r\n\r\nPointed out in https://lists.w3.org/Archives/Public/ietf-http-wg/2017OctDec/0399.html.\r\n\r\nHowever, https://tools.ietf.org/html/draft-ietf-httpbis-origin-frame-04#section-1 does have a deep link to <a href=\"./rfc7540#section-9.1.2\">[RFC7540], Section&nbsp;9.1.2</a>, so I don't think this ordering is the fundamental problem.\r\n\r\nI can't get any of these syntaxes to result in deep links from https://xml2rfc.tools.ietf.org/, so I'm not sure what the ietf-httpbis drafts are doing to get them. The httpsbis editors' drafts do *not* have deep links: http://httpwg.org/http-extensions/expect-ct.html#response-header-field-syntax\r\n\r\n@MikeBishop, halp! 😺"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/91",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -27020,7 +27074,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/63.patch"
     },
     "body": "Headers are decompressed before being hashed."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/62",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -27074,10 +27131,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/62.patch"
     },
     "body": "This sits on top of #55, #60, #61, #63, #64, #65, and #66. Sorry that it's so long again."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/61",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -28640,7 +28694,10 @@
     "closed_at": "2019-05-13T16:49:49Z",
     "author_association": "MEMBER",
     "body": "@bmeck, could you describe the use cases you're interested in for the packaging format, either in this issue or as a PR against the [`README.md`](https://github.com/dimich-g/webpackage/blob/master/README.md)?"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/32",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -28688,10 +28745,7 @@
     "closed_at": "2019-05-13T16:49:31Z",
     "author_association": "MEMBER",
     "body": "@lrosenthol, could you describe the use cases you're interested in for the packaging format, either in this issue or as a PR against the [`README.md`](https://github.com/dimich-g/webpackage/blob/master/README.md)?"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/31",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -29317,9 +29371,9 @@
 
     ],
     "milestone": null,
-    "comments": 8,
+    "comments": 12,
     "created_at": "2016-12-10T16:55:07Z",
-    "updated_at": "2017-03-30T18:07:48Z",
+    "updated_at": "2019-12-12T01:16:14Z",
     "closed_at": "2017-03-30T18:07:48Z",
     "author_association": "COLLABORATOR",
     "body": "For self extracting executables, the common implementation is to produce a file which is a concatenated binary executable head, and an archive tail.\r\n\r\nNode and Electron are looking at reusing webpackage possibly as things progress and need a way:\r\n\r\n* Have a signature for the concatenated binary+archive\r\n* Have a length pointer to let the runtime jump to the start of the archive\r\n\r\nSelf extracting zip files, ASAR from electron, and NODA are examples of this from the past. These all work by having a directory at end of file, but for all use cases I know a pointer to start of archive on the tail would be sufficient. Doing so would most likely just be a series of magic bytes and kength that exists at the end of the file. It could be optional but must be easy to add to an existing webpackage.\r\n\r\nFor a signature of the entire binary + archive this is important so people don't perform a secondary concatenation and load a different archive than expected, it most likely can just be a well known header that optionally exists on the package headers."
@@ -30209,7 +30263,10 @@
     "closed_at": "2017-01-13T19:54:47Z",
     "author_association": "NONE",
     "body": "Very happy to see Packaging reconsidered. The Digital Publishing IG considered this as well. Please see http://w3c.github.io/dpub-pwp-ucr/index.html for our use cases and requirements. We are also looking at Web App Manifest (https://w3c.github.io/manifest/) as a potential mechanism. Our goals are very similar, so it would be helpful to discuss and find common ground. "
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/2",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -30257,10 +30314,7 @@
     "closed_at": "2017-01-09T16:38:05Z",
     "author_association": "NONE",
     "body": "Something unclear reading through the current proposal is how a developer would hint that some resources in a web package have a higher priority to fetch (e.g via resource hints) than others - the entire package would be fetched with a single priority. If I want to prefetch or preload certain assets, I'm unsure how those systems interface with packages.\r\n\r\nAre there any thoughts about this?"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/1",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
