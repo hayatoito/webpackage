@@ -1,6 +1,114 @@
 [
 
   {
+    "url": "https://api.github.com/repos/WICG/webpackage/issues/549",
+    "repository_url": "https://api.github.com/repos/WICG/webpackage",
+    "labels_url": "https://api.github.com/repos/WICG/webpackage/issues/549/labels{/name}",
+    "comments_url": "https://api.github.com/repos/WICG/webpackage/issues/549/comments",
+    "events_url": "https://api.github.com/repos/WICG/webpackage/issues/549/events",
+    "html_url": "https://github.com/WICG/webpackage/pull/549",
+    "id": 540767671,
+    "node_id": "MDExOlB1bGxSZXF1ZXN0MzU1NTM0OTgz",
+    "number": 549,
+    "title": "js/bundle: Bump version to 0.0.4",
+    "user": {
+      "login": "irori",
+      "id": 80796,
+      "node_id": "MDQ6VXNlcjgwNzk2",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/80796?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/irori",
+      "html_url": "https://github.com/irori",
+      "followers_url": "https://api.github.com/users/irori/followers",
+      "following_url": "https://api.github.com/users/irori/following{/other_user}",
+      "gists_url": "https://api.github.com/users/irori/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/irori/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/irori/subscriptions",
+      "organizations_url": "https://api.github.com/users/irori/orgs",
+      "repos_url": "https://api.github.com/users/irori/repos",
+      "events_url": "https://api.github.com/users/irori/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/irori/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2019-12-20T05:21:13Z",
+    "updated_at": "2019-12-20T06:19:46Z",
+    "closed_at": "2019-12-20T06:19:45Z",
+    "author_association": "COLLABORATOR",
+    "pull_request": {
+      "url": "https://api.github.com/repos/WICG/webpackage/pulls/549",
+      "html_url": "https://github.com/WICG/webpackage/pull/549",
+      "diff_url": "https://github.com/WICG/webpackage/pull/549.diff",
+      "patch_url": "https://github.com/WICG/webpackage/pull/549.patch"
+    },
+    "body": "@kinu ptl"
+  },
+  {
+    "url": "https://api.github.com/repos/WICG/webpackage/issues/548",
+    "repository_url": "https://api.github.com/repos/WICG/webpackage",
+    "labels_url": "https://api.github.com/repos/WICG/webpackage/issues/548/labels{/name}",
+    "comments_url": "https://api.github.com/repos/WICG/webpackage/issues/548/comments",
+    "events_url": "https://api.github.com/repos/WICG/webpackage/issues/548/events",
+    "html_url": "https://github.com/WICG/webpackage/pull/548",
+    "id": 540068079,
+    "node_id": "MDExOlB1bGxSZXF1ZXN0MzU0OTM3OTY3",
+    "number": 548,
+    "title": "js/bundle: Allow method chaining in bundle builder",
+    "user": {
+      "login": "irori",
+      "id": 80796,
+      "node_id": "MDQ6VXNlcjgwNzk2",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/80796?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/irori",
+      "html_url": "https://github.com/irori",
+      "followers_url": "https://api.github.com/users/irori/followers",
+      "following_url": "https://api.github.com/users/irori/following{/other_user}",
+      "gists_url": "https://api.github.com/users/irori/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/irori/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/irori/subscriptions",
+      "organizations_url": "https://api.github.com/users/irori/orgs",
+      "repos_url": "https://api.github.com/users/irori/repos",
+      "events_url": "https://api.github.com/users/irori/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/irori/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2019-12-19T04:25:14Z",
+    "updated_at": "2019-12-20T06:18:59Z",
+    "closed_at": "2019-12-20T06:18:58Z",
+    "author_association": "COLLABORATOR",
+    "pull_request": {
+      "url": "https://api.github.com/repos/WICG/webpackage/pulls/548",
+      "html_url": "https://github.com/WICG/webpackage/pull/548",
+      "diff_url": "https://github.com/WICG/webpackage/pull/548.diff",
+      "patch_url": "https://github.com/WICG/webpackage/pull/548.patch"
+    },
+    "body": "This makes BundleBuilder methods return the builder itself, so that callers can chain method calls, like this:\r\n```javascript\r\n  const bundle = (new BundleBuilder(primaryURL))\r\n    .setManifestURL(...)\r\n    .addExchange(...)\r\n    .addExchange(...)\r\n    .createBundle();\r\n```\r\nThis is a common idiom of Builder classes."
+  },
+  {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/547",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
     "labels_url": "https://api.github.com/repos/WICG/webpackage/issues/547/labels{/name}",
@@ -594,7 +702,7 @@
     "milestone": null,
     "comments": 1,
     "created_at": "2019-11-22T06:09:54Z",
-    "updated_at": "2019-11-22T06:11:30Z",
+    "updated_at": "2019-12-19T04:23:31Z",
     "closed_at": null,
     "author_association": "COLLABORATOR",
     "pull_request": {
@@ -1520,7 +1628,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/520.patch"
     },
     "body": "The content is copied from go/bundle/README.md. Having this information\r\nhere too would be useful."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/519",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -1628,10 +1739,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/518.patch"
     },
     "body": "Make it explicit that manifestUrl is optional (and also added some texts).\r\n\r\nUsers should ultimately refer to the code or run the tool to see detailed parameter options, but wanted to add some info to unconfuse. Wdyt?"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/517",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -3164,7 +3272,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/490.patch"
     },
     "body": "This adds `sign-bundle` command line tool. It takes an existing bundle, a certificate chain (generated by `gen-certurl`) and a private key, and creates a new bundle with a \"signatures\" section added.\r\n\r\nThe generated signatures section includes a signature that covers all exchanges whose hostname matches the certificate. Also, this tool encodes those exchanges with the mi-sha256-03 content encoding."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/489",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -3272,10 +3383,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/488.patch"
     },
     "body": "This adds data structures for the signature section [1], and encoder / decoder for the section. Signing and verification code will be added in follow-up PRs.\r\n\r\n[1] https://wicg.github.io/webpackage/draft-yasskin-wpack-bundled-exchanges.html#signatures-section"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/487",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -4792,7 +4900,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/460.patch"
     },
     "body": "This patch splits `bundle.go` into three files:\r\n\r\n- `bundle.go` - definition of common data types and some utility functions\r\n- `encoder.go` - bundle generation code\r\n- `decoder.go` - bundle parsing code\r\n\r\nCode moves only, no functional changes.\r\n"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/459",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -4900,10 +5011,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/458.patch"
     },
     "body": "This is a preparation for supporting the new bundle format (#450).\r\n\r\n- Introduces `Version` type to represent spec versions. `version.Unversioned` represents the old format before #450.\r\n- `gen-bundle` now accepts `-version` flag. Note that it doesn't generate valid bundle in the new format yet."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/457",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -6511,7 +6619,10 @@
     "closed_at": null,
     "author_association": "NONE",
     "body": "It's been widely discussed that SXG certificates enable off-path attacks. This means that an attacker that has stolen an SXG private key and created SXG content can send it to a client from any server controlled by that attacker, such as a phishing site, and the browser will trust it. This opens up a lot of possibilities for impersonation that are not currently available to an attacker that compromises a TLS certificate. An attacker with a TLS certificate needs to somehow get a client that is already connecting to a site (via DNS and TCP/IP) to connect to a server under their control to fetch the content. This usually requires DNS poisoning or being on-path between the victim and the server.\r\n\r\nBecause SXG introduces a new off-path vector of attack, it's worth considering ways to mitigate this attack vector in the specification. This is the situation we found ourselves in for the Secondary Certificates project (https://tools.ietf.org/html/draft-bishop-httpbis-http2-additional-certs-05), which allows attackers with specially-issued secondary certificates to serve content from multiple sites over the same connection, which enables similar off-path attacks.\r\n\r\nThe mitigation that was discussed in Secondary Certificates to prevent arbitrary off-path domain hijacking was a simple one: we proposed that for a certificate to be used as secondary, it needs an additional field called \"Required Domain\". In order to accept a certificate with a \"Required Domain\" extension, the server must have previously served a certificate that covers the required domain on the same connection. This has the nice property that if a secondary certificate is compromised, it can only be used to hijack traffic if they also have control over the secondary domain.\r\n\r\nI'd like to suggest that this mechanism be considered here for SXG certificates. In order to serve an SXG from a cache, the certificate would need to have that cache's domain in its set of \"Required Domains\". This would drastically reduce the capabilities of an attacker who steals an SXG cert key, mints SXGs and serves them from an arbitrary phishing domain."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/429",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -6619,10 +6730,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/428.patch"
     },
     "body": "This removes one avenue by which a distributor could send its notion of\na user's ID to another origin, for server-side correlation with that\norigin's cookies. That correlation would violate the goals in #422 and seems easy to block.\n\nThanks @kristoferbaxter and @twifkak for pointing this out.\n\nI don't *think* it's useful to customize the content of a certificate chain to a particular user, especially since the hash of the certificate itself is locked in by the SXG's signature. But if anyone sees a way this'll break things, please speak up.\n\n\n<!--\n    This comment and the below content is programatically generated.\n    You may add a comma-separated list of anchors you'd like a\n    direct link to below (e.g. #idl-serializers, #idl-sequence):\n\n    Don't remove this comment or modify anything below this line.\n    If you don't want a preview generated for this pull request,\n    just replace the whole of this comment's content by \"no preview\"\n    and remove what's below.\n-->\n***\n<a href=\"https://pr-preview.s3.amazonaws.com/jyasskin/webpackage/pull/428.html\" title=\"Last updated on May 1, 2019, 8:05 PM UTC (1321699)\">Preview</a> | <a href=\"https://pr-preview.s3.amazonaws.com/WICG/webpackage/428/9634466...jyasskin:1321699.html\" title=\"Last updated on May 1, 2019, 8:05 PM UTC (1321699)\">Diff</a>"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/427",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -8166,7 +8274,10 @@
     "closed_at": "2019-03-24T09:31:48Z",
     "author_association": "MEMBER",
     "body": "@horo-t, could you add an example ([`<div class=\"example\" id=\"example-network-error-log\">`](https://tabatkins.github.io/bikeshed/#notes-etc)) Network Error Log that could be produced by the spec you added in #374? https://wicg.github.io/webpackage/loading.html#queue-report would be a reasonable place to put it unless you think somewhere else will be more clear."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/399",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -8268,10 +8379,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/398.patch"
     },
     "body": "- Prints validation result at the top\r\n- Adds a blank line between validation result and dump\r\n\r\nFixes #389."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/397",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -9879,7 +9987,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/370.patch"
     },
     "body": "This patch lets gen-signedexchange validate the generated exchange\r\nusing `Verify()`, when `-ignoreErrors` flag is not specified.\r\n\r\nBreaking change: Now `signedexchange.NewExchange` takes request URL as a\r\nstring (not a `*url.URL`), and does not return an error."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/369",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -9987,10 +10098,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/368.patch"
     },
     "body": ""
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/367",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -11586,7 +11694,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/339.patch"
     },
     "body": "Fixes #336 and fixes #340.\n\n\n<!--\n    This comment and the below content is programatically generated.\n    You may add a comma-separated list of anchors you'd like a\n    direct link to below (e.g. #idl-serializers, #idl-sequence):\n\n    Don't remove this comment or modify anything below this line.\n    If you don't want a preview generated for this pull request,\n    just replace the whole of this comment's content by \"no preview\"\n    and remove what's below.\n-->\n***\n<a href=\"https://pr-preview.s3.amazonaws.com/nyaxt/webpackage/pull/339.html\" title=\"Last updated on Jan 10, 2019, 5:26 PM UTC (3e85268)\">Preview</a> | <a href=\"https://pr-preview.s3.amazonaws.com/WICG/webpackage/339/80005f0...nyaxt:3e85268.html\" title=\"Last updated on Jan 10, 2019, 5:26 PM UTC (3e85268)\">Diff</a>"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/338",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -11688,10 +11799,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/337.patch"
     },
     "body": ""
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/336",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -13411,7 +13519,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/309.patch"
     },
     "body": ""
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/308",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -13519,10 +13630,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/307.patch"
     },
     "body": ""
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/306",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -15000,7 +15108,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/279.patch"
     },
     "body": "To address #276 "
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/278",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -15108,10 +15219,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/277.patch"
     },
     "body": "… debugging"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/276",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -16637,7 +16745,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/249.patch"
     },
     "body": ""
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/248",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -16739,10 +16850,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/247.patch"
     },
     "body": "But warn servers away from using it in TLS servers.\r\n\r\nFixes #238.\r\n\r\n@sleevi and any CA folks who see this, do you think I'm right to say \"Conforming CAs MUST NOT mark this extension as critical.\", or should I leave them without a requirement here?\r\n\r\nSpec: [Preview](https://jyasskin.github.io/webpackage/non-critical-extension/draft-yasskin-http-origin-signed-responses.html), [Diff](https://tools.ietf.org/rfcdiff?url1=https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.txt&url2=https://jyasskin.github.io/webpackage/non-critical-extension/draft-yasskin-http-origin-signed-responses.txt)\r\n\r\nImpl draft: [Preview](https://jyasskin.github.io/webpackage/non-critical-extension/draft-yasskin-httpbis-origin-signed-exchanges-impl.html), [Diff](https://tools.ietf.org/rfcdiff?url1=https://wicg.github.io/webpackage/draft-yasskin-httpbis-origin-signed-exchanges-impl.txt&url2=https://jyasskin.github.io/webpackage/non-critical-extension/draft-yasskin-httpbis-origin-signed-exchanges-impl.txt)"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/246",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -18359,7 +18467,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/219.patch"
     },
     "body": ""
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/218",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -18467,10 +18578,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/217.patch"
     },
     "body": ""
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/216",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -20048,7 +20156,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/189.patch"
     },
     "body": "Addresses #135 \r\nCorresponding spec change at f4ca17d1377bed966fdba85c03adbd798cfb5a96\r\n\r\n@jyasskin FYI"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/188",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -20190,10 +20301,7 @@
     "closed_at": null,
     "author_association": "COLLABORATOR",
     "body": "It seems worth adding a \"desired version(s)\" to the Accept-Signature, so intermediaries can signal which version of the Signature header they are capable of consuming. Otherwise, I guess they would have to sniff, based on the names of the parameters, or add a non-standard request header for this purpose."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/186",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -21826,7 +21934,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/159.patch"
     },
     "body": "#152 \r\n\r\nPTAL"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/158",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -21934,10 +22045,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/157.patch"
     },
     "body": "Fixes #151\r\n\r\nCC @twifkak \r\n\r\nPTAL"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/156",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -23650,7 +23758,10 @@
     "closed_at": "2018-03-05T21:29:35Z",
     "author_association": "NONE",
     "body": "It's \"Chrome OS\", not \"ChromeOS\"."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/128",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -23752,10 +23863,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/127.patch"
     },
     "body": "PTAL @nyaxt "
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/126",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -25262,7 +25370,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/99.patch"
     },
     "body": "Instead of arrays with alternating keys and values, which side-steps the\r\ndisagreement about CBOR canonical map ordering rules, I now specify one\r\nof the ordering rules and use maps where they make sense.\r\n\r\nThe one place I'm still not using a map is in the top level of the\r\nexchange representation, where the request/response/payload ordering\r\nseems useful and where we might someday want to add, for example, the\r\nrequest payload between the request and response.\r\n\r\n[Preview](https://jyasskin.github.io/webpackage/use-maps/draft-yasskin-http-origin-signed-responses.html), [Diff](https://tools.ietf.org/rfcdiff?url1=https://jyasskin.github.io/webpackage/draft-yasskin-http-origin-signed-responses.txt&url2=https://jyasskin.github.io/webpackage/use-maps/draft-yasskin-http-origin-signed-responses.txt)\r\n\r\n@MikeBishop"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/98",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -25370,10 +25481,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/97.patch"
     },
     "body": "@yoavweiss"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/96",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -26977,7 +27085,10 @@
     "closed_at": "2018-01-24T18:39:34Z",
     "author_association": "MEMBER",
     "body": "For example, we might want to be able to start playing a large video file without hashing the whole thing.\r\n\r\nSee https://tools.ietf.org/html/draft-thomson-http-mice for one approach."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/68",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -27085,10 +27196,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/67.patch"
     },
     "body": "This depends on #62."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/66",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -28615,7 +28723,10 @@
     "closed_at": "2019-05-13T16:51:39Z",
     "author_association": "MEMBER",
     "body": "From @dimich-g's https://github.com/dimich-g/webpackage/pull/36#issuecomment-290316360:\r\n\r\nWithout a signed manifest, there's no structure to identify sub-packages.\r\n\r\nHowever, it might just work to lump all the resources together at the top level. Do we need to identify the sub-package structure?"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/38",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -28717,10 +28828,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/37.patch"
     },
     "body": "It's a fairly long list. Did I miss anything?"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/36",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -30144,7 +30252,10 @@
     "closed_at": "2017-01-24T02:07:46Z",
     "author_association": "NONE",
     "body": "As defined [in its IANA registration](https://www.iana.org/assignments/media-types/application/index), this is not a valid media type.  Instead, either a new sub-type should be defined and/or the appropriate format extension (eg. +json) should be added."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/8",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -30286,10 +30397,7 @@
     "closed_at": null,
     "author_association": "NONE",
     "body": "While there is a good discussion about the need to handle separate (and unique) origins [here](https://github.com/dimich-g/webpackage#use-case-a-web-page-with-a-resources-from-the-other-origin), it's not clear whether such content should be loaded in a secure (https-like) or insecure (http) context - and whether it being signed influences that choice."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/6",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
