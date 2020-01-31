@@ -1,6 +1,102 @@
 [
 
   {
+    "url": "https://api.github.com/repos/WICG/webpackage/issues/551",
+    "repository_url": "https://api.github.com/repos/WICG/webpackage",
+    "labels_url": "https://api.github.com/repos/WICG/webpackage/issues/551/labels{/name}",
+    "comments_url": "https://api.github.com/repos/WICG/webpackage/issues/551/comments",
+    "events_url": "https://api.github.com/repos/WICG/webpackage/issues/551/events",
+    "html_url": "https://github.com/WICG/webpackage/issues/551",
+    "id": 556474481,
+    "node_id": "MDU6SXNzdWU1NTY0NzQ0ODE=",
+    "number": 551,
+    "title": "Correct / real URLs should be enforced, to avoid breaking adblockers",
+    "user": {
+      "login": "snyderp",
+      "id": 76526,
+      "node_id": "MDQ6VXNlcjc2NTI2",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/76526?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/snyderp",
+      "html_url": "https://github.com/snyderp",
+      "followers_url": "https://api.github.com/users/snyderp/followers",
+      "following_url": "https://api.github.com/users/snyderp/following{/other_user}",
+      "gists_url": "https://api.github.com/users/snyderp/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/snyderp/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/snyderp/subscriptions",
+      "organizations_url": "https://api.github.com/users/snyderp/orgs",
+      "repos_url": "https://api.github.com/users/snyderp/repos",
+      "events_url": "https://api.github.com/users/snyderp/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/snyderp/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2020-01-28T21:18:35Z",
+    "updated_at": "2020-01-29T16:02:47Z",
+    "closed_at": null,
+    "author_association": "NONE",
+    "body": "Currently there is no enforced relationship between the URL used to look up resources in the package, and where the resource came from online.  Consistent URLs are an imperfect, but extremely useful signal for privacy protecting tools (filter lists, adblockers, disconnect, Firefox and Edge built in protections, safe browsing, etc.).  \r\n\r\nThe current proposal would allow for all WebPackage'd sites to circumvent all URL based tools by simply randomizing URLs as a post processing step in [amppackager](https://github.com/ampproject/amppackager) or similar.  This could even be done per-request per page.  Since URLs are effectively just indexes into the package (and not keys for decision making, caching, etc), they can be changed arbitrarily w/o affecting how the package loads, but preventing the URL-based privacy preserving tools from running.\r\n\r\nA (partial) possible solution to the problem is to play a [cut-and-choose](https://www.usenix.org/conference/usenixsecurity16/technical-sessions/presentation/zhu), commitment-auditing style games with the URLs.  At package time, the packager has to make commitments about which URL each resource came from, and the size, shape etc of the resource.  These can be made / mixed with the URL of the page being packaged. \r\n\r\nThe client can then, w/ some probability, audit some number of the URLs in the package.  If the commitments fail, deterring counter measures can be taken against the packing origin (e.g. global decaying block list of misbehaving packagers, etc)."
+  },
+  {
+    "url": "https://api.github.com/repos/WICG/webpackage/issues/550",
+    "repository_url": "https://api.github.com/repos/WICG/webpackage",
+    "labels_url": "https://api.github.com/repos/WICG/webpackage/issues/550/labels{/name}",
+    "comments_url": "https://api.github.com/repos/WICG/webpackage/issues/550/comments",
+    "events_url": "https://api.github.com/repos/WICG/webpackage/issues/550/events",
+    "html_url": "https://github.com/WICG/webpackage/issues/550",
+    "id": 553492404,
+    "node_id": "MDU6SXNzdWU1NTM0OTI0MDQ=",
+    "number": 550,
+    "title": "Sort order example for map keys in canonical CBOR may be incorrect",
+    "user": {
+      "login": "casey",
+      "id": 1945,
+      "node_id": "MDQ6VXNlcjE5NDU=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1945?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/casey",
+      "html_url": "https://github.com/casey",
+      "followers_url": "https://api.github.com/users/casey/followers",
+      "following_url": "https://api.github.com/users/casey/following{/other_user}",
+      "gists_url": "https://api.github.com/users/casey/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/casey/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/casey/subscriptions",
+      "organizations_url": "https://api.github.com/users/casey/orgs",
+      "repos_url": "https://api.github.com/users/casey/repos",
+      "events_url": "https://api.github.com/users/casey/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/casey/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 2,
+    "created_at": "2020-01-22T11:55:07Z",
+    "updated_at": "2020-01-23T07:16:23Z",
+    "closed_at": "2020-01-22T21:09:06Z",
+    "author_association": "NONE",
+    "body": "I was just reading through [the Signed HTTP Exchanges draft](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html#name-canonical-cbor-serializatio), and I think the given example for how keys in a CBOR map should be sorted is incorrect.\r\n\r\nThe example reads:\r\n\r\n```\r\nThe keys in every map MUST be sorted in the bytewise\r\nlexicographic order of their canonical encodings. For example,\r\nthe following keys are correctly sorted:\r\n\r\n1. 10, encoded as 0A.\r\n2. 100, encoded as 18 64.\r\n3. -1, encoded as 20.\r\n4. \"z\", encoded as 61 7A.\r\n5. \"aa\", encoded as 62 61 61.\r\n6. [100], encoded as 81 18 64.\r\n7. [-1], encoded as 81 20.\r\n8. false, encoded as F4.\r\n```\r\n\r\nHowever, section 3.9 of [RFC 7049](https://www.rfc-editor.org/rfc/rfc7049.txt) states:\r\n\r\n```\r\n   o  The keys in every map must be sorted lowest value to highest.\r\n      Sorting is performed on the bytes of the representation of the key\r\n      data items without paying attention to the 3/5 bit splitting for\r\n      major types.  (Note that this rule allows maps that have keys of\r\n      different types, even though that is probably a bad practice that\r\n      could lead to errors in some canonicalization implementations.)\r\n      The sorting rules are:\r\n\r\n      *  If two keys have different lengths, the shorter one sorts\r\n         earlier;\r\n\r\n      *  If two keys have the same length, the one with the lower value\r\n         in (byte-wise) lexical order sorts earlier.\r\n```\r\n\r\nIt's a little odd, but this reads to me as if keys should be sorted by key length first, and only then should keys with the same length be lexically sorted. This would give the sorting:\r\n\r\n```\r\n1. 10, encoded as 0A.\r\n2. -1, encoded as 20.\r\n3. false, encoded as F4.\r\n4. 100, encoded as 18 64.\r\n5. \"z\", encoded as 61 7A.\r\n6. [-1], encoded as 81 20.\r\n7. \"aa\", encoded as 62 61 61.\r\n8. [100], encoded as 81 18 64.\r\n```"
+  },
+  {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/549",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
     "labels_url": "https://api.github.com/repos/WICG/webpackage/issues/549/labels{/name}",
@@ -1520,7 +1616,10 @@
     "closed_at": "2019-11-12T01:16:10Z",
     "author_association": "COLLABORATOR",
     "body": "This generates broken bundle:\r\n\r\n```JavaScript\r\nconst wbn = require('wbn');\r\nconst builder = new wbn.BundleBuilder('http://example.com/');\r\nbuilder.addExchange('http://example.com/', 200,\r\n                    {'content-type': 'application/octet-stream'},\r\n                    new Uint8Array(1024*1024));  // 1MB content\r\nconst buf = builder.createBundle();\r\n```\r\n\r\nThe CBOR encoder we use is implemented using Node streams. It [chokes if it is given large (>16kB) input synchronously](https://github.com/hildjj/node-cbor#highwatermark), and generates truncated output.\r\n"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/521",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -1628,10 +1727,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/520.patch"
     },
     "body": "The content is copied from go/bundle/README.md. Having this information\r\nhere too would be useful."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/519",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -2894,9 +2990,9 @@
 
     ],
     "milestone": null,
-    "comments": 0,
+    "comments": 1,
     "created_at": "2019-09-18T06:03:38Z",
-    "updated_at": "2019-09-18T06:03:38Z",
+    "updated_at": "2020-01-23T07:18:18Z",
     "closed_at": null,
     "author_association": "NONE",
     "body": "I've been making bundles of exchanges from directories of files. It might be nice if there was a tool to do the reverse.\r\n\r\nFor the ESCAPE Workshop, I was going to submit my paper as a bundle, but I figured the organizers couldn't unbundle it :)"
@@ -3164,7 +3260,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/492.patch"
     },
     "body": "- add link to bundle too\r\n- fix signedexchange `go install` url"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/491",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -3272,10 +3371,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/490.patch"
     },
     "body": "This adds `sign-bundle` command line tool. It takes an existing bundle, a certificate chain (generated by `gen-certurl`) and a private key, and creates a new bundle with a \"signatures\" section added.\r\n\r\nThe generated signatures section includes a signature that covers all exchanges whose hostname matches the certificate. Also, this tool encodes those exchanges with the mi-sha256-03 content encoding."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/489",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -4442,9 +4538,9 @@
 
     ],
     "milestone": null,
-    "comments": 2,
+    "comments": 5,
     "created_at": "2019-07-26T01:42:32Z",
-    "updated_at": "2019-08-16T05:04:57Z",
+    "updated_at": "2020-01-29T04:49:44Z",
     "closed_at": null,
     "author_association": "COLLABORATOR",
     "body": "Current bundle spec says that [Bundled Exchanges parser must fail if URL have a fragment or credentials](https://wicg.github.io/webpackage/draft-yasskin-wpack-bundled-exchanges.html#index-section), but says nothing about the URL scheme.\r\n\r\nIn Signed Exchange, [exchange's URL must be `https:`](https://wicg.github.io/webpackage/draft-yasskin-httpbis-origin-signed-exchanges-impl.html#application-signed-exchange). Sould Bundled Exchanges follow this, or should also allow `http:`? Since exchange is defined as HTTP request+response pair, I think non-http(s) schemes don't make sense.\r\n"
@@ -4792,7 +4888,10 @@
     "closed_at": null,
     "author_association": "COLLABORATOR",
     "body": "When `NextUpdate` is in the past, signed exchanges are invalid. `dump-certurl` and `dump-signedexchange` do not currently check these dates -- they should."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/461",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -4900,10 +4999,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/460.patch"
     },
     "body": "This patch splits `bundle.go` into three files:\r\n\r\n- `bundle.go` - definition of common data types and some utility functions\r\n- `encoder.go` - bundle generation code\r\n- `decoder.go` - bundle parsing code\r\n\r\nCode moves only, no functional changes.\r\n"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/459",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -6429,7 +6525,10 @@
     "closed_at": null,
     "author_association": "MEMBER",
     "body": "https://crbug.com/939684 handles this by removing `application/signed-exchange` from the `Accept` header on fallback, but @gregable mentions the possibility of not-checking the signature for a same-origin signed exchange.\r\n\r\nThis interacts with #397 in that we'll want to make sure the loop prevention works for every reason we might use the fallback URL."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/431",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -6619,10 +6718,7 @@
     "closed_at": null,
     "author_association": "NONE",
     "body": "It's been widely discussed that SXG certificates enable off-path attacks. This means that an attacker that has stolen an SXG private key and created SXG content can send it to a client from any server controlled by that attacker, such as a phishing site, and the browser will trust it. This opens up a lot of possibilities for impersonation that are not currently available to an attacker that compromises a TLS certificate. An attacker with a TLS certificate needs to somehow get a client that is already connecting to a site (via DNS and TCP/IP) to connect to a server under their control to fetch the content. This usually requires DNS poisoning or being on-path between the victim and the server.\r\n\r\nBecause SXG introduces a new off-path vector of attack, it's worth considering ways to mitigate this attack vector in the specification. This is the situation we found ourselves in for the Secondary Certificates project (https://tools.ietf.org/html/draft-bishop-httpbis-http2-additional-certs-05), which allows attackers with specially-issued secondary certificates to serve content from multiple sites over the same connection, which enables similar off-path attacks.\r\n\r\nThe mitigation that was discussed in Secondary Certificates to prevent arbitrary off-path domain hijacking was a simple one: we proposed that for a certificate to be used as secondary, it needs an additional field called \"Required Domain\". In order to accept a certificate with a \"Required Domain\" extension, the server must have previously served a certificate that covers the required domain on the same connection. This has the nice property that if a secondary certificate is compromised, it can only be used to hijack traffic if they also have control over the secondary domain.\r\n\r\nI'd like to suggest that this mechanism be considered here for SXG certificates. In order to serve an SXG from a cache, the certificate would need to have that cache's domain in its set of \"Required Domains\". This would drastically reduce the capabilities of an attacker who steals an SXG cert key, mints SXGs and serves them from an arbitrary phishing domain."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/429",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -8172,7 +8268,10 @@
     "closed_at": null,
     "author_association": "MEMBER",
     "body": "CORB seems like a good thing to enable for more mime types. Since there are very few users of our mime types, we should see if it makes sense to turn on CORB for them. We're trying to discourage personalized data in signed exchanges, but unsigned bundles could certainly have it.\r\n\r\n@anforowicz for any thoughts."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/401",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -8274,10 +8373,7 @@
     "closed_at": "2019-03-24T09:31:48Z",
     "author_association": "MEMBER",
     "body": "@horo-t, could you add an example ([`<div class=\"example\" id=\"example-network-error-log\">`](https://tabatkins.github.io/bikeshed/#notes-etc)) Network Error Log that could be produced by the spec you added in #374? https://wicg.github.io/webpackage/loading.html#queue-report would be a reasonable place to put it unless you think somewhere else will be more clear."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/399",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -9813,7 +9909,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/372.patch"
     },
     "body": ""
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/371",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -9987,10 +10086,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/370.patch"
     },
     "body": "This patch lets gen-signedexchange validate the generated exchange\r\nusing `Verify()`, when `-ignoreErrors` flag is not specified.\r\n\r\nBreaking change: Now `signedexchange.NewExchange` takes request URL as a\r\nstring (not a `*url.URL`), and does not return an error."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/369",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -11592,7 +11688,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/341.patch"
     },
     "body": "This implements Step 3-5 of the \"Cross-origin trust\" algorithm\r\n([Section 4 of draft-yasskin-http-origin-signed-responses.html](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html#rfc.section.4))."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/340",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -11694,10 +11793,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/339.patch"
     },
     "body": "Fixes #336 and fixes #340.\n\n\n<!--\n    This comment and the below content is programatically generated.\n    You may add a comma-separated list of anchors you'd like a\n    direct link to below (e.g. #idl-serializers, #idl-sequence):\n\n    Don't remove this comment or modify anything below this line.\n    If you don't want a preview generated for this pull request,\n    just replace the whole of this comment's content by \"no preview\"\n    and remove what's below.\n-->\n***\n<a href=\"https://pr-preview.s3.amazonaws.com/nyaxt/webpackage/pull/339.html\" title=\"Last updated on Jan 10, 2019, 5:26 PM UTC (3e85268)\">Preview</a> | <a href=\"https://pr-preview.s3.amazonaws.com/WICG/webpackage/339/80005f0...nyaxt:3e85268.html\" title=\"Last updated on Jan 10, 2019, 5:26 PM UTC (3e85268)\">Diff</a>"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/338",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -13417,7 +13513,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/311.patch"
     },
     "body": ""
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/310",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -13519,10 +13618,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/309.patch"
     },
     "body": ""
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/308",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -15000,7 +15096,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/281.patch"
     },
     "body": "[Preview](https://jyasskin.github.io/webpackage/loading-spec/loading.html)"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/280",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -15108,10 +15207,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/279.patch"
     },
     "body": "To address #276 "
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/278",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -16637,7 +16733,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/251.patch"
     },
     "body": "This PR exposes all the members of `Exchange` for consistency."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/250",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -16745,10 +16844,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/249.patch"
     },
     "body": ""
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/248",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -18359,7 +18455,10 @@
     "closed_at": null,
     "author_association": "COLLABORATOR",
     "body": "By using [data-url](https://fetch.spec.whatwg.org/#data-urls) in cert-url of [Signature Header](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html#signature-header), the [certificate chain](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html#cert-chain-format) can be contained in a Signed HTTP Exchange. It is useful for offline loading.\r\n\r\nBut having the same certificate chain in multiple Signed HTTP Exchanges in a Bundled HTTP Exchange is not efficient. We should have a way to contain one certificate chain per one host name for multiple Signed HTTP Exchanges in a Bundled HTTP Exchange.\r\n\r\nI filed this issue from the discussion in https://crrev.com/c/1102281."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/220",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -18467,10 +18566,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/219.patch"
     },
     "body": ""
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/218",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -20048,7 +20144,10 @@
     "closed_at": "2018-05-24T23:19:19Z",
     "author_association": "COLLABORATOR",
     "body": "In the current spec draft, the magic string is allowed to be arbitrary length for implementation drafts.\r\n\r\n> Note: RFC EDITOR PLEASE DELETE THIS NOTE; The implementation of the final RFC MUST use this file signature, but implementations of drafts MUST NOT use it and MUST use another implementation-specific string beginning with “sxg1-“ and ending with a 0 byte instead.\r\n\r\nThis makes its streaming parsing non-trivial, since we need to scan for `\"\\0\"` to appear, rather than reading fixed length record.\r\n\r\nTwo proposals:\r\n- Allocate fixed length (8bytes?) for the magic string field, and pad the rest of the bytes `\"\\0\"` \r\n  - Will file a PR for this\r\n- Separate version field?"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/190",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -20156,10 +20255,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/189.patch"
     },
     "body": "Addresses #135 \r\nCorresponding spec change at f4ca17d1377bed966fdba85c03adbd798cfb5a96\r\n\r\n@jyasskin FYI"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/188",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -21794,7 +21890,10 @@
     "closed_at": "2018-03-27T20:27:15Z",
     "author_association": "COLLABORATOR",
     "body": "CBOR representation of exchange headers must be canonically-serialized, which means maps must not have multiple entries with the same key.\r\n\r\nHowever, they still can have duplicated HTTP header fields with case differences. For example:\r\n```\r\n[\r\n  {\r\n    ':url': 'https://example.com/'\r\n    ':method': 'GET',\r\n  },\r\n  {\r\n    ':status': '200',\r\n    'Content-Type': ...\r\n    'content-type': ...\r\n  }\r\n]\r\n\r\n```\r\nShould the spec explicitly forbid such duplicated headers? Or specify that header names must be stored in lower-case?"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/160",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -21934,10 +22033,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/159.patch"
     },
     "body": "#152 \r\n\r\nPTAL"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/158",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -23656,7 +23752,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/131.patch"
     },
     "body": "@KenjiBaheux @thinkpanzer, is this clear as an entry-point to the packaging specs? Have I missed anything folks will want to see?"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/130",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -23758,10 +23857,7 @@
     "closed_at": "2018-03-05T21:29:35Z",
     "author_association": "NONE",
     "body": "It's \"Chrome OS\", not \"ChromeOS\"."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/128",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -25268,7 +25364,10 @@
     "closed_at": "2018-02-13T06:06:33Z",
     "author_association": "NONE",
     "body": "in ES modules, we need to fetch a lot of module files.\r\nincreasing requests cause a performance issue. ([10k 1kB load is 10 times slower than single 10MB load](https://docs.google.com/document/d/1ds9EEkcDGnt-iR8SAN-_7nsOfw7gsMfhZjzZ_QAIyjM/edit))\r\n\r\nh2 will reduce connection handshake/establish, but doesn't reduce request/response itself which browser handles inside.\r\n\r\nbut reducing files via bundling like webpack is less merit of es modules(ex caching etc). \r\n\r\nsame things happens for image. so we sometimes concatting them aka Sprite.\r\n\r\ncurrent spec seems packaging main-resource + sub-resource in 1 file.\r\nso if webpackage support or have candidate to package lot of resources into 1 package(not include main-resoruce) seems solve fetching performance problem.\r\nexpected behavior is fetching single response but unpackaging in browser and handling/caching like separated ESModules/ImageIcons/StyleSheets etc."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/100",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -25370,10 +25469,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/99.patch"
     },
     "body": "Instead of arrays with alternating keys and values, which side-steps the\r\ndisagreement about CBOR canonical map ordering rules, I now specify one\r\nof the ordering rules and use maps where they make sense.\r\n\r\nThe one place I'm still not using a map is in the top level of the\r\nexchange representation, where the request/response/payload ordering\r\nseems useful and where we might someday want to add, for example, the\r\nrequest payload between the request and response.\r\n\r\n[Preview](https://jyasskin.github.io/webpackage/use-maps/draft-yasskin-http-origin-signed-responses.html), [Diff](https://tools.ietf.org/rfcdiff?url1=https://jyasskin.github.io/webpackage/draft-yasskin-http-origin-signed-responses.txt&url2=https://jyasskin.github.io/webpackage/use-maps/draft-yasskin-http-origin-signed-responses.txt)\r\n\r\n@MikeBishop"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/98",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -26951,7 +27047,10 @@
     "closed_at": "2017-08-14T23:58:02Z",
     "author_association": "MEMBER",
     "body": "This supports the [IETF submission](https://mailarchive.ietf.org/arch/msg/dispatch/NQ0deHSsRvt4BL4alk_WYVnhhvo). It has to happen before they close the RFC database from July 3 until the [Prague meeting](http://ietf.org/meeting/99/index.html).\r\n\r\nWe can use https://github.com/cabo/kramdown-rfc2629 to author in markdown, and https://github.com/martinthomson/i-d-template to build with Travis CI."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/70",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -27085,10 +27184,7 @@
     "closed_at": "2018-01-24T18:39:34Z",
     "author_association": "MEMBER",
     "body": "For example, we might want to be able to start playing a large video file without hashing the whole thing.\r\n\r\nSee https://tools.ietf.org/html/draft-thomson-http-mice for one approach."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/68",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -28610,7 +28706,10 @@
     "closed_at": "2017-05-11T00:02:03Z",
     "author_association": "MEMBER",
     "body": "From @dimich-g's https://github.com/dimich-g/webpackage/pull/36#issuecomment-290316360:\r\n\r\nThe `resource-key` structure (which holds a URL and possibly a set of request headers) is used as the key for the index, manifest, and main content. URLs can be fairly long, so we may want to optimize or compress that redundancy.\r\n\r\nOne idea for avoiding this duplication: Add a section of abbreviations that assigns each resource-key an index, and use those indices as the keys in the other three sections.\r\n\r\n1. We could re-use the index as that section of abbreviations.\r\n2. We probably don't want to re-use the manifest as that section, so that aggregating packages can build their own abbreviations.\r\n3. The abbreviations need to be expanded before hashing or checking signatures.\r\n4. We could shorten the abbreviation section even more by:\r\n   1. Resolving each URL/resource-key relative to the previous one.\r\n   1. Using the array index of the URL as its abbreviation instead of making the section name an abbreviation.\r\n\r\nAnother possibility would be to use a shared brotli dictionary to compress all three sections. The main downside here is that shared brotli dictionaries don't exist yet, and when they do, we may want to use a URL to identify which shared dictionary to use, which we'd again want to compress."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/40",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -28723,10 +28822,7 @@
     "closed_at": "2019-05-13T16:51:39Z",
     "author_association": "MEMBER",
     "body": "From @dimich-g's https://github.com/dimich-g/webpackage/pull/36#issuecomment-290316360:\r\n\r\nWithout a signed manifest, there's no structure to identify sub-packages.\r\n\r\nHowever, it might just work to lump all the resources together at the top level. Do we need to identify the sub-package structure?"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/38",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -30156,7 +30252,10 @@
     "closed_at": "2018-01-22T19:29:08Z",
     "author_association": "NONE",
     "body": "However, because the header of the is document is text - most sniffers will consider this a text file and treat it accordingly (eg. screwing up line endings).  If this happens, then all byte offsets will be incorrect and the file will be unable to load.\r\n\r\nConsider finding a way to fool the sniffer or move to a binary format.\r\n\r\n"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/10",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -30252,10 +30351,7 @@
     "closed_at": "2017-01-24T02:07:46Z",
     "author_association": "NONE",
     "body": "As defined [in its IANA registration](https://www.iana.org/assignments/media-types/application/index), this is not a valid media type.  Instead, either a new sub-type should be defined and/or the appropriate format extension (eg. +json) should be added."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/8",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
