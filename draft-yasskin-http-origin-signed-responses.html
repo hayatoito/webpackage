@@ -17,7 +17,7 @@ other ways described in the appendices.
        These signatures contain countermeasures against downgrade and
 protocol-confusion attacks. 
     " name="description">
-<meta content="xml2rfc 2.39.0" name="generator">
+<meta content="xml2rfc 2.40.0" name="generator">
 <meta content="draft-yasskin-http-origin-signed-responses-latest" name="ietf.draft">
 <link href="draft-yasskin-http-origin-signed-responses.xml" type="application/rfc+xml" rel="alternate">
 <link href="#copyright" rel="license">
@@ -826,7 +826,7 @@ table.left {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Yasskin</td>
-<td class="center">Expires 10 August 2020</td>
+<td class="center">Expires 22 August 2020</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -839,12 +839,12 @@ table.left {
 <dd class="internet-draft">draft-yasskin-http-origin-signed-responses-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2020-02-07" class="published">7 February 2020</time>
+<time datetime="2020-02-19" class="published">19 February 2020</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2020-08-10">10 August 2020</time></dd>
+<dd class="expires"><time datetime="2020-08-22">22 August 2020</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -896,7 +896,7 @@ in <a href="https://github.com/WICG/webpackage">https://github.com/WICG/webpacka
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 10 August 2020.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 22 August 2020.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1600,7 +1600,7 @@ augmented-certificate = {
 <p id="section-3.3-3">The first map (second item) in the CBOR array is treated as the end-entity
 certificate, and the client will attempt to build a path (<span>[<a href="#RFC5280" class="xref">RFC5280</a>]</span>) to it
 from a trusted root using the other certificates in the chain.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.3-4">
+<ol start="1" type="1" class="normal type-1" id="section-3.3-4">
           <li id="section-3.3-4.1">Each <code>cert</code> value MUST be a DER-encoded X.509v3 certificate (<span>[<a href="#RFC5280" class="xref">RFC5280</a>]</span>).
 Other key/value pairs in the same array item define properties of this
 certificate.<a href="#section-3.3-4.1" class="pilcrow">¶</a>
@@ -1615,7 +1615,7 @@ response for that certificate (using the ASN.1 type <code>OCSPResponse</code> de
 </li>
 </ol>
 <p id="section-3.3-5">Loading a <code>cert-url</code> takes a <code>forceFetch</code> flag. The client MUST:<a href="#section-3.3-5" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.3-6">
+<ol start="1" type="1" class="normal type-1" id="section-3.3-6">
           <li id="section-3.3-6.1">Let <code>raw-chain</code> be the result of fetching (<span>[<a href="#FETCH" class="xref">FETCH</a>]</span>) <code>cert-url</code>. If
 <code>forceFetch</code> is <em>not</em> set, the fetch can be fulfilled from a cache using
 normal HTTP semantics <span>[<a href="#RFC7234" class="xref">RFC7234</a>]</span>. If this fetch fails, return
@@ -1650,7 +1650,7 @@ possible encoding.<a href="#section-3.4-2.1" class="pilcrow">¶</a>
 <li id="section-3.4-2.3">
             <p id="section-3.4-2.3.1">The keys in every map MUST be sorted in the bytewise lexicographic order of
 their canonical encodings. For example, the following keys are correctly sorted:<a href="#section-3.4-2.3.1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.4-2.3.2">
+<ol start="1" type="1" class="normal type-1" id="section-3.4-2.3.2">
               <li id="section-3.4-2.3.2.1">10, encoded as 0A.<a href="#section-3.4-2.3.2.1" class="pilcrow">¶</a>
 </li>
 <li id="section-3.4-2.3.2.2">100, encoded as 18 64.<a href="#section-3.4-2.3.2.2" class="pilcrow">¶</a>
@@ -1718,7 +1718,7 @@ URLs. A client that determines that a potentially-valid certificate chain is
 actually invalid due to an expired OCSP response MAY retry with <code>forceFetch</code> set
 to retrieve an updated OCSP from the original server.<a href="#section-3.5-6" class="pilcrow">¶</a></p>
 </div>
-<ol start="1" type="1" class="normal" id="section-3.5-7">
+<ol start="1" type="1" class="normal type-1" id="section-3.5-7">
           <li id="section-3.5-7.1">
             <p id="section-3.5-7.1.1">Let:<a href="#section-3.5-7.1.1" class="pilcrow">¶</a></p>
 <ul>
@@ -1752,10 +1752,10 @@ time.<a href="#section-3.5-7.1.2.8" class="pilcrow">¶</a>
 </li>
 <li id="section-3.5-7.2">
             <p id="section-3.5-7.2.1">Set <code>publicKey</code> and <code>signing-alg</code> depending on which key fields are present:<a href="#section-3.5-7.2.1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.5-7.2.2">
+<ol start="1" type="1" class="normal type-1" id="section-3.5-7.2.2">
               <li id="section-3.5-7.2.2.1">
                 <p id="section-3.5-7.2.2.1.1">If <code>cert-url</code> is present:<a href="#section-3.5-7.2.2.1.1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.5-7.2.2.1.2">
+<ol start="1" type="1" class="normal type-1" id="section-3.5-7.2.2.1.2">
                   <li id="section-3.5-7.2.2.1.2.1">Let <code>certificate-chain</code> be the result of loading the certificate chain
 at <code>cert-url</code> passing the <code>forceFetch</code> flag (<a href="#cert-chain-format" class="xref">Section 3.3</a>). If
 this returns "invalid", return "invalid".<a href="#section-3.5-7.2.2.1.2.1" class="pilcrow">¶</a>
@@ -1792,7 +1792,7 @@ signing algorithm defined by TLS 1.3 or later
 matches the <span>[<a href="#RFC8446" class="xref">RFC8446</a>]</span> format to avoid cross-protocol attacks if
 anyone uses the same key in a TLS certificate and an exchange-signing
 certificate.<a href="#section-3.5-7.5.1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.5-7.5.2">
+<ol start="1" type="1" class="normal type-1" id="section-3.5-7.5.2">
               <li id="section-3.5-7.5.2.1">A string that consists of octet 32 (0x20) repeated 64 times.<a href="#section-3.5-7.5.2.1" class="pilcrow">¶</a>
 </li>
 <li id="section-3.5-7.5.2.2">
@@ -2190,7 +2190,7 @@ the exchange's response metadata and headers, and<a href="#section-4-2.2" class=
 to the instructions in <a href="#signature-validity" class="xref">Section 3.5</a>, and run the following algorithm
 for each signature, stopping at the first one that returns "valid". If any
 signature returns "valid", return "valid". Otherwise, return "invalid".<a href="#section-4-3" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-4-4">
+<ol start="1" type="1" class="normal type-1" id="section-4-4">
         <li id="section-4-4.1">If the signature's <span><a href="#signature-validityurl" class="xref">"validity-url" parameter</a> (<a href="#signature-validityurl" class="xref">Section 3.1</a>)</span> is not
 <a href="https://html.spec.whatwg.org/multipage/origin.html#same-origin">same-origin</a>
 with <code>requestUrl</code>, return "invalid".<a href="#section-4-4.1" class="pilcrow">¶</a>
@@ -2216,7 +2216,7 @@ return "invalid".<a href="#section-4-4.4" class="pilcrow">¶</a>
 fail, re-run <a href="#signature-validity" class="xref">Section 3.5</a> once over the signature with the
 <code>forceFetch</code> flag set, and restart from step 2. If a substep fails again,
 return "invalid".<a href="#section-4-4.7.1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-4-4.7.2">
+<ol start="1" type="1" class="normal type-1" id="section-4-4.7.2">
             <li id="section-4-4.7.2.1">Use <code>certificate-chain</code> to validate that its first entry,
 <code>main-certificate</code> is trusted as <code>authority</code>'s server certificate
 (<span>[<a href="#RFC5280" class="xref">RFC5280</a>]</span> and other undocumented conventions). Let <code>path</code> be the path
@@ -2377,7 +2377,7 @@ days.<a href="#section-4.2-7" class="pilcrow">¶</a></p>
 <p id="section-4.2-8">Conforming CAs MUST NOT mark this extension as critical.<a href="#section-4.2-8" class="pilcrow">¶</a></p>
 <p id="section-4.2-9">A conforming CA MUST NOT issue certificates with this extension unless, for each
 dNSName in the subjectAltName extension of the certificate to be issued:<a href="#section-4.2-9" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-4.2-10">
+<ol start="1" type="1" class="normal type-1" id="section-4.2-10">
           <li id="section-4.2-10.1">An "issue" or "issuewild" CAA property (<span>[<a href="#RFC6844" class="xref">RFC6844</a>]</span>) exists that authorizes
 the CA to issue the certificate; and<a href="#section-4.2-10.1" class="pilcrow">¶</a>
 </li>
@@ -2588,7 +2588,7 @@ error (Section 5.4.2 of <span>[<a href="#RFC7540" class="xref">RFC7540</a>]</spa
 Section 8.2 of <span>[<a href="#RFC7540" class="xref">RFC7540</a>]</span>, unless there is another error as described below.<a href="#section-5.2.3-1" class="pilcrow">¶</a></p>
 <p id="section-5.2.3-2">Instead, the client MUST validate such a PUSH_PROMISE and its response against
 the following list:<a href="#section-5.2.3-2" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-5.2.3-3">
+<ol start="1" type="1" class="normal type-1" id="section-5.2.3-3">
             <li id="section-5.2.3-3.1">If the PUSH_PROMISE includes any non-pseudo request header fields, the client
 MUST treat it as a stream error (Section 5.4.2 of <span>[<a href="#RFC7540" class="xref">RFC7540</a>]</span>) of type
 PROTOCOL_ERROR.<a href="#section-5.2.3-3.1" class="pilcrow">¶</a>
@@ -2651,7 +2651,7 @@ content sniffing vulnerabilities (<a href="#seccons-content-sniffing" class="xre
 </li>
 </ul>
 <p id="section-5.3-4">This content type consists of the concatenation of the following items:<a href="#section-5.3-4" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-5.3-5">
+<ol start="1" type="1" class="normal type-1" id="section-5.3-5">
           <li id="section-5.3-5.1">
             <p id="section-5.3-5.1.1">8 bytes consisting of the ASCII characters "sxg1" followed by 4 0x00 bytes,
 to serve as a file signature. This is redundant with the MIME type, and
@@ -2764,7 +2764,7 @@ design their systems to opt particular public content that doesn't depend on
 authentication status into signatures instead of signing by default.<a href="#section-6.1-1" class="pilcrow">¶</a></p>
 <p id="section-6.1-2">Signing systems SHOULD also incorporate the following mitigations to reduce the
 risk that private responses are signed:<a href="#section-6.1-2" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-6.1-3">
+<ol start="1" type="1" class="normal type-1" id="section-6.1-3">
           <li id="section-6.1-3.1">Strip the <code>Cookie</code> request header field and other identifying information
 like client authentication and TLS session IDs from requests whose exchange
 is destined to be signed, before forwarding the request to a backend.<a href="#section-6.1-3.1" class="pilcrow">¶</a>
@@ -2987,7 +2987,7 @@ attacker could use to cause these plugins to sniff a bad content type.<a href="#
 <code>application/signed-exchange</code> resource (SXG) from a domain if it would also be
 safe for that domain to serve the SXG's content directly, and to follow at least
 one of the following strategies:<a href="#section-6.8-3" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-6.8-4">
+<ol start="1" type="1" class="normal type-1" id="section-6.8-4">
           <li id="section-6.8-4.1">Only serve signed exchanges from dedicated domains that don't have access to
 sensitive cookies or user storage.<a href="#section-6.8-4.1" class="pilcrow">¶</a>
 </li>
@@ -2997,7 +2997,7 @@ in response to untrusted-reader queries.<a href="#section-6.8-4.2" class="pilcro
 </li>
 <li id="section-6.8-4.3">
             <p id="section-6.8-4.3.1">Do all of:<a href="#section-6.8-4.3.1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-6.8-4.3.2">
+<ol start="1" type="1" class="normal type-1" id="section-6.8-4.3.2">
               <li id="section-6.8-4.3.2.1">If the SXG's fallback URL (<a href="#application-signed-exchange" class="xref">Section 5.3</a>) is derived
 from the request URL,
 <a href="https://url.spec.whatwg.org/#percent-encode">percent-encode</a> (<span>[<a href="#URL" class="xref">URL</a>]</span>)
@@ -3074,7 +3074,7 @@ source's or distributor's user ID for the user, either because it's sent with
 the distributor's cookies or because the source stashes an encoded user ID into
 either the request's path or a subdomain, the distributor has a few ways to
 pass that user ID on to the publisher that signed the page:<a href="#section-7.2-1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-7.2-2">
+<ol start="1" type="1" class="normal type-1" id="section-7.2-2">
           <li id="section-7.2-2.1">If the distributor has the publisher's signing keys, it can sign a new page
 with its user ID directly embedded.<a href="#section-7.2-2.1" class="pilcrow">¶</a>
 </li>
@@ -3579,7 +3579,7 @@ is to re-use the web PKI and CA ecosystem.<a href="#section-b.1-1" class="pilcro
 <a href="#section-b.1.1" class="section-number selfRef">B.1.1. </a><a href="#name-certificate-constraints" class="section-name selfRef">Certificate constraints</a>
           </h3>
 <p id="section-b.1.1-1">If we re-use existing TLS server certificates, we incur the risks that:<a href="#section-b.1.1-1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-b.1.1-2">
+<ol start="1" type="1" class="normal type-1" id="section-b.1.1-2">
             <li id="section-b.1.1-2.1">TLS server certificates must be accessible from online servers, so they're
 easier to steal or use as signing oracles than an offline key. An exchange's
 signing key doesn't need to be online.<a href="#section-b.1.1-2.1" class="pilcrow">¶</a>
@@ -3604,7 +3604,7 @@ resource from causing those signed bytes to be interpreted as something else the
 new X.509 extension here is forbidden from being used in TLS servers. If
 <a href="#cross-origin-cert-req" class="xref">Section 4.2</a> changes to allow re-use in TLS servers, we would need
 to:<a href="#section-b.1.2-1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-b.1.2-2">
+<ol start="1" type="1" class="normal type-1" id="section-b.1.2-2">
             <li id="section-b.1.2-2.1">Avoid key types that are used for non-TLS protocols whose output could be
 confused with a signature. That may be just the <code>rsaEncryption</code> OID from
 <span>[<a href="#RFC8017" class="xref">RFC8017</a>]</span>.<a href="#section-b.1.2-2.1" class="pilcrow">¶</a>
@@ -3734,7 +3734,7 @@ signed content in a reasonable amount of time. Similar to certificate
 revocation, I expect the best option to be stapled "this version is still valid"
 assertions with short expiration times.<a href="#section-b.3.2-1" class="pilcrow">¶</a></p>
 <p id="section-b.3.2-2">These assertions could be structured as:<a href="#section-b.3.2-2" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-b.3.2-3">
+<ol start="1" type="1" class="normal type-1" id="section-b.3.2-3">
             <li id="section-b.3.2-3.1">A signed minimum version number or timestamp for a set of request headers:
 This requires that signed responses need to include a version number or
 timestamp, but allows a server to provide a single signature covering all

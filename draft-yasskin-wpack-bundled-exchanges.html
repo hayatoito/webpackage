@@ -13,7 +13,7 @@ can include multiple top-level resources with one identified as the default by a
 primaryUrl metadata, provide random access to their component exchanges, and
 efficiently store 8-bit resources. 
     " name="description">
-<meta content="xml2rfc 2.39.0" name="generator">
+<meta content="xml2rfc 2.40.0" name="generator">
 <meta content="draft-yasskin-wpack-bundled-exchanges-latest" name="ietf.draft">
 <link href="draft-yasskin-wpack-bundled-exchanges.xml" type="application/rfc+xml" rel="alternate">
 <link href="#copyright" rel="license">
@@ -822,7 +822,7 @@ table.left {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Yasskin</td>
-<td class="center">Expires 10 August 2020</td>
+<td class="center">Expires 22 August 2020</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -835,12 +835,12 @@ table.left {
 <dd class="internet-draft">draft-yasskin-wpack-bundled-exchanges-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2020-02-07" class="published">7 February 2020</time>
+<time datetime="2020-02-19" class="published">19 February 2020</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2020-08-10">10 August 2020</time></dd>
+<dd class="expires"><time datetime="2020-08-22">22 August 2020</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -887,7 +887,7 @@ in <a href="https://github.com/WICG/webpackage">https://github.com/WICG/webpacka
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 10 August 2020.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 22 August 2020.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1299,7 +1299,7 @@ section-lengths = [* (section-name: tstr, length: uint) ],
 </div>
 <p id="section-3.3-3">To implement <a href="#semantics-load-metadata" class="xref">Section 2.2</a>, the parser MUST run the following
 steps, taking the <code>stream</code> as input.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.3-4">
+<ol start="1" type="1" class="normal type-1" id="section-3.3-4">
           <li id="section-3.3-4.1">Seek to offset 0 in <code>stream</code>. Assert: this operation doesn't fail.<a href="#section-3.3-4.1" class="pilcrow">¶</a>
 </li>
 <li id="section-3.3-4.2">If reading 10 bytes from <code>stream</code> returns an error or doesn't return the
@@ -1378,7 +1378,7 @@ client has implemented.<a href="#section-3.3-4.15" class="pilcrow">¶</a>
 </li>
 <li id="section-3.3-4.19">
             <p id="section-3.3-4.19.1">For each (<code>"name"</code>, <code>length</code>) pair of adjacent elements in <code>sectionLengths</code>:<a href="#section-3.3-4.19.1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.3-4.19.2">
+<ol start="1" type="1" class="normal type-1" id="section-3.3-4.19.2">
               <li id="section-3.3-4.19.2.1">
                 <p id="section-3.3-4.19.2.1.1">If <code>"name"</code>'s specification in <code>knownSections</code> says not to process other
 sections, add those sections' names to <code>ignoredSections</code>.<a href="#section-3.3-4.19.2.1.1" class="pilcrow">¶</a></p>
@@ -1405,7 +1405,7 @@ pair <code>"primaryUrl"</code>/<code>fallbackUrl</code>.<a href="#section-3.3-4.
 </li>
 <li id="section-3.3-4.22">
             <p id="section-3.3-4.22.1">For each <code>"name"</code> --&gt; (<code>offset</code>, <code>length</code>) triple in <code>sectionOffsets</code>:<a href="#section-3.3-4.22.1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.3-4.22.2">
+<ol start="1" type="1" class="normal type-1" id="section-3.3-4.22.2">
               <li id="section-3.3-4.22.2.1">If <code>"name"</code> isn't in <code>knownSections</code>, continue to the next triple.<a href="#section-3.3-4.22.2.1" class="pilcrow">¶</a>
 </li>
 <li id="section-3.3-4.22.2.2">If <code>"name"</code>'s Metadata field (<a href="#bundle-section-name-registry" class="xref">Section 6.2</a>) is "No", continue
@@ -1494,7 +1494,7 @@ defined by an integer offset from the start of the stream and the integer number
 of bytes in the range.<a href="#section-3.3.1-8" class="pilcrow">¶</a></p>
 <p id="section-3.3.1-9">To parse the index section, given its <code>sectionContents</code>, the <code>sectionOffsets</code>
 map, and the <code>metadata</code> map to fill in, the parser MUST do the following:<a href="#section-3.3.1-9" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.3.1-10">
+<ol start="1" type="1" class="normal type-1" id="section-3.3.1-10">
             <li id="section-3.3.1-10.1">Let <code>index</code> be the result of parsing <code>sectionContents</code> as a CBOR item
 matching the <code>index</code> rule in the above CDDL (<a href="#parse-cbor" class="xref">Section 3.5</a>). If <code>index</code> is
 an error, return an error.<a href="#section-3.3.1-10.1" class="pilcrow">¶</a>
@@ -1509,7 +1509,7 @@ values, as described in <a href="#semantics-load-metadata" class="xref">Section 
               <p id="section-3.3.1-10.3.1">Let <code>MakeRelativeToStream</code> be a function that takes a <code>location-in-responses</code>
 value (<code>offset</code>, <code>length</code>) and returns a <code>ResponseMetadata</code> struct or error
 by running the following sub-steps:<a href="#section-3.3.1-10.3.1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.3.1-10.3.2">
+<ol start="1" type="1" class="normal type-1" id="section-3.3.1-10.3.2">
                 <li id="section-3.3.1-10.3.2.1">If <code>offset</code> + <code>length</code> is larger than
 <code>sectionOffsets["responses"].length</code>, return an error.<a href="#section-3.3.1-10.3.2.1" class="pilcrow">¶</a>
 </li>
@@ -1521,7 +1521,7 @@ by running the following sub-steps:<a href="#section-3.3.1-10.3.1" class="pilcro
 </li>
 <li id="section-3.3.1-10.4">
               <p id="section-3.3.1-10.4.1">For each (<code>url</code>, <code>responses</code>) entry in the <code>index</code> map:<a href="#section-3.3.1-10.4.1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.3.1-10.4.2">
+<ol start="1" type="1" class="normal type-1" id="section-3.3.1-10.4.2">
                 <li id="section-3.3.1-10.4.2.1">Let <code>parsedUrl</code> be the result of parsing (<span>[<a href="#URL" class="xref">URL</a>]</span>) <code>url</code> with
 no base URL.<a href="#section-3.3.1-10.4.2.1" class="pilcrow">¶</a>
 </li>
@@ -1530,7 +1530,7 @@ credentials, return an error.<a href="#section-3.3.1-10.4.2.2" class="pilcrow">�
 </li>
 <li id="section-3.3.1-10.4.2.3">
                   <p id="section-3.3.1-10.4.2.3.1">If the first element of <code>responses</code> is the empty string:<a href="#section-3.3.1-10.4.2.3.1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.3.1-10.4.2.3.2">
+<ol start="1" type="1" class="normal type-1" id="section-3.3.1-10.4.2.3.2">
                     <li id="section-3.3.1-10.4.2.3.2.1">If the length of <code>responses</code> is not 3 (i.e. there is more than one
 <code>location-in-responses</code> in responses), return an error.<a href="#section-3.3.1-10.4.2.3.2.1" class="pilcrow">¶</a>
 </li>
@@ -1544,7 +1544,7 @@ credentials, return an error.<a href="#section-3.3.1-10.4.2.2" class="pilcrow">�
 </li>
 <li id="section-3.3.1-10.4.2.4">
                   <p id="section-3.3.1-10.4.2.4.1">Otherwise:<a href="#section-3.3.1-10.4.2.4.1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.3.1-10.4.2.4.2">
+<ol start="1" type="1" class="normal type-1" id="section-3.3.1-10.4.2.4.2">
                     <li id="section-3.3.1-10.4.2.4.2.1">Let <code>variants</code> be the result of parsing the first element of
 <code>responses</code> as the value of the <code>Variants</code> HTTP header field (Section 2
 of <span>[<a href="#I-D.ietf-httpbis-variants" class="xref">I-D.ietf-httpbis-variants</a>]</span>). If this fails, return an error.<a href="#section-3.3.1-10.4.2.4.2.1" class="pilcrow">¶</a>
@@ -1590,7 +1590,7 @@ manifest = whatwg-url
 </div>
 <p id="section-3.3.2-4">To parse the manifest section, given its <code>sectionContents</code> and the <code>metadata</code>
 map to fill in, the parser MUST do the following:<a href="#section-3.3.2-4" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.3.2-5">
+<ol start="1" type="1" class="normal type-1" id="section-3.3.2-5">
             <li id="section-3.3.2-5.1">Let <code>urlString</code> be the result of parsing <code>sectionContents</code> as a CBOR item
 matching the above <code>manifest</code> rule (<a href="#parse-cbor" class="xref">Section 3.5</a>. If <code>urlString</code> is an
 error, return that error.<a href="#section-3.3.2-5.1" class="pilcrow">¶</a>
@@ -1669,7 +1669,7 @@ resource-integrity = (
 <p id="section-3.3.3-7">The <code>augmented-certificate</code> CDDL rule comes from Section 3.3 of <span>[<a href="#I-D.yasskin-http-origin-signed-responses" class="xref">I-D.yasskin-http-origin-signed-responses</a>]</span>.<a href="#section-3.3.3-7" class="pilcrow">¶</a></p>
 <p id="section-3.3.3-8">To parse the signatures section, given its <code>sectionContents</code>, the <code>sectionOffsets</code>
 map, and the <code>metadata</code> map to fill in, the parser MUST do the following:<a href="#section-3.3.3-8" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.3.3-9">
+<ol start="1" type="1" class="normal type-1" id="section-3.3.3-9">
             <li id="section-3.3.3-9.1">Let <code>signatures</code> be the result of parsing <code>sectionContents</code> as a CBOR item
 matching the <code>signatures</code> rule in the above CDDL (<a href="#parse-cbor" class="xref">Section 3.5</a>).<a href="#section-3.3.3-9.1" class="pilcrow">¶</a>
 </li>
@@ -1697,7 +1697,7 @@ critical = [*tstr]
 </div>
 <p id="section-3.3.4-3">To parse the critical section, given its <code>sectionContents</code> and the <code>metadata</code>
 map to fill in, the parser MUST do the following:<a href="#section-3.3.4-3" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.3.4-4">
+<ol start="1" type="1" class="normal type-1" id="section-3.3.4-4">
             <li id="section-3.3.4-4.1">Let <code>critical</code> be the result of parsing <code>sectionContents</code> as a CBOR item
 matching the above <code>critical</code> rule (<a href="#parse-cbor" class="xref">Section 3.5</a>). If <code>critical</code> is an
 error, return that error.<a href="#section-3.3.4-4.1" class="pilcrow">¶</a>
@@ -1745,7 +1745,7 @@ string at the end of the bundle.<a href="#section-3.3.6-1" class="pilcrow">¶</a
 a self-extracting executable.<a href="#section-3.3.6-3" class="pilcrow">¶</a></p>
 <p id="section-3.3.6-4">To implement <a href="#semantics-load-metadata-from-end" class="xref">Section 2.2.1</a>, taking a sequence of bytes
 <code>bytes</code>, the client MUST:<a href="#section-3.3.6-4" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.3.6-5">
+<ol start="1" type="1" class="normal type-1" id="section-3.3.6-5">
             <li id="section-3.3.6-5.1">Let <code>byteStringHeader</code> be <code>bytes[bytes.length - 9]</code>. If <code>byteStringHeader is
 not </code>0x48` (the CBOR (<span>[<a href="#CBORbis" class="xref">CBORbis</a>]</span>) initial byte for an 8-byte byte string),
 return an error.<a href="#section-3.3.6-5.1" class="pilcrow">¶</a>
@@ -1795,7 +1795,7 @@ response = [headers: bstr .cbor headers, payload: bstr]
 <p id="section-3.4-3">To implement <a href="#semantics-load-response" class="xref">Section 2.3</a>, the parser MUST run the following
 steps, taking the bundle's <code>stream</code>, a <code>request</code> (<span>[<a href="#FETCH" class="xref">FETCH</a>]</span>), and a
 <code>responseMetadata</code> returned by <a href="#semantics-load-metadata" class="xref">Section 2.2</a> .<a href="#section-3.4-3" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.4-4">
+<ol start="1" type="1" class="normal type-1" id="section-3.4-4">
           <li id="section-3.4-4.1">Seek to offset <code>responseMetadata.offset</code> in <code>stream</code>. If this fails, return an
 error.<a href="#section-3.4-4.1" class="pilcrow">¶</a>
 </li>
@@ -1876,7 +1876,7 @@ deterministically encoded.<a href="#section-3.5-1" class="pilcrow">¶</a></p>
           </h4>
 <p id="section-3.5.1-1">To parse a CBOR item (<span>[<a href="#CBORbis" class="xref">CBORbis</a>]</span>), optionally matching a CDDL rule (<span>[<a href="#CDDL" class="xref">CDDL</a>]</span>),
 from a sequence of bytes, <code>bytes</code>, the parser MUST do the following:<a href="#section-3.5.1-1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.5.1-2">
+<ol start="1" type="1" class="normal type-1" id="section-3.5.1-2">
             <li id="section-3.5.1-2.1">If <code>bytes</code> are not a well-formed CBOR item, return an error.<a href="#section-3.5.1-2.1" class="pilcrow">¶</a>
 </li>
 <li id="section-3.5.1-2.2">If <code>bytes</code> does not satisfy the core deterministic encoding requirements from
@@ -1905,7 +1905,7 @@ error.<a href="#section-3.5.1-2.3" class="pilcrow">¶</a>
 their length. This algorithm returns the number of bytes in the variable-length
 item and sets the stream's current offset to  the first byte of the contents.<a href="#section-3.5.2-1" class="pilcrow">¶</a></p>
 <p id="section-3.5.2-2">To get the length of a CBOR bytestring header from a bundle's stream, the parser MUST do the following:<a href="#section-3.5.2-2" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.5.2-3">
+<ol start="1" type="1" class="normal type-1" id="section-3.5.2-3">
             <li id="section-3.5.2-3.1">Let (<code>type</code>, <code>argument</code>) be the result of parsing the type and argument of a
 CBOR item from the stream (<a href="#parse-type-argument" class="xref">Section 3.5.3</a>). If this returns an
 error, return that error.<a href="#section-3.5.2-3.1" class="pilcrow">¶</a>
@@ -1925,7 +1925,7 @@ error, return that error.<a href="#section-3.5.2-3.1" class="pilcrow">¶</a>
 <p id="section-3.5.3-1">To parse the type and argument of a CBOR item from a bundle's stream, the parser
 MUST do the following. This algorithm returns a pair of the CBOR major type 0-7
 inclusive, and a 64-bit integral argument for the CBOR item:<a href="#section-3.5.3-1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.5.3-2">
+<ol start="1" type="1" class="normal type-1" id="section-3.5.3-2">
             <li id="section-3.5.3-2.1">Let <code>firstByte</code> be the result of reading 1 byte from the stream. If
 <code>firstByte</code> is an error, return that error.<a href="#section-3.5.3-2.1" class="pilcrow">¶</a>
 </li>
@@ -1991,7 +1991,7 @@ headers = {* bstr =&gt; bstr}
 create a request or response as appropriate<a href="#section-3.6-3" class="pilcrow">¶</a></p>
 <p id="section-3.6-4">To convert a CBOR item <code>item</code> into a <span>[<a href="#FETCH" class="xref">FETCH</a>]</span> header list and pseudoheaders,
 parsers MUST do the following:<a href="#section-3.6-4" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.6-5">
+<ol start="1" type="1" class="normal type-1" id="section-3.6-5">
           <li id="section-3.6-5.1">If <code>item</code> doesn't match the <code>headers</code> rule in the above CDDL, return an
 error.<a href="#section-3.6-5.1" class="pilcrow">¶</a>
 </li>
@@ -2001,13 +2001,13 @@ error.<a href="#section-3.6-5.1" class="pilcrow">¶</a>
 </li>
 <li id="section-3.6-5.4">
             <p id="section-3.6-5.4.1">For each pair (<code>name</code>, <code>value</code>) in <code>item</code>:<a href="#section-3.6-5.4.1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.6-5.4.2">
+<ol start="1" type="1" class="normal type-1" id="section-3.6-5.4.2">
               <li id="section-3.6-5.4.2.1">If <code>name</code> contains any upper-case or non-ASCII characters, return an
 error. This matches the requirement in Section 8.1.2 of <span>[<a href="#RFC7540" class="xref">RFC7540</a>]</span>.<a href="#section-3.6-5.4.2.1" class="pilcrow">¶</a>
 </li>
 <li id="section-3.6-5.4.2.2">
                 <p id="section-3.6-5.4.2.2.1">If <code>name</code> starts with a ':':<a href="#section-3.6-5.4.2.2.1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-3.6-5.4.2.2.2">
+<ol start="1" type="1" class="normal type-1" id="section-3.6-5.4.2.2.2">
                   <li id="section-3.6-5.4.2.2.2.1">Assert: <code>pseudos[name]</code> does not exist, because CBOR maps cannot
 contain duplicate keys.<a href="#section-3.6-5.4.2.2.2.1" class="pilcrow">¶</a>
 </li>
@@ -2090,7 +2090,7 @@ to sniff a bad content type.<a href="#section-5.2-2" class="pilcrow">¶</a></p>
 <code>application/webbundle</code> resource from a domain if it would also be safe for that
 domain to serve the bundle's content directly, and to follow at least one of the
 following strategies:<a href="#section-5.2-3" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-5.2-4">
+<ol start="1" type="1" class="normal type-1" id="section-5.2-4">
           <li id="section-5.2-4.1">Only serve bundles from dedicated domains that don't have access to sensitive
 cookies or user storage.<a href="#section-5.2-4.1" class="pilcrow">¶</a>
 </li>
@@ -2100,7 +2100,7 @@ in response to untrusted-reader queries.<a href="#section-5.2-4.2" class="pilcro
 </li>
 <li id="section-5.2-4.3">
             <p id="section-5.2-4.3.1">Do all of:<a href="#section-5.2-4.3.1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal" id="section-5.2-4.3.2">
+<ol start="1" type="1" class="normal type-1" id="section-5.2-4.3.2">
               <li id="section-5.2-4.3.2.1">If the bundle's contained URLs (e.g. in the manifest and index) are
 derived from the request for the bundle,
 <a href="https://url.spec.whatwg.org/#percent-encode">percent-encode</a> (<span>[<a href="#URL" class="xref">URL</a>]</span>)
