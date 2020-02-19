@@ -1,6 +1,156 @@
 [
 
   {
+    "url": "https://api.github.com/repos/WICG/webpackage/issues/557",
+    "repository_url": "https://api.github.com/repos/WICG/webpackage",
+    "labels_url": "https://api.github.com/repos/WICG/webpackage/issues/557/labels{/name}",
+    "comments_url": "https://api.github.com/repos/WICG/webpackage/issues/557/comments",
+    "events_url": "https://api.github.com/repos/WICG/webpackage/issues/557/events",
+    "html_url": "https://github.com/WICG/webpackage/pull/557",
+    "id": 565021474,
+    "node_id": "MDExOlB1bGxSZXF1ZXN0Mzc1MTQ3NTY3",
+    "number": 557,
+    "title": "Add non-browser feedback about unsigned bundles.",
+    "user": {
+      "login": "jyasskin",
+      "id": 83420,
+      "node_id": "MDQ6VXNlcjgzNDIw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/83420?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/jyasskin",
+      "html_url": "https://github.com/jyasskin",
+      "followers_url": "https://api.github.com/users/jyasskin/followers",
+      "following_url": "https://api.github.com/users/jyasskin/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jyasskin/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jyasskin/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jyasskin/subscriptions",
+      "organizations_url": "https://api.github.com/users/jyasskin/orgs",
+      "repos_url": "https://api.github.com/users/jyasskin/repos",
+      "events_url": "https://api.github.com/users/jyasskin/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jyasskin/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2020-02-14T00:01:14Z",
+    "updated_at": "2020-02-14T00:01:14Z",
+    "closed_at": null,
+    "author_association": "MEMBER",
+    "pull_request": {
+      "url": "https://api.github.com/repos/WICG/webpackage/pulls/557",
+      "html_url": "https://github.com/WICG/webpackage/pull/557",
+      "diff_url": "https://github.com/WICG/webpackage/pull/557.diff",
+      "patch_url": "https://github.com/WICG/webpackage/pull/557.patch"
+    },
+    "body": "@dauwhe, am I representing your position well here? Is there a better description of your opinion on how we make browsers navigate to unsigned books?"
+  },
+  {
+    "url": "https://api.github.com/repos/WICG/webpackage/issues/556",
+    "repository_url": "https://api.github.com/repos/WICG/webpackage",
+    "labels_url": "https://api.github.com/repos/WICG/webpackage/issues/556/labels{/name}",
+    "comments_url": "https://api.github.com/repos/WICG/webpackage/issues/556/comments",
+    "events_url": "https://api.github.com/repos/WICG/webpackage/issues/556/events",
+    "html_url": "https://github.com/WICG/webpackage/issues/556",
+    "id": 564556245,
+    "node_id": "MDU6SXNzdWU1NjQ1NTYyNDU=",
+    "number": 556,
+    "title": "\"These are encoded so that the normal algorithm for computing an origin from a URL works\" is false",
+    "user": {
+      "login": "annevk",
+      "id": 1544111,
+      "node_id": "MDQ6VXNlcjE1NDQxMTE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1544111?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/annevk",
+      "html_url": "https://github.com/annevk",
+      "followers_url": "https://api.github.com/users/annevk/followers",
+      "following_url": "https://api.github.com/users/annevk/following{/other_user}",
+      "gists_url": "https://api.github.com/users/annevk/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/annevk/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/annevk/subscriptions",
+      "organizations_url": "https://api.github.com/users/annevk/orgs",
+      "repos_url": "https://api.github.com/users/annevk/repos",
+      "events_url": "https://api.github.com/users/annevk/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/annevk/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2020-02-13T09:40:10Z",
+    "updated_at": "2020-02-13T09:40:10Z",
+    "closed_at": null,
+    "author_association": "NONE",
+    "body": "https://github.com/WICG/webpackage/blob/master/explainers/navigation-to-unsigned-bundles.md#urls-for-bundle-components is incorrect as due to the scheme you'll get an opaque origin."
+  },
+  {
+    "url": "https://api.github.com/repos/WICG/webpackage/issues/555",
+    "repository_url": "https://api.github.com/repos/WICG/webpackage",
+    "labels_url": "https://api.github.com/repos/WICG/webpackage/issues/555/labels{/name}",
+    "comments_url": "https://api.github.com/repos/WICG/webpackage/issues/555/comments",
+    "events_url": "https://api.github.com/repos/WICG/webpackage/issues/555/events",
+    "html_url": "https://github.com/WICG/webpackage/issues/555",
+    "id": 563792722,
+    "node_id": "MDU6SXNzdWU1NjM3OTI3MjI=",
+    "number": 555,
+    "title": "loading spec: Content sniffing prevention steps are missing in Parsing b3 algorithm",
+    "user": {
+      "login": "irori",
+      "id": 80796,
+      "node_id": "MDQ6VXNlcjgwNzk2",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/80796?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/irori",
+      "html_url": "https://github.com/irori",
+      "followers_url": "https://api.github.com/users/irori/followers",
+      "following_url": "https://api.github.com/users/irori/following{/other_user}",
+      "gists_url": "https://api.github.com/users/irori/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/irori/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/irori/subscriptions",
+      "organizations_url": "https://api.github.com/users/irori/orgs",
+      "repos_url": "https://api.github.com/users/irori/repos",
+      "events_url": "https://api.github.com/users/irori/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/irori/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2020-02-12T06:56:11Z",
+    "updated_at": "2020-02-12T06:56:11Z",
+    "closed_at": null,
+    "author_association": "COLLABORATOR",
+    "body": "#354 added two steps in the [Parsing b2 CBOR headers](https://wicg.github.io/webpackage/loading.html#parse-b2-cbor-headers) algorithm:\r\n\r\n> 7. If responseHeaders does not contain `Content-Type`, return a failure.\r\n> 8. Set `X-Content-Type-Options`/`nosniff` in responseHeaders.\r\n\r\nBut it did not add them into the [Parsing **b3** CBOR headers](https://wicg.github.io/webpackage/loading.html#parse-cbor-headers) algorithm.\r\n"
+  },
+  {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/554",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
     "labels_url": "https://api.github.com/repos/WICG/webpackage/issues/554/labels{/name}",
@@ -151,7 +301,7 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2020-02-04T22:59:11Z",
-    "updated_at": "2020-02-07T21:54:51Z",
+    "updated_at": "2020-02-18T08:01:10Z",
     "closed_at": "2020-02-07T21:54:48Z",
     "author_association": "MEMBER",
     "pull_request": {
@@ -194,7 +344,15 @@
       "site_admin": false
     },
     "labels": [
-
+      {
+        "id": 1839294128,
+        "node_id": "MDU6TGFiZWwxODM5Mjk0MTI4",
+        "url": "https://api.github.com/repos/WICG/webpackage/labels/privacy-tracker",
+        "name": "privacy-tracker",
+        "color": "d4af37",
+        "default": false,
+        "description": "Group bringing to attention of Privacy, or tracked by the Privacy Group but not needing response."
+      }
     ],
     "state": "open",
     "locked": false,
@@ -205,7 +363,7 @@
     "milestone": null,
     "comments": 1,
     "created_at": "2020-01-28T21:18:35Z",
-    "updated_at": "2020-02-05T20:09:21Z",
+    "updated_at": "2020-02-10T20:53:22Z",
     "closed_at": null,
     "author_association": "NONE",
     "body": "Currently there is no enforced relationship between the URL used to look up resources in the package, and where the resource came from online.  Consistent URLs are an imperfect, but extremely useful signal for privacy protecting tools (filter lists, adblockers, disconnect, Firefox and Edge built in protections, safe browsing, etc.).  \r\n\r\nThe current proposal would allow for all WebPackage'd sites to circumvent all URL based tools by simply randomizing URLs as a post processing step in [amppackager](https://github.com/ampproject/amppackager) or similar.  This could even be done per-request per page.  Since URLs are effectively just indexes into the package (and not keys for decision making, caching, etc), they can be changed arbitrarily w/o affecting how the package loads, but preventing the URL-based privacy preserving tools from running.\r\n\r\nA (partial) possible solution to the problem is to play a [cut-and-choose](https://www.usenix.org/conference/usenixsecurity16/technical-sessions/presentation/zhu), commitment-auditing style games with the URLs.  At package time, the packager has to make commitments about which URL each resource came from, and the size, shape etc of the resource.  These can be made / mixed with the URL of the page being packaged. \r\n\r\nThe client can then, w/ some probability, audit some number of the URLs in the package.  If the commitments fail, deterring counter measures can be taken against the packing origin (e.g. global decaying block list of misbehaving packagers, etc)."
@@ -1426,7 +1584,10 @@
     "closed_at": null,
     "author_association": "NONE",
     "body": "in https://wicg.github.io/webpackage/draft-yasskin-wpack-bundled-exchanges.html#rfc.section.3.3\r\n\r\n> 2. If reading 10 bytes from stream returns an error or doesn’t return the bytes with hex encoding “86 48 F0 9F 8C 90 F0 9F 93 A6” (the CBOR encoding of the 6-item array initial byte and 8-byte bytestring initial byte, followed by 🌐📦 in UTF-8), return a “format error”.\r\n\r\nI think this will cause implements like below\r\n\r\n```js\r\nhead = read_first_10_byte(path)\r\n\r\nif (head == [86 48 F0 9F 8C 90 F0 9F 93 A6]) {\r\n  // this is web bundle\r\n  switch (parse_cbor(path)['version']) {\r\n    // version switch\r\n  }\r\n} else {\r\n  // this is not web bundle\r\n}\r\n```\r\n\r\nbut if webbundle format will change like below in the future. and also version ++.\r\n\r\n```js\r\nwebbundle = [\r\n  magic\r\n  version // *2*\r\n  primary-url\r\n  section-lengths\r\n  sections\r\n  extension // *new*\r\n  length\r\n]\r\n```\r\n\r\nthe length of array will increase and first 10 byte will change.\r\n\r\nthis cause previous code not working, should be like this\r\n\r\n```js\r\nhead = read_first_10_byte(path)\r\n\r\nif (head == [86 48 F0 9F 8C 90 F0 9F 93 A6]) {\r\n  // this is web bundle\r\n  switch (parse_cbor(path)['version']) {\r\n    // version switch\r\n  }\r\n} else if (head == [*87* 48 F0 9F 8C 90 F0 9F 93 A6]\r\n  // this is also new web bundle\r\n  switch (parse_cbor(path)['version']) {\r\n    // version switch\r\n  }\r\n} else {\r\n  // this is not web bundle\r\n}\r\n```\r\n\r\nso, this version model is not allow adding meta-section to webbundle cbor array.\r\nif you think *cbor array should not change from 6 forever*, it works.\r\nbut I think it seems better to find other way to \r\n\r\n1. magic number should usable for file detection\r\n2. cbor structure update could detect by version, and not affect to 1\r\n\r\nfor example\r\n\r\n```js\r\nwebbundle = [\r\n  magic\r\n  body\r\n  length\r\n]\r\n\r\nbody = [\r\n  version\r\n  primary-url\r\n  section-lengths\r\n  sections\r\n]\r\n```"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/527",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -1576,10 +1737,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/525.patch"
     },
     "body": "The bundled things aren't really exchanges anymore: they're a request\nURL and a response that is expected to include its content negotiation\ninformation in the Variants header.\n\n@jpmedley @uskay FYI.\n\n\n<!--\n    This comment and the below content is programatically generated.\n    You may add a comma-separated list of anchors you'd like a\n    direct link to below (e.g. #idl-serializers, #idl-sequence):\n\n    Don't remove this comment or modify anything below this line.\n    If you don't want a preview generated for this pull request,\n    just replace the whole of this comment's content by \"no preview\"\n    and remove what's below.\n-->\n***\n<a href=\"https://pr-preview.s3.amazonaws.com/jyasskin/webpackage/pull/525.html\" title=\"Last updated on Nov 8, 2019, 7:29 PM UTC (30cb778)\">Preview</a> | <a href=\"https://pr-preview.s3.amazonaws.com/WICG/webpackage/525/271865a...jyasskin:30cb778.html\" title=\"Last updated on Nov 8, 2019, 7:29 PM UTC (30cb778)\">Diff</a>"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/524",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -3110,7 +3268,10 @@
     "closed_at": null,
     "author_association": "NONE",
     "body": "We hope that bundles (most likely unsigned?) would be used for distributing publications, such as ebooks. We do hope that some sort of persistent storage would be available on the user's device. Here's a list of a few use cases, [created by @jaypanoz](https://github.com/kobolabs/epub-spec/issues/38#issuecomment-365185776):\r\n\r\n\r\n* storing a list of quizzes/games which have already been done so that it doesn’t reset every time you open the publication;\r\n* storing a list of values for a checklist so that you can automatically save the progress;\r\n* saving a drawing in a canvas – although this is a little bit of a hack as it can only store strings and you must base64-encode it on the fly… but when you’ve got nothing else, it does the job;\r\n* saving the current position in an overflowing element since mishandling can happen (turning the page accidentally, which loads a new resource and resets the state of the current one);\r\n* saving the origin of a redirection to easily get back to the previous page if needed – yeah I know there’s a “previous button” in the bottom left corner but sometimes it takes years for users to discover it;\r\n* more generally saving any information you’ll retrieve later, which can go from practical things like the examples above, to technical things like storing the results of a feature detect requiring to create an element, test its styles and remove it, which will cause a repaint (there are obviously different strategies to deal with upgrades or invalidate those results whenever needed there).\r\n\r\n\r\n\r\n\r\n"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/497",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -3260,10 +3421,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/495.patch"
     },
     "body": "After this patch, `gen-bundle -URLList urls.txt` will fetch URLs listed\r\nin `urls.txt` and create a bundle from their responses.\r\n"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/494",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -4706,7 +4864,10 @@
     "closed_at": null,
     "author_association": "COLLABORATOR",
     "body": "Current bundle spec says that [Bundled Exchanges parser must fail if URL have a fragment or credentials](https://wicg.github.io/webpackage/draft-yasskin-wpack-bundled-exchanges.html#index-section), but says nothing about the URL scheme.\r\n\r\nIn Signed Exchange, [exchange's URL must be `https:`](https://wicg.github.io/webpackage/draft-yasskin-httpbis-origin-signed-exchanges-impl.html#application-signed-exchange). Sould Bundled Exchanges follow this, or should also allow `http:`? Since exchange is defined as HTTP request+response pair, I think non-http(s) schemes don't make sense.\r\n"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/467",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -4900,10 +5061,7 @@
     "closed_at": null,
     "author_association": "MEMBER",
     "body": "The first step is to answer the rough questionnaire at https://tools.ietf.org/html/draft-irtf-hrpc-guidelines-03."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/464",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -6367,7 +6525,10 @@
     "closed_at": "2019-05-30T19:49:00Z",
     "author_association": "NONE",
     "body": "The signedexchange tools installed easily, but I get an error trying to install the bundle tools: \r\n\r\n```\r\n$ go get -u github.com/WICG/webpackage/go/bundle/cmd/...\r\npackage github.com/influxdata/influxdb/client/v2: cannot find package \"github.com/influxdata/influxdb/client/v2\" in any of:\r\n\t/usr/local/go/src/github.com/influxdata/influxdb/client/v2 (from $GOROOT)\r\n\t/Users/cramerd/go/src/github.com/influxdata/influxdb/client/v2 (from $GOPATH)\r\n\r\n```\r\nGoing to https://github.com/influxdata/influxdb finds:\r\n\r\n> If you are looking for the InfluxDB 1.x Go Client, we've created a new [repo](https://github.com/influxdata/influxdb1-client) for that. \r\n"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/437",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -6517,10 +6678,7 @@
     "closed_at": "2019-07-01T22:21:39Z",
     "author_association": "NONE",
     "body": "For a server returning a signed exchange, the content type will be something like:\r\n\r\n```\r\ncontent-type: application/signed-exchange;v=b3\r\n```\r\n\r\nAs per https://www.w3.org/Protocols/rfc1341/4_Content-Type.html, the `application/signed-exchange` and `v` parts of this are case-insensitive, whereas the `b3` part (parameter value) is not well defined in the RFC:\r\n\r\n> Parameter values are normally case sensitive, but certain parameters are interpreted to be case- insensitive, depending on the intended use.\r\n\r\nI don't see anything explicit in the Signed Exchange spec about the case-sensitivity of the parameter value. Should we call this out explicitly?\r\n\r\nIt's a small point, but I would also suggest that it seems a little error-prone to have this entire string be case-insensitive except for one character (the `b`). Perhaps we should define the version identifier to also be case-insensitive for consistency. Thoughts?"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/434",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -8124,7 +8282,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/408.patch"
     },
     "body": "It's what our current most enthusiastic customer (AMP) depends on, so we\r\nshould be sure not to break it."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/407",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -8280,10 +8441,7 @@
     "closed_at": "2019-03-14T00:52:11Z",
     "author_association": "COLLABORATOR",
     "body": "https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html#cross-origin-trust item 7.3 says:\r\n\r\n> Validate that `main-certificate` has an `ocsp` property\r\n> ({{cert-chain-format}}) with a valid OCSP response whose lifetime\r\n> (`nextUpdate - thisUpdate`) is less than 7 days ({{!RFC6960}}).\r\n\r\nBut per https://tools.ietf.org/html/rfc6960#section-4.2, an `OCSPResponse` may have multiple `SingleResponse`s, each with its own `nextUpdate` and `thisUpdate`. Are such OCSP responses disallowed by the spec? Otherwise, to which `SingleResponse` does this requirement apply?"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/404",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -9707,7 +9865,10 @@
     "closed_at": "2019-02-08T19:52:19Z",
     "author_association": "MEMBER",
     "body": "In [the blink-dev Intent-to-Ship thread](https://groups.google.com/a/chromium.org/d/msg/blink-dev/gPH_BcOBEtc/WXRzifVlDQAJ), @agwa suggests \r\n\r\n> It may also be a good idea to limit the lifetime of certificates used in SXG, to reduce the amount of time that an illegitimate certificate can be used, in case an attacker exploits a CA vulnerability to obtain future-dated good OCSP responses.\r\n\r\n* @agwa [suggests 7-14 days](https://groups.google.com/a/chromium.org/d/msg/blink-dev/gPH_BcOBEtc/eL5q1f-rDQAJ).\r\n* @clintwilson says [\"Something around 7-10 days would be a nice target IMO, but even restricting to 30-90 days would be a substantial improvement.\"](https://groups.google.com/a/chromium.org/d/msg/blink-dev/gPH_BcOBEtc/mfxmsbZ3DQAJ)\r\n* If we go to 7 days, we can probably get rid of any mention of OCSP responses. What's the longest certificate lifetime where folks would be comfortable dropping our requirement for OCSP stapling?\r\n* A very-short lifetime will be a problem if a CA has to temporarily disable issuance, for example after security weaknesses in certain domain validation methods are discovered. \r\n* Even a 90-day limit probably requires automated certificate rotation, a'la ACME. Shorter certainly does.\r\n* Should we say anything about re-using an old public key in a new certificate?\r\n\r\nThese requirements may well wind up in the [BRs](https://cabforum.org/baseline-requirements-documents/) instead of this repository's specs, but this issue will track getting them where they need to go."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/377",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -9863,10 +10024,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/375.patch"
     },
     "body": "PTAL"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/374",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -11538,7 +11696,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/348.patch"
     },
     "body": "This fixes #321, I think. @molnarg, how do you feel about this?\n\nI'll need to add this to bundles too, but I want to get the SXG text right first.\n\n\n<!--\n    This comment and the below content is programatically generated.\n    You may add a comma-separated list of anchors you'd like a\n    direct link to below (e.g. #idl-serializers, #idl-sequence):\n\n    Don't remove this comment or modify anything below this line.\n    If you don't want a preview generated for this pull request,\n    just replace the whole of this comment's content by \"no preview\"\n    and remove what's below.\n-->\n***\n<a href=\"https://pr-preview.s3.amazonaws.com/jyasskin/webpackage/pull/348.html\" title=\"Last updated on Dec 13, 2018, 12:52 AM GMT (052993b)\">Preview</a> | <a href=\"https://pr-preview.s3.amazonaws.com/WICG/webpackage/348/dcb188d...jyasskin:052993b.html\" title=\"Last updated on Dec 13, 2018, 12:52 AM GMT (052993b)\">Diff</a>"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/347",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -11694,10 +11855,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/344.patch"
     },
     "body": "- Add `RequestMethod` field to the `Exchange` struct\r\n- `NewExchange()` takes `method` as a parameter\r\n- Fix a bug that request headers were not encoded\r\n- Function Renamings\r\n  - {encode,decode}Request -> {encode,decode}RequestMap\r\n  - {encode,decode}ResponseHeaders -> {encode,decode}ResponseMap"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/343",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -13293,7 +13451,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/317.patch"
     },
     "body": "Keep firebase.json, which is still up-to-date.\r\n\r\nFixes #316."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/316",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -13513,10 +13674,7 @@
     "closed_at": null,
     "author_association": "COLLABORATOR",
     "body": "[The snapshot](https://wicg.github.io/webpackage/draft-yasskin-httpbis-origin-signed-exchanges-impl.html#signature-validity) is missing the following text, present in the [spec](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html):\r\n\r\n\"If validating integrity using the selected header field requires the client to process records larger than 16384 bytes, return “invalid”.\"\r\n\r\nHowever, this limitation still exists in the [implementation](https://cs.chromium.org/chromium/src/content/browser/loader/merkle_integrity_source_stream.cc?l=18&rcl=591949795043a818e50aba8a539094c321a4220c)."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/313",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -14934,7 +15092,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/287.patch"
     },
     "body": "Fixes #276 and makes it clearer that implementations shouldn't reserialize things per https://crbug.com/863499.\r\n\r\n[Preview](https://jyasskin.github.io/webpackage/fix-276-clearly-reuse-header-bytes/draft-yasskin-http-origin-signed-responses.html), [Diff](https://tools.ietf.org/rfcdiff?url1=https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.txt&url2=https://jyasskin.github.io/webpackage/fix-276-clearly-reuse-header-bytes/draft-yasskin-http-origin-signed-responses.txt)\r\n\r\nThe change to the signed-message format can only take effect in b2, of course."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/286",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -15096,10 +15257,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/284.patch"
     },
     "body": "We should merge this after #281."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/283",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -16539,7 +16697,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/257.patch"
     },
     "body": "Change gen-signedexchange to try parsing all blocks in the key file as a\r\nprivate key. On OpenSSL 1.1.0h, the instructions at README.md result in\r\na key file that has two blocks, where the first is an EC PARAMETERS\r\nblock and the second is the EC PRIVATE KEY. This allows that file to be\r\nread."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/256",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -16701,10 +16862,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/254.patch"
     },
     "body": ""
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/253",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -18272,7 +18430,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/227.patch"
     },
     "body": "Two instances of receipient => recipient"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/226",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -18450,10 +18611,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/224.patch"
     },
     "body": "Feel free to land via rebase if everything looks good."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/223",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -19988,7 +20146,10 @@
     "closed_at": "2018-08-14T18:25:27Z",
     "author_association": "COLLABORATOR",
     "body": "I suppose the latest draft of the -impl checkpoint basically follows the latest responses draft ('the main draft) with some gaps, so a typical workflow could be like to keep cherry-picking changes from the latest responses into the latest impl draft.  However there are some diffs that are only tracked by the impl checkpoint but not in the main draft, e.g. like https://github.com/WICG/webpackage/pull/155 (`MI` vs `MI-draft2`).  I can see the reason not to track this in the main draft, but I'm afraid tracking such changes that only exist in some branch but not in the master responses draft may become a bit cumbersome, especially if we start to have multiple of such diffs.\r\n\r\nWould it be possible to avoid doing this but instead put some instructions for the implementors in the main draft? (This is something @jyasskin mentioned as a potential alternative in some of our offline chat)  Or could we have some special section in the ChangeLog in the main draft so that all we need to cherry-pick can be still found in the main draft?"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/196",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -20150,10 +20311,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/194.patch"
     },
     "body": "Thanks to @triblondon for noticing in\r\nhttps://github.com/w3ctag/design-reviews/issues/235#issuecomment-379424440.\r\n\r\n[Preview](https://jyasskin.github.io/webpackage/fix-http1-samples/draft-yasskin-http-origin-signed-responses.html), [Diff](https://tools.ietf.org/rfcdiff?url1=https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.txt&url2=https://jyasskin.github.io/webpackage/fix-http1-samples/draft-yasskin-http-origin-signed-responses.txt)\r\n"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/193",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -21700,7 +21858,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/167.patch"
     },
     "body": ""
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/166",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -21896,10 +22057,7 @@
     "closed_at": "2018-04-06T03:00:13Z",
     "author_association": "COLLABORATOR",
     "body": "In the #updating-validity section, the 3rd and subsequent paragraphs should be removed.\r\n\r\nAt present, Chromium requires the Signature to have a valid validityUrl, but doesn't use it except for including it in the signed message. (@nyaxt please correct me if I'm wrong.)"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/163",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -23558,7 +23716,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/137.patch"
     },
     "body": "[Preview](https://jyasskin.github.io/webpackage/archival-use-case/draft-yasskin-webpackage-use-cases.html), [Diff](https://tools.ietf.org/rfcdiff?url1=https://wicg.github.io/webpackage/draft-yasskin-webpackage-use-cases.txt&url2=https://jyasskin.github.io/webpackage/archival-use-case/draft-yasskin-webpackage-use-cases.txt)\r\n\r\n@ibnesayeed @craigfrancis @TzviyaSiegman, you've been interested in this topic in issues like #105. What should I write in this section? I don't know enough about the topic to even describe the use case well.\r\n\r\nI'm probably going to merge this without review to get it in time for the IETF deadline, but I'll definitely fix any comments that show up after that."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/136",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -23752,10 +23913,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/134.patch"
     },
     "body": "This builds on #132, so probably review that one first.\r\n\r\n[Preview](https://jyasskin.github.io/webpackage/cert-extension/draft-yasskin-http-origin-signed-responses.html), [Diff](https://tools.ietf.org/rfcdiff?url1=https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.txt&url2=https://jyasskin.github.io/webpackage/cert-extension/draft-yasskin-http-origin-signed-responses.txt)\r\n\r\n@davidben @sleevi"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/133",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -25216,7 +25374,10 @@
     "closed_at": null,
     "author_association": "CONTRIBUTOR",
     "body": "If and when browser support for webpackage arrives, batch cache synchronization [1] or cache initialization [2] might be good use-cases, especially in the context of Service Worker. Using some sort of content negotiation mechanism, Service Worker might be able to ask the server for a webpackage that at least contains desired request URL(s). By unpacking the response and populating the cache, it can serve subsequent requests pretty quickly. What will be packed in the response is something that can be negotiated using some means or the server can decide as it does in case of HTTP/2 Server Hints (`prefetch`).\r\n\r\n[1] https://github.com/WICG/BackgroundSync\r\n[2] https://developer.mozilla.org/en-US/docs/Web/API/Cache/addAll"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/106",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -25374,10 +25535,7 @@
     "closed_at": null,
     "author_association": "CONTRIBUTOR",
     "body": "Some of the suggested uses cases seem to require that sources of non-determinism (such as RNG seeds and the current time) are captured to ensure that, for example, saving and sharing a web page can occur with greater fidelity."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/103",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -26839,7 +26997,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/77.patch"
     },
     "body": "I've heard from at least two people who started reading the TAG's document instead of this one because of how prominently we highlight it."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/76",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -26989,10 +27150,7 @@
     "closed_at": "2018-01-24T18:36:30Z",
     "author_association": "MEMBER",
     "body": "The link to https://w3ctag.github.io/packaging-on-the-web/ at the beginning of the explainer needs to say clearly that it's been superseded."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/73",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -28560,7 +28718,10 @@
     "closed_at": "2019-05-13T16:54:03Z",
     "author_association": "MEMBER",
     "body": "I received feedback from some of our security people that [DER](https://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf) is easier to parse securely than [CBOR](https://tools.ietf.org/html/rfc7049). I'm not 100% sure that's the right choice yet, so here are some pros and cons.\r\n\r\nDER Pro's:\r\n1. Much older, with security-hardened implementations in many languages. e.g. BoringSSL includes a library for memory-safe DER parsing. CBOR has [many implementations](http://cbor.io/impls.html), but they aren't hardened.\r\n1. Prefixing with the length in bytes makes it easier to skip unneeded items. CBOR can work around this by embedding things into bytestrings.\r\n1. Generic parsing has only 2 cases: Primitive, where the interpretation of the bytes depends on the tag, and Constructed, where the content bytes encode a sequence of items. CBOR has 8 cases: integer, string, array, map, tag, simple value, simple value in next byte, and float. This is primarily used to skip unknown fields in structures.\r\n\r\nCBOR Pro's:\r\n1. ~8 primitive types instead of 30+. We can subset ASN.1 to only use INTEGER, OCTET STRING, UTF8String, and SEQUENCE, but we can also subset CBOR to use integers, byte strings, text strings, arrays, and maps.\r\n1. Extensibility based on maps from strings to values is easier to understand and possibly to manage than ASN.1's extensibility based on appending to sequences. However, it's possible I've missed a better way to extend structures in ASN.1.\r\n1. It's easy to find the latest specification.\r\n1. Combining the length into the type saves a byte for smaller items.\r\n1. Serializing canonical CBOR, which is needed for signature checking, is significantly easier to implement.\r\n1. All DER integers and floats have to deal with the complexity of encoding bignums. For our purposes, where bignums aren't needed, CBOR's 8,16,32, and 64-bit integers are simpler. Even if bignums were needed, it's likely that a fixed length would be simpler to specify and implement than DER's variable-length encoding.\r\n\r\n\r\nIf we stick with CBOR, we'll mandate [Canonical CBOR](https://tools.ietf.org/html/rfc7049#section-3.9), which includes minimal integer encodings. That means offsets will need to measure a range that doesn't include the offset itself, but that's doable for both the section list and the resource index.\r\n\r\nI'll update this list as more considerations come up."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/46",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -28724,10 +28885,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/44.patch"
     },
     "body": "COSE is more complex than we need, and exposes us to any bugs in generic COSE\r\ntools.\r\n\r\nWe're not necessarily going to allow certificates that can be used for TLS\r\ntraffic, but using their signing format removes one thing that'd block it.\r\n\r\nThese are requests from @agl."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/43",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -30126,7 +30284,10 @@
     "closed_at": "2016-12-07T00:40:56Z",
     "author_association": "NONE",
     "body": "It's not clear from the document whether offsets specified in the header or index of a nested package are to be taken from the start of the containing/primary package data or from the start of the nested package header.  \r\n"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/16",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -30270,10 +30431,7 @@
     "closed_at": "2017-01-05T02:08:54Z",
     "author_association": "NONE",
     "body": "As asked [here](https://github.com/dimich-g/webpackage#use-case-signed-package-one-origin):\r\n> Should there be '-with-ECDSA' since certificate specifies the key's algorithm?\r\n\r\nNo, not necessary since the certificate specifies the algorithm."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/13",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
