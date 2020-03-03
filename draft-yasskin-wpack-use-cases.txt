@@ -4,8 +4,8 @@
 
 Network Working Group                                         J. Yasskin
 Internet-Draft                                                    Google
-Intended status: Informational                          21 February 2020
-Expires: 24 August 2020
+Intended status: Informational                              3 March 2020
+Expires: 4 September 2020
 
 
               Use Cases and Requirements for Web Packages
@@ -42,7 +42,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 24 August 2020.
+   This Internet-Draft will expire on 4 September 2020.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Yasskin                  Expires 24 August 2020                 [Page 1]
+Yasskin                 Expires 4 September 2020                [Page 1]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Yasskin                  Expires 24 August 2020                 [Page 2]
+Yasskin                 Expires 4 September 2020                [Page 2]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
        3.2.4.  Binary  . . . . . . . . . . . . . . . . . . . . . . .  18
@@ -165,9 +165,9 @@ Internet-Draft Use Cases and Requirements for Web Packages February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                 [Page 3]
+Yasskin                 Expires 4 September 2020                [Page 3]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
 2.  Use cases
@@ -221,9 +221,9 @@ Internet-Draft Use Cases and Requirements for Web Packages February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                 [Page 4]
+Yasskin                 Expires 4 September 2020                [Page 4]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
    *  Downgrade prevention: "O"'s site might have an XSS vulnerability,
@@ -277,9 +277,9 @@ Internet-Draft Use Cases and Requirements for Web Packages February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                 [Page 5]
+Yasskin                 Expires 4 September 2020                [Page 5]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
 2.1.2.  Offline browsing
@@ -333,9 +333,9 @@ Internet-Draft Use Cases and Requirements for Web Packages February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                 [Page 6]
+Yasskin                 Expires 4 September 2020                [Page 6]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
 2.1.4.  Privacy-preserving prefetch
@@ -389,9 +389,9 @@ Internet-Draft Use Cases and Requirements for Web Packages February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                 [Page 7]
+Yasskin                 Expires 4 September 2020                [Page 7]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
 2.2.1.  Packaged Web Publications
@@ -445,9 +445,9 @@ Internet-Draft Use Cases and Requirements for Web Packages February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                 [Page 8]
+Yasskin                 Expires 4 September 2020                [Page 8]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
    *  Certificate revocation: The publisher's certificate might be
@@ -501,9 +501,9 @@ Internet-Draft Use Cases and Requirements for Web Packages February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                 [Page 9]
+Yasskin                 Expires 4 September 2020                [Page 9]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
    Associated requirements:
@@ -557,9 +557,9 @@ Internet-Draft Use Cases and Requirements for Web Packages February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 10]
+Yasskin                 Expires 4 September 2020               [Page 10]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
    If the subresource is signed by its publisher, the main resource's
@@ -613,9 +613,9 @@ Internet-Draft Use Cases and Requirements for Web Packages February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 11]
+Yasskin                 Expires 4 September 2020               [Page 11]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
 2.2.7.  Protecting Users from a Compromised Frontend
@@ -669,9 +669,9 @@ Internet-Draft Use Cases and Requirements for Web Packages February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 12]
+Yasskin                 Expires 4 September 2020               [Page 12]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
    Associated requirements:
@@ -725,9 +725,9 @@ Internet-Draft Use Cases and Requirements for Web Packages February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 13]
+Yasskin                 Expires 4 September 2020               [Page 13]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
    3.  Loss of module semantics - ES6 modules must be delivered as
@@ -781,9 +781,9 @@ Internet-Draft Use Cases and Requirements for Web Packages February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 14]
+Yasskin                 Expires 4 September 2020               [Page 14]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
    *  Indexed by URL
@@ -837,9 +837,9 @@ Internet-Draft Use Cases and Requirements for Web Packages February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 15]
+Yasskin                 Expires 4 September 2020               [Page 15]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
    and [I-D.cavage-http-signatures]) omit a description of how a client
@@ -893,9 +893,9 @@ Internet-Draft Use Cases and Requirements for Web Packages February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 16]
+Yasskin                 Expires 4 September 2020               [Page 16]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
 3.1.11.  Metadata
@@ -949,9 +949,9 @@ Internet-Draft Use Cases and Requirements for Web Packages February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 17]
+Yasskin                 Expires 4 September 2020               [Page 17]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
 3.2.4.  Binary
@@ -1005,9 +1005,9 @@ Internet-Draft Use Cases and Requirements for Web Packages February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 18]
+Yasskin                 Expires 4 September 2020               [Page 18]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
 3.2.12.  External dependencies
@@ -1061,9 +1061,9 @@ Internet-Draft Use Cases and Requirements for Web Packages February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 19]
+Yasskin                 Expires 4 September 2020               [Page 19]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
    We believe we'll cause fewer privacy breaches if we omit any
@@ -1117,9 +1117,9 @@ Internet-Draft Use Cases and Requirements for Web Packages February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 20]
+Yasskin                 Expires 4 September 2020               [Page 20]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
    *  Streamed loading: If the whole package has to be downloaded before
@@ -1173,9 +1173,9 @@ Internet-Draft Use Cases and Requirements for Web Packages February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 21]
+Yasskin                 Expires 4 September 2020               [Page 21]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
               Certificate Authentication in HTTP/2", Work in Progress,
@@ -1229,9 +1229,9 @@ Internet-Draft Use Cases and Requirements for Web Packages February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 22]
+Yasskin                 Expires 4 September 2020               [Page 22]
 
-Internet-Draft Use Cases and Requirements for Web Packages February 2020
+Internet-Draft Use Cases and Requirements for Web Packages    March 2020
 
 
               Transparency", RFC 6962, DOI 10.17487/RFC6962, June 2013,
@@ -1285,4 +1285,4 @@ Author's Address
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 23]
+Yasskin                 Expires 4 September 2020               [Page 23]

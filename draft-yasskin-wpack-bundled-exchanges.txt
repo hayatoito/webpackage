@@ -4,8 +4,8 @@
 
 Network Working Group                                         J. Yasskin
 Internet-Draft                                                    Google
-Intended status: Standards Track                        21 February 2020
-Expires: 24 August 2020
+Intended status: Standards Track                            3 March 2020
+Expires: 4 September 2020
 
 
                               Web Bundles
@@ -46,16 +46,16 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 24 August 2020.
+   This Internet-Draft will expire on 4 September 2020.
 
 
 
 
 
 
-Yasskin                  Expires 24 August 2020                 [Page 1]
+Yasskin                 Expires 4 September 2020                [Page 1]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
 Copyright Notice
@@ -109,14 +109,14 @@ Table of Contents
 
 
 
-Yasskin                  Expires 24 August 2020                 [Page 2]
+Yasskin                 Expires 4 September 2020                [Page 2]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
      7.1.  Normative References  . . . . . . . . . . . . . . . . . .  25
      7.2.  Informative References  . . . . . . . . . . . . . . . . .  26
-   Appendix A.  Change Log . . . . . . . . . . . . . . . . . . . . .  27
+   Appendix A.  Change Log . . . . . . . . . . . . . . . . . . . . .  26
    Appendix B.  Acknowledgements . . . . . . . . . . . . . . . . . .  27
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  27
 
@@ -165,9 +165,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                 [Page 3]
+Yasskin                 Expires 4 September 2020                [Page 3]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
    A bundle is parsed from a stream of bytes, which is assumed to have
@@ -221,9 +221,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                 [Page 4]
+Yasskin                 Expires 4 September 2020                [Page 4]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
    requests  A map ([INFRA]) whose keys are URLs and whose values
@@ -277,9 +277,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                 [Page 5]
+Yasskin                 Expires 4 September 2020                [Page 5]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
    A client will generally want to load the response for a request that
@@ -333,9 +333,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                 [Page 6]
+Yasskin                 Expires 4 September 2020                [Page 6]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
 3.2.  Serving constraints
@@ -389,9 +389,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                 [Page 7]
+Yasskin                 Expires 4 September 2020                [Page 7]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
         Note: From this point forward, errors also include the fallback
@@ -445,9 +445,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                 [Page 8]
+Yasskin                 Expires 4 September 2020                [Page 8]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
    15.  Let "knownSections" be the subset of the Section 6.2 that this
@@ -501,9 +501,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                 [Page 9]
+Yasskin                 Expires 4 September 2020                [Page 9]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
         3.  If ""name"" is in "ignoredSections", continue to the next
@@ -557,9 +557,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 10]
+Yasskin                 Expires 4 September 2020               [Page 10]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
    The order of variant-axes is important.  If the "variants-value" were
@@ -613,9 +613,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 11]
+Yasskin                 Expires 4 September 2020               [Page 11]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
        1.  If "offset" + "length" is larger than
@@ -669,9 +669,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 12]
+Yasskin                 Expires 4 September 2020               [Page 12]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
    5.  Set "metadata["requests"]" to "requests".
@@ -725,9 +725,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 13]
+Yasskin                 Expires 4 September 2020               [Page 13]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
    *  Reject all signatures by an RSA public key.
@@ -781,9 +781,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 14]
+Yasskin                 Expires 4 September 2020               [Page 14]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
    1.  Let "signatures" be the result of parsing "sectionContents" as a
@@ -837,9 +837,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 15]
+Yasskin                 Expires 4 September 2020               [Page 15]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
                       Figure 1: Example trailing bytes
@@ -893,9 +893,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 16]
+Yasskin                 Expires 4 September 2020               [Page 16]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
    1.   Seek to offset "responseMetadata.offset" in "stream".  If this
@@ -949,9 +949,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 17]
+Yasskin                 Expires 4 September 2020               [Page 17]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
         of "stream" starting at the current offset and ending after
@@ -1005,9 +1005,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 18]
+Yasskin                 Expires 4 September 2020               [Page 18]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
 3.5.2.  Parsing variable-length data from a bytestring
@@ -1061,9 +1061,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 19]
+Yasskin                 Expires 4 September 2020               [Page 19]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
        27  Let "content" be the result of reading 8 bytes from the
@@ -1117,9 +1117,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 20]
+Yasskin                 Expires 4 September 2020               [Page 20]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
        4.  Assert: "headers" does not contain ([FETCH]) "name", because
@@ -1173,9 +1173,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 21]
+Yasskin                 Expires 4 September 2020               [Page 21]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
    To avoid vulnerabilities, in addition to the response header
@@ -1229,9 +1229,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 22]
+Yasskin                 Expires 4 September 2020               [Page 22]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
 6.  IANA considerations
@@ -1285,9 +1285,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 23]
+Yasskin                 Expires 4 September 2020               [Page 23]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
    *  Person & email address to contact for further information: See the
@@ -1341,9 +1341,9 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 24]
+Yasskin                 Expires 4 September 2020               [Page 24]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
    The section's specification can use the bytes making up the section,
@@ -1376,7 +1376,7 @@ Internet-Draft                 Web Bundles                 February 2020
               JSON Data Structures", RFC 8610, DOI 10.17487/RFC8610,
               June 2019, <https://www.rfc-editor.org/info/rfc8610>.
 
-   [FETCH]    WHATWG, "Fetch", February 2020,
+   [FETCH]    WHATWG, "Fetch", March 2020,
               <https://fetch.spec.whatwg.org/>.
 
    [I-D.ietf-httpbis-variants]
@@ -1397,15 +1397,15 @@ Internet-Draft                 Web Bundles                 February 2020
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 25]
+Yasskin                 Expires 4 September 2020               [Page 25]
 
-Internet-Draft                 Web Bundles                 February 2020
+Internet-Draft                 Web Bundles                    March 2020
 
 
               IANA, "Media Types",
               <http://www.iana.org/assignments/media-types>.
 
-   [INFRA]    WHATWG, "Infra", February 2020,
+   [INFRA]    WHATWG, "Infra", March 2020,
               <https://infra.spec.whatwg.org/>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
@@ -1427,8 +1427,7 @@ Internet-Draft                 Web Bundles                 February 2020
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
-   [URL]      WHATWG, "URL", February 2020,
-              <https://url.spec.whatwg.org/>.
+   [URL]      WHATWG, "URL", March 2020, <https://url.spec.whatwg.org/>.
 
 7.2.  Informative References
 
@@ -1447,20 +1446,17 @@ Internet-Draft                 Web Bundles                 February 2020
               Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
               <https://www.rfc-editor.org/info/rfc8446>.
 
-
-
-
-
-
-
-Yasskin                  Expires 24 August 2020                [Page 26]
-
-Internet-Draft                 Web Bundles                 February 2020
-
-
 Appendix A.  Change Log
 
    RFC EDITOR PLEASE DELETE THIS SECTION.
+
+
+
+
+Yasskin                 Expires 4 September 2020               [Page 26]
+
+Internet-Draft                 Web Bundles                    March 2020
+
 
    draft-02
 
@@ -1509,4 +1505,8 @@ Author's Address
 
 
 
-Yasskin                  Expires 24 August 2020                [Page 27]
+
+
+
+
+Yasskin                 Expires 4 September 2020               [Page 27]
