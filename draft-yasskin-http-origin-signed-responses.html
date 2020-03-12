@@ -200,6 +200,9 @@ a[href]:hover {
 a[href].selfRef:hover {
   background-color: var(--highlight-color);
 }
+a.xref {
+  white-space: nowrap;
+}
 
 /* Figures */
 tt, code, pre {
@@ -392,6 +395,9 @@ hr {
   padding-left: 1.2em;
   text-indent: -1.2em;
 }
+#toc a.xref {
+  white-space: normal;
+}
 /* references */
 .references dt {
   text-align: right;
@@ -475,7 +481,7 @@ hr.addr {
     column-count: 2;
     column-gap: 20px;
   }
-  #name-authors-address {
+  #name-authors-addresses {
     position: absolute;
     top: 0px;
     column-span: all;
@@ -822,7 +828,6 @@ table.left {
 <link href="rfc-local.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-<script src="metadata.min.js"></script>
 <table class="ears">
 <thead><tr>
 <td class="left">Internet-Draft</td>
@@ -831,7 +836,7 @@ table.left {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Yasskin</td>
-<td class="center">Expires 4 September 2020</td>
+<td class="center">Expires 13 September 2020</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -844,12 +849,12 @@ table.left {
 <dd class="internet-draft">draft-yasskin-http-origin-signed-responses-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2020-03-03" class="published">3 March 2020</time>
+<time datetime="2020-03-12" class="published">12 March 2020</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2020-09-04">4 September 2020</time></dd>
+<dd class="expires"><time datetime="2020-09-13">13 September 2020</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -901,7 +906,7 @@ in <a href="https://github.com/WICG/webpackage">https://github.com/WICG/webpacka
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 4 September 2020.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 13 September 2020.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -3279,7 +3284,7 @@ CBOR-format certificate chains, application/cert-chain+cbor, as follows:<a href=
 <span class="refAuthor">WHATWG</span>, <span class="refTitle">"Fetch"</span>, <time datetime="2020-03">March 2020</time>, <span>&lt;<a href="https://fetch.spec.whatwg.org/">https://fetch.spec.whatwg.org/</a>&gt;</span>. </dd>
 <dt id="I-D.ietf-httpbis-header-structure">[I-D.ietf-httpbis-header-structure]</dt>
 <dd>
-<span class="refAuthor">Nottingham, M.</span><span class="refAuthor"> and P. Kamp</span>, <span class="refTitle">"Structured Headers for HTTP"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-header-structure-15</span>, <time datetime="2020-01-28">28 January 2020</time>, <span>&lt;<a href="http://www.ietf.org/internet-drafts/draft-ietf-httpbis-header-structure-15.txt">http://www.ietf.org/internet-drafts/draft-ietf-httpbis-header-structure-15.txt</a>&gt;</span>. </dd>
+<span class="refAuthor">Nottingham, M.</span><span class="refAuthor"> and P. Kamp</span>, <span class="refTitle">"Structured Field Values for HTTP"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-header-structure-16</span>, <time datetime="2020-03-09">9 March 2020</time>, <span>&lt;<a href="http://www.ietf.org/internet-drafts/draft-ietf-httpbis-header-structure-16.txt">http://www.ietf.org/internet-drafts/draft-ietf-httpbis-header-structure-16.txt</a>&gt;</span>. </dd>
 <dt id="I-D.ietf-httpbis-variants">[I-D.ietf-httpbis-variants]</dt>
 <dd>
 <span class="refAuthor">Nottingham, M.</span>, <span class="refTitle">"HTTP Representation Variants"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-variants-06</span>, <time datetime="2019-11-03">3 November 2019</time>, <span>&lt;<a href="http://www.ietf.org/internet-drafts/draft-ietf-httpbis-variants-06.txt">http://www.ietf.org/internet-drafts/draft-ietf-httpbis-variants-06.txt</a>&gt;</span>. </dd>
@@ -3367,7 +3372,7 @@ CBOR-format certificate chains, application/cert-chain+cbor, as follows:<a href=
 <span class="refAuthor">Cavage, M.</span><span class="refAuthor"> and M. Sporny</span>, <span class="refTitle">"Signing HTTP Messages"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-cavage-http-signatures-12</span>, <time datetime="2019-10-21">21 October 2019</time>, <span>&lt;<a href="http://www.ietf.org/internet-drafts/draft-cavage-http-signatures-12.txt">http://www.ietf.org/internet-drafts/draft-cavage-http-signatures-12.txt</a>&gt;</span>. </dd>
 <dt id="I-D.ietf-httpbis-cache">[I-D.ietf-httpbis-cache]</dt>
 <dd>
-<span class="refAuthor">Fielding, R.</span><span class="refAuthor">, Nottingham, M.</span><span class="refAuthor">, and J. Reschke</span>, <span class="refTitle">"HTTP Caching"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-cache-06</span>, <time datetime="2019-11-04">4 November 2019</time>, <span>&lt;<a href="http://www.ietf.org/internet-drafts/draft-ietf-httpbis-cache-06.txt">http://www.ietf.org/internet-drafts/draft-ietf-httpbis-cache-06.txt</a>&gt;</span>. </dd>
+<span class="refAuthor">Fielding, R.</span><span class="refAuthor">, Nottingham, M.</span><span class="refAuthor">, and J. Reschke</span>, <span class="refTitle">"HTTP Caching"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-cache-07</span>, <time datetime="2020-03-07">7 March 2020</time>, <span>&lt;<a href="http://www.ietf.org/internet-drafts/draft-ietf-httpbis-cache-07.txt">http://www.ietf.org/internet-drafts/draft-ietf-httpbis-cache-07.txt</a>&gt;</span>. </dd>
 <dt id="I-D.ietf-httpbis-http2-secondary-certs">[I-D.ietf-httpbis-http2-secondary-certs]</dt>
 <dd>
 <span class="refAuthor">Bishop, M.</span><span class="refAuthor">, Sullivan, N.</span><span class="refAuthor">, and M. Thomson</span>, <span class="refTitle">"Secondary Certificate Authentication in HTTP/2"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-http2-secondary-certs-05</span>, <time datetime="2019-11-01">1 November 2019</time>, <span>&lt;<a href="http://www.ietf.org/internet-drafts/draft-ietf-httpbis-http2-secondary-certs-05.txt">http://www.ietf.org/internet-drafts/draft-ietf-httpbis-http2-secondary-certs-05.txt</a>&gt;</span>. </dd>

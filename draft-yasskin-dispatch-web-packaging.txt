@@ -4,8 +4,8 @@
 
 Network Working Group                                         J. Yasskin
 Internet-Draft                                                    Google
-Intended status: Standards Track                            3 March 2020
-Expires: 4 September 2020
+Intended status: Standards Track                           12 March 2020
+Expires: 13 September 2020
 
 
                              Web Packaging
@@ -32,7 +32,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 September 2020.
+   This Internet-Draft will expire on 13 September 2020.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Yasskin                 Expires 4 September 2020                [Page 1]
+Yasskin                 Expires 13 September 2020               [Page 1]
 
 Internet-Draft                Web Packaging                   March 2020
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Yasskin                 Expires 4 September 2020                [Page 2]
+Yasskin                 Expires 13 September 2020               [Page 2]
 
 Internet-Draft                Web Packaging                   March 2020
 
@@ -165,7 +165,7 @@ Internet-Draft                Web Packaging                   March 2020
 
 
 
-Yasskin                 Expires 4 September 2020                [Page 3]
+Yasskin                 Expires 13 September 2020               [Page 3]
 
 Internet-Draft                Web Packaging                   March 2020
 
@@ -221,7 +221,7 @@ Internet-Draft                Web Packaging                   March 2020
 
 
 
-Yasskin                 Expires 4 September 2020                [Page 4]
+Yasskin                 Expires 13 September 2020               [Page 4]
 
 Internet-Draft                Web Packaging                   March 2020
 
@@ -277,7 +277,7 @@ Internet-Draft                Web Packaging                   March 2020
 
 
 
-Yasskin                 Expires 4 September 2020                [Page 5]
+Yasskin                 Expires 13 September 2020               [Page 5]
 
 Internet-Draft                Web Packaging                   March 2020
 
@@ -333,7 +333,7 @@ Internet-Draft                Web Packaging                   March 2020
 
 
 
-Yasskin                 Expires 4 September 2020                [Page 6]
+Yasskin                 Expires 13 September 2020               [Page 6]
 
 Internet-Draft                Web Packaging                   March 2020
 
@@ -389,7 +389,7 @@ Internet-Draft                Web Packaging                   March 2020
 
 
 
-Yasskin                 Expires 4 September 2020                [Page 7]
+Yasskin                 Expires 13 September 2020               [Page 7]
 
 Internet-Draft                Web Packaging                   March 2020
 
@@ -445,7 +445,7 @@ Internet-Draft                Web Packaging                   March 2020
 
 
 
-Yasskin                 Expires 4 September 2020                [Page 8]
+Yasskin                 Expires 13 September 2020               [Page 8]
 
 Internet-Draft                Web Packaging                   March 2020
 
@@ -501,7 +501,7 @@ Internet-Draft                Web Packaging                   March 2020
 
 
 
-Yasskin                 Expires 4 September 2020                [Page 9]
+Yasskin                 Expires 13 September 2020               [Page 9]
 
 Internet-Draft                Web Packaging                   March 2020
 
@@ -557,7 +557,7 @@ Internet-Draft                Web Packaging                   March 2020
 
 
 
-Yasskin                 Expires 4 September 2020               [Page 10]
+Yasskin                 Expires 13 September 2020              [Page 10]
 
 Internet-Draft                Web Packaging                   March 2020
 
@@ -613,7 +613,7 @@ Internet-Draft                Web Packaging                   March 2020
 
 
 
-Yasskin                 Expires 4 September 2020               [Page 11]
+Yasskin                 Expires 13 September 2020              [Page 11]
 
 Internet-Draft                Web Packaging                   March 2020
 
@@ -669,7 +669,7 @@ Internet-Draft                Web Packaging                   March 2020
 
 
 
-Yasskin                 Expires 4 September 2020               [Page 12]
+Yasskin                 Expires 13 September 2020              [Page 12]
 
 Internet-Draft                Web Packaging                   March 2020
 
@@ -725,7 +725,7 @@ Internet-Draft                Web Packaging                   March 2020
 
 
 
-Yasskin                 Expires 4 September 2020               [Page 13]
+Yasskin                 Expires 13 September 2020              [Page 13]
 
 Internet-Draft                Web Packaging                   March 2020
 
@@ -781,7 +781,7 @@ Internet-Draft                Web Packaging                   March 2020
 
 
 
-Yasskin                 Expires 4 September 2020               [Page 14]
+Yasskin                 Expires 13 September 2020              [Page 14]
 
 Internet-Draft                Web Packaging                   March 2020
 
@@ -837,7 +837,7 @@ Internet-Draft                Web Packaging                   March 2020
 
 
 
-Yasskin                 Expires 4 September 2020               [Page 15]
+Yasskin                 Expires 13 September 2020              [Page 15]
 
 Internet-Draft                Web Packaging                   March 2020
 
@@ -893,7 +893,7 @@ Internet-Draft                Web Packaging                   March 2020
 
 
 
-Yasskin                 Expires 4 September 2020               [Page 16]
+Yasskin                 Expires 13 September 2020              [Page 16]
 
 Internet-Draft                Web Packaging                   March 2020
 
@@ -949,4 +949,4 @@ Author's Address
 
 
 
-Yasskin                 Expires 4 September 2020               [Page 17]
+Yasskin                 Expires 13 September 2020              [Page 17]
