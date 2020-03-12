@@ -1,6 +1,108 @@
 [
 
   {
+    "url": "https://api.github.com/repos/WICG/webpackage/issues/563",
+    "repository_url": "https://api.github.com/repos/WICG/webpackage",
+    "labels_url": "https://api.github.com/repos/WICG/webpackage/issues/563/labels{/name}",
+    "comments_url": "https://api.github.com/repos/WICG/webpackage/issues/563/comments",
+    "events_url": "https://api.github.com/repos/WICG/webpackage/issues/563/events",
+    "html_url": "https://github.com/WICG/webpackage/pull/563",
+    "id": 579683487,
+    "node_id": "MDExOlB1bGxSZXF1ZXN0Mzg3MDMyNDk2",
+    "number": 563,
+    "title": "gen-bundle: Skip duplicated URLs in URL list",
+    "user": {
+      "login": "irori",
+      "id": 80796,
+      "node_id": "MDQ6VXNlcjgwNzk2",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/80796?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/irori",
+      "html_url": "https://github.com/irori",
+      "followers_url": "https://api.github.com/users/irori/followers",
+      "following_url": "https://api.github.com/users/irori/following{/other_user}",
+      "gists_url": "https://api.github.com/users/irori/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/irori/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/irori/subscriptions",
+      "organizations_url": "https://api.github.com/users/irori/orgs",
+      "repos_url": "https://api.github.com/users/irori/repos",
+      "events_url": "https://api.github.com/users/irori/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/irori/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2020-03-12T04:24:09Z",
+    "updated_at": "2020-03-12T05:06:18Z",
+    "closed_at": "2020-03-12T05:05:41Z",
+    "author_association": "COLLABORATOR",
+    "pull_request": {
+      "url": "https://api.github.com/repos/WICG/webpackage/pulls/563",
+      "html_url": "https://github.com/WICG/webpackage/pull/563",
+      "diff_url": "https://github.com/WICG/webpackage/pull/563.diff",
+      "patch_url": "https://github.com/WICG/webpackage/pull/563.patch"
+    },
+    "body": "This is similar to #481, but for `gen-bundle -URLList`."
+  },
+  {
+    "url": "https://api.github.com/repos/WICG/webpackage/issues/562",
+    "repository_url": "https://api.github.com/repos/WICG/webpackage",
+    "labels_url": "https://api.github.com/repos/WICG/webpackage/issues/562/labels{/name}",
+    "comments_url": "https://api.github.com/repos/WICG/webpackage/issues/562/comments",
+    "events_url": "https://api.github.com/repos/WICG/webpackage/issues/562/events",
+    "html_url": "https://github.com/WICG/webpackage/issues/562",
+    "id": 577258522,
+    "node_id": "MDU6SXNzdWU1NzcyNTg1MjI=",
+    "number": 562,
+    "title": "Unclear error processing model for mismatched types",
+    "user": {
+      "login": "domenic",
+      "id": 617481,
+      "node_id": "MDQ6VXNlcjYxNzQ4MQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/617481?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/domenic",
+      "html_url": "https://github.com/domenic",
+      "followers_url": "https://api.github.com/users/domenic/followers",
+      "following_url": "https://api.github.com/users/domenic/following{/other_user}",
+      "gists_url": "https://api.github.com/users/domenic/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/domenic/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/domenic/subscriptions",
+      "organizations_url": "https://api.github.com/users/domenic/orgs",
+      "repos_url": "https://api.github.com/users/domenic/repos",
+      "events_url": "https://api.github.com/users/domenic/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/domenic/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2020-03-07T02:03:38Z",
+    "updated_at": "2020-03-07T02:03:38Z",
+    "closed_at": null,
+    "author_association": "NONE",
+    "body": "(Forked from https://github.com/WICG/origin-policy/issues/87#issuecomment-596029083)\r\n\r\nhttps://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html#name-the-signature-header specifies types for various parameters, but from what I can tell the processing model in https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html#section-3.5-7.1.1 does not explain what to do when the types mismatch.\r\n\r\nIt seems like maybe the intention is to return \"invalid\", but if so I'd expect an explicit step, like \"If integrity is not a string, return \"invalid\"."
+  },
+  {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/561",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
     "labels_url": "https://api.github.com/repos/WICG/webpackage/issues/561/labels{/name}",
@@ -1500,7 +1602,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/534.patch"
     },
     "body": ""
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/533",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -1596,10 +1701,7 @@
     "closed_at": null,
     "author_association": "NONE",
     "body": "It's great to see the initial bundle replay implementation in Chrome 80!\r\n\r\nI wanted to suggest an archival use case, from perspective of individual users.\r\nI think web bundles could provide alternative to the existing 'Save Page As...' functionality, which is essentially broken for many modern websites. The idea would be to allow users to 'save' a page as a bundle, and replay the page as best as possible. \r\n\r\nThe goal would be to make this work without requiring sites having to become more bundle-friendly or require signing.\r\n\r\nFor bundles to work as a 'generic' save page alternative, I think two extensions would be really useful:\r\n\r\n- Support for non-GET requests, because many sites use other methods during normal operation. I see that this has been closed in #70. Unfortunately, many sites currently use\r\nPOST in normal operation. An example: Twitter uses POST during normal operation. If a user were to save a Tweet, then a critical POST request would be missed, and shows up as an error.\r\n\r\n- Support for custom request/response resolution, perhaps via a 'bundle scoped service worker' that could override fetch() and handle domain-specific requests. Replaying of network traffic is necessarily non-deterministic as often timestamps are added, so a request for `https://example.com/?_=123` might be replayed as `https://example.com/?_124`. If there was a way for a 'worker' in a site to handle fetch(), it could then resolve these in a bundle-specific way.\r\n\r\nA bit more background: I've been working on a project called Webrecorder, which allows users to capture network traffic and replay it back (though a server proxy). In a way, it is designed to be as close as possible to a working 'save page as...'. This implementation uses a backend server.\r\n\r\nI've also have a service-worker based prototype, https://wab.ac/ which allows replay of HAR, WARC and now bundle WBN files in any browser that supports service workers.\r\nIt uses the 'wayback-machine style' URL rewriting approach, but of course it would be better if it could be done 'natively' in the browser, and bundles provide an exciting possibility for that.\r\n\r\nI've wondering if there is any interest, perhaps down the road, in expanding bundles to be able to support features needed to 'fix' Save Page As... for users? Or expanding the bundle spec so that extensions could be implemented to facilitate better replay of 'saved' pages?"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/531",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -3159,7 +3261,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/504.patch"
     },
     "body": "I think this describes the easier half of #425, with the second use case mentioned in https://github.com/WICG/webpackage/pull/425#pullrequestreview-300951626 left for another PR.\r\n\r\n@davidstrauss, does it make sense to use this instead of your PR?\r\n\r\nRendered version at https://jyasskin.github.io/webpackage/frontend-compromise-use-case/draft-yasskin-webpackage-use-cases.html#compromised-frontend."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/503",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -3261,10 +3366,7 @@
     "closed_at": "2019-10-05T19:12:54Z",
     "author_association": "NONE",
     "body": "Cloudfront recently blogged [a demo](https://blog.cloudflare.com/real-urls-for-amp-cached-content-using-cloudflare-workers/#generating-http-signed-exchanges-with-workers) of \"HTTP signed exchanges in action on 1-800-Flowers,\" using Chrome Beta for Android. Is there a way to replicate that interaction using `curl`, so that the signed exchange is returned and I can inspect the headers? I can't figure out how to get a response via `curl` which includes a `Signature:` header, or otherwise seems to be a signed exchange.\r\n\r\nApologies if this is a bit off-topic for a repo which seems to be mostly focused on the webpackage standard. If there are better places to ask this question, I'd be grateful for pointers."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/501",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -4759,7 +4861,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/474.patch"
     },
     "body": "Use `-days 90` when creating a self-signed certificate, as certificate\r\nlifetime is limited to maximum 90 days. (#383)"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/473",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -4855,10 +4960,7 @@
     "closed_at": "2019-08-29T07:58:56Z",
     "author_association": "COLLABORATOR",
     "body": "Bundled Exchanges spec [defines the format of signature section](https://wicg.github.io/webpackage/draft-yasskin-wpack-bundled-exchanges.html#signatures-section) but doesn't define how to validate it.\r\n\r\nI can imagine how validation works; To validate `(authority, sig, signed)` triple in `vouched-subsets`, a client would run an algorithm similar to the [SXG's Signature validity](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html#signature-validity) but its entities replaced as follows:\r\n\r\n- `requestUrl` -> `signed.subset-hashes` which includes `whatwg-url`\r\n- `responseHeaders` -> `signed.subset-hashes` which includes `header-sha256`\r\n- `payload` -> `payload` in the responses section\r\n- `signature` -> `sig`\r\n- `integrity` -> `payload-integrity-header` included in `signed.subset-hashes`\r\n- `validity-url` -> `signed.validity-url`\r\n- `cert-sha256` -> `signed.auth-sha256`\r\n- `date` -> `signed.date`\r\n- `expires` -> `signed.expires`\r\n- `certificate-chain` -> `authorities`\r\n- `main-certificate` -> `authorities[authority]`\r\n\r\nDoes this align with your idea? @jyasskin\r\n\r\nQuestions:\r\n\r\n- Will signing message be the `signed` binary string itself? It doesn't have the 64-spaces padding nor a context string.\r\n- What's the content of resource at `validity-url`?\r\n- Do the requirements of SXG headers (e.g. no uncached fields) apply to BXG too? Response headers are not included in bundle's metadata, so it'd have to be checked in a later step of loading (it wouldn't be a big deal though).\r\n- What about the certificate requirements?\r\n- Is it possible to unify the algorithm to SXG's validation algorithm? It would make implementation simpler.\r\n"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/471",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -6389,7 +6491,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/444.patch"
     },
     "body": "Print warning or error message if main certificate has a validity period\r\nlonger than 90 days."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/443",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -6499,10 +6604,7 @@
     "closed_at": null,
     "author_association": "CONTRIBUTOR",
     "body": "According to https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html#signature-header, each parameterised identifier MUST have parameters 'sig', 'integirty', and so on. Then is it okay for them to contain other parameters not referred as 'necessary' in the spec?"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/441",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -8184,7 +8286,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/414.patch"
     },
     "body": "Please take a look when you have time."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/413",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -8286,10 +8391,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/412.patch"
     },
     "body": ""
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/411",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -9763,7 +9865,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/384.patch"
     },
     "body": "- Update spec comments\r\n- Headers must contain `Content-Type` (#354)\r\n- Check request method only for b1 and b2"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/383",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -9871,10 +9976,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/382.patch"
     },
     "body": "idnits caught that I'd forgotten to do this when TLS was published."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/381",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -11600,7 +11702,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/354.patch"
     },
     "body": "@annevk @molnarg This has the somewhat controversial requirement that SXGs are served with `X-Content-Type-Options: nosniff` from #348. @molnarg, if we want this, we should show a case where it actually prevents a plugin from sniffing an executable content type.\n\nI've also added the promised requirement that clients treat the contents as including that header, and a requirement we haven't discussed yet that the contents actually include a `Content-Type` header.\n\n[signed-responses preview](https://jyasskin.github.io/webpackage/nosniff-header/draft-yasskin-http-origin-signed-responses.html#seccons-content-sniffing)\n[bundled-exchanges preview](https://jyasskin.github.io/webpackage/nosniff-header/draft-yasskin-wpack-bundled-exchanges.html#seccons-content-sniffing)\n\n\n<!--\n    This comment and the below content is programatically generated.\n    You may add a comma-separated list of anchors you'd like a\n    direct link to below (e.g. #idl-serializers, #idl-sequence):\n\n    Don't remove this comment or modify anything below this line.\n    If you don't want a preview generated for this pull request,\n    just replace the whole of this comment's content by \"no preview\"\n    and remove what's below.\n-->\n***\n<a href=\"https://pr-preview.s3.amazonaws.com/jyasskin/webpackage/pull/354.html\" title=\"Last updated on Jan 14, 2019, 7:30 PM UTC (cf5f1b1)\">Preview</a> | <a href=\"https://pr-preview.s3.amazonaws.com/WICG/webpackage/354/595f72f...jyasskin:cf5f1b1.html\" title=\"Last updated on Jan 14, 2019, 7:30 PM UTC (cf5f1b1)\">Diff</a>"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/353",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -11708,10 +11813,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/352.patch"
     },
     "body": "See also some discussion in https://crbug.com/915576.\n\n\n<!--\n    This comment and the below content is programatically generated.\n    You may add a comma-separated list of anchors you'd like a\n    direct link to below (e.g. #idl-serializers, #idl-sequence):\n\n    Don't remove this comment or modify anything below this line.\n    If you don't want a preview generated for this pull request,\n    just replace the whole of this comment's content by \"no preview\"\n    and remove what's below.\n-->\n***\n<a href=\"https://pr-preview.s3.amazonaws.com/jyasskin/webpackage/pull/352.html\" title=\"Last updated on Dec 17, 2018, 5:44 PM UTC (579eac9)\">Preview</a> | <a href=\"https://pr-preview.s3.amazonaws.com/WICG/webpackage/352/d335219...jyasskin:579eac9.html\" title=\"Last updated on Dec 17, 2018, 5:44 PM UTC (579eac9)\">Diff</a>"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/351",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -13285,7 +13387,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/323.patch"
     },
     "body": "This is part of #319 and will be used to parse `signature` header."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/322",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -13419,10 +13524,7 @@
     "closed_at": "2018-12-19T22:43:35Z",
     "author_association": "NONE",
     "body": "When a server returns a web package in the application/signed-exchange format, it'll embed the request URL in the returned binary blob in the fallbackUrl field. Depending on the server implementation, the encoding of bytes of the URL might vary. Some implementation might choose the easiest solution, which is to just reflect whatever representation the client sends.\r\n\r\nThis is problematic, because this gives attackers an easy injection point within the first few bytes of the file, which can be turned into code running in the victim origin using content sniffing. The Adobe PDF parser for example ignores the unknown prefix bytes if it finds a valid PDF signature within the first 1kb of the file.\r\n\r\nThe \"x-content-type-options: nosniff\" header instruct browsers to not do content sniffing, but plugins can choose to (and in many cases do) ignore them. Because of this, the usual suggestion is to host partially user controlled binary files only on sandbox domains (when it's not possible to sufficiently escape the user controlled parts, which is usually not the case).\r\n\r\nThis demo page is not vulnerable to this, because it requires a special Accept request header: https://azei-package-test.com/ Clients that can't interpret the web package format will never send this header, so they'll never see the signed exchange file format.\r\n\r\nOne solution would be to use some kind of encoding for all reflected values (e.g. base64) to avoid introducing a valuable injection point in the first place."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/320",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -14990,7 +15092,10 @@
     "closed_at": "2018-09-16T13:12:34Z",
     "author_association": "NONE",
     "body": "In order to discourage centralization of the web, authors should have an incentive to keep their websites active.\r\n\r\nOne way is to make sure is that the author's server provides the client with the decryption key to decrypt the package.\r\n\r\ni.e:\r\n1. example.com signs and packages example.com/index.html and submits to google.com\r\n2. google.com distributes example.com/index.html \r\n3. users downloads example.com/index.html from google.com\r\n4. user connects to example.com for the index.html's decryption key\r\n5. browser decrypt the index.html package supplied by google with the decryption key supplied by example.com\r\n\r\nThis all should be optional to the author. Some authors might only want google.com to distribute the html/css/js for faster loading but ensure that the client has a first party contact with example.com too.  \r\n\r\nIt is already possible to do the same with javascript, but the web should also provide a native way to do this. \r\n"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/292",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -15098,10 +15203,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/291.patch"
     },
     "body": "This PR introduces `Version` type to represent spec versions. This is needed to be a new package since this is referenced from multiple packages not only `signedexchange` but also `mice`."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/290",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -16589,7 +16691,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/263.patch"
     },
     "body": "That function is not used anywhere."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/262",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -16697,10 +16802,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/261.patch"
     },
     "body": "This is twice Chromium's limit for the request or response headers,\r\nsince both are included in the signed exchange headers block."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/260",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -18328,7 +18430,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/233.patch"
     },
     "body": ""
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/232",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -18436,10 +18541,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/231.patch"
     },
     "body": "Per @sleevi's suggestion.\r\n\r\nFixes #229.\r\n\r\n[Preview](https://jyasskin.github.io/webpackage/rename-test-oid/draft-yasskin-http-origin-signed-responses.html), [Diff](https://tools.ietf.org/rfcdiff?url1=https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.txt&url2=https://jyasskin.github.io/webpackage/rename-test-oid/draft-yasskin-http-origin-signed-responses.txt)"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/230",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -19972,7 +20074,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/203.patch"
     },
     "body": "The leading `+` in L336 caused the markdown parser to interpret it as a new unordered list. This PR fixes it by moving the `+` to the end of previous line."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/202",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -20152,10 +20257,7 @@
     "closed_at": "2019-03-22T18:56:28Z",
     "author_association": "MEMBER",
     "body": "https://wicg.github.io/webpackage/draft-yasskin-dispatch-bundled-exchanges.html currently doesn't specify how a client decides which bundled request to use in any particular context. We need to define that.\r\n\r\nhttps://docs.google.com/document/d/1JdJkdY7cK2rD9JXbK75sSn069c0rhF9UnLQACBZ1OtY/edit# starts exploring the space but doesn't come to a conclusion yet."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/200",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -21762,7 +21864,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/173.patch"
     },
     "body": "Thanks @kinu! This is a subset of your document that I think will give folks like the TAG enough to go on. The rest of your doc is most of the specification.\r\n\r\nhttps://github.com/jyasskin/webpackage/blob/sketch-loading/explainer.md#signed-exchange-loading-sketch"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/172",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -21864,10 +21969,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/171.patch"
     },
     "body": "Thanks @irori.\r\n\r\n@davidben @sleevi, is this the right thing to do? Or should I match [RFC6962](https://tools.ietf.org/html/rfc6962#section-3.3) by requiring clients to look in all three places?"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/170",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -23572,7 +23674,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/143.patch"
     },
     "body": "Updates gen-signedexchange to match spec text changes in 3cae5496a86cafde2ab59f95bb62d6d47202445b"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/142",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -23722,10 +23827,7 @@
     "closed_at": null,
     "author_association": "MEMBER",
     "body": "Our strictness in enforcing being within the 7-day signature validity period interacts badly with skewed clocks. Do we want to encourage signers to pre-date the signature's timestamp by X hours, or require clients to trust signatures that start being valid in X hours, or something else?"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/140",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -25255,7 +25357,10 @@
     "closed_at": "2018-05-08T22:54:07Z",
     "author_association": "NONE",
     "body": "I'd like to propose that we explore an alternative name for webpackage. Although [webpack](https://webpack.js.org/) is a separate tool in concerns of responsibilities from webpackage, I've already had a variety of confusion expressed from our userbase about what webpackage is and how it relates to webpack. \r\n\r\n\r\nMaybe some options: \r\n* WebParcel\r\n* WebZip\r\n* WebDistro\r\n\r\nMind you these are off the cuff, but I'd like to formally spin up the work involved to start exploring a replacement if there are no objections. "
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/112",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -25363,10 +25468,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/111.patch"
     },
     "body": "@sleevi, how's this look?\r\n\r\n[Preview](https://jyasskin.github.io/webpackage/sleevi-comments/draft-yasskin-http-origin-signed-responses.html), [Diff](https://tools.ietf.org/rfcdiff?url1=https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.txt&url2=https://jyasskin.github.io/webpackage/sleevi-comments/draft-yasskin-http-origin-signed-responses.txt)"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/110",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -26901,7 +27003,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/83.patch"
     },
     "body": "Preview in https://jyasskin.github.io/webpackage/alex-changes/draft-yasskin-webpackage-use-cases.html.\r\n\r\nThis also adds a \"Metadata\" requirement from https://www.w3.org/TR/pwp-ucr/#archmetadata, which is also used by the offline-installation use case."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/82",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -27009,10 +27114,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/81.patch"
     },
     "body": "Preview at https://jyasskin.github.io/webpackage/draft-yasskin-origin-signed-responses/draft-yasskin-http-origin-signed-responses.html\r\n\r\nThis doesn't yet have a design, just some use cases and constraints on the design. I also haven't yet worked out how this would fit into a bundling proposal. It's possible that it doesn't.\r\n\r\n@nyaxt @KenjiBaheux @mnot @mikewest"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/80",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -28612,7 +28714,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/53.patch"
     },
     "body": "It also removes the O(#parts^2) slowdown from inserting offsets one at a time, and makes it possible to build packages larger than fit in memory.\r\n\r\n@mrdewitt"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/52",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -28722,10 +28827,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/51.patch"
     },
     "body": "Is there a more official link to the Chrome MHTML work than http://www.techgainer.com/enable-single-file-mhtml-support-chrome/?"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/50",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -30188,7 +30290,10 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/23.patch"
     },
     "body": "This allows for:\r\n\r\n* streaming without worrying about collision and without the need to pre-parse the file\r\n* signatures to be preserved even if chunk sizes differ due to streaming\r\n\r\nfixes #6"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/22",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
@@ -30296,10 +30401,7 @@
       "patch_url": "https://github.com/WICG/webpackage/pull/21.patch"
     },
     "body": "Just explicit bound checking."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/WICG/webpackage/issues/20",
     "repository_url": "https://api.github.com/repos/WICG/webpackage",
